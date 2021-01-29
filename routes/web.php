@@ -78,6 +78,7 @@ Route::prefix('main')->namespace('FrontEnd')->group(function(){
 
 
 
+
 });
 
 
@@ -94,4 +95,7 @@ Route::middleware('admin')->prefix('admin')->namespace('BackEnd')->group(functio
    route::delete('messages/{message}','MessageController@destroy')->name('messages.destroy');
 
 });
+
 Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

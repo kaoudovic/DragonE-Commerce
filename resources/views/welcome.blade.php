@@ -102,7 +102,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title> Algmdan.com</title>
+    <title>Dragon Web Store</title>
     <!-- Roboto Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700&display=swap">
     <!-- Font Awesome -->
@@ -145,11 +145,11 @@
                 <!-- Grid column -->
                 <div class="col-lg-3 col-xl-2 mt-3 mt-lg-0">
                     <a href="#!">
-                        <img src="https://mdbootstrap.com/img/logo/mdb-transaprent-noshadows.png" height="35">
+                        <img src="{{asset('Pictures_Project/logo/logo1.jpg')}}" height="58" >
+
                     </a>
                 </div>
                 <!-- Grid column -->
-
                 <!-- Grid column -->
                 <div class="col-md-7 col-lg-5 col-xl-6">
 
@@ -188,38 +188,77 @@
                 <!-- Grid column -->
                 <div class="col-md-5 col-lg-4 col-xl-4 mt-2 mb-1 mb-md-0 pb-2 pb-md-0">
 
+
                     <!-- Icons -->
                     <div class="d-flex justify-content-start justify-content-md-end text-center">
 
-                        <div class="mr-4">
+                        <div class="mr-2">
 
-                            <a href="#!" role="button">
-                                <div>
-                                    <i class="fas fa-user fa-lg text-muted"></i>
-                                    <span
-                                        class="counter counter-floating counter-lg-icon position-absolute ml-n1 mt-1"><strong>3</strong></span>
+                            <!-- Authentication Links -->
+                            @guest
+                                <div class="mr-0">
+                                    <a href="{{ route('login')}}" role="button">
+                                        <div>
+                                            <i class="fas fa-sign-in-alt fa-lg"></i>
+                                        </div>
+                                        <small class="text-dark">{{__('Login')}}</small>
+                                    </a>
                                 </div>
-                                <small class="text-dark">My profile</small>
-                            </a>
+                                @if (Route::has('register'))
+
+                                @endif
+                            @else
+                                <div class="mr-2">
+                                    <div class="mr-4">
+                                        <a id="navbarDropdown"  href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                            <div> <i class="fas fa-user-circle fa-lg "></i></div>
+                                            <small class="text-dark">{{ Auth::user()->name }} </small>
+                                        </a>
+
+                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                            <a class="dropdown-item" href="{{ route('logout') }}"
+                                               onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                                {{ __('Logout') }}
+                                            </a>
+
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                @csrf
+                                            </form>
+                                        </div>
+                                </div>
+                                </div>
+                            @endguest
 
                         </div>
+
+                        <div class="mr-4">
+                            <a href="{{ route('blog.index')}}" role="button">
+                                <div>
+                                    <i class="fas fa-blog fa-lg "></i>
+                                </div>
+                                <small class="text-dark">Blog</small>
+                            </a>
+                        </div>
+
+
                         <div class="mr-4">
 
                             <a href="{{route('track_order')}}" role="button">
                                 <div>
-                                    <i class="fas fa-store fa-lg text-muted"></i>
+                                    <i class="fas fa-store fa-lg "></i>
                                 </div>
-                                <small class="text-dark">Orders</small>
+                                <small class="text-dark " >Orders</small>
                             </a>
 
                         </div>
-                        <div class="mr-0">
+                        <div class="mr-2">
 
                             <a href="#!" role="button">
                                 <div>
-                                    <i class="fas fa-shopping-cart fa-lg text-muted"></i>
+                                    <i class="fas fa-shopping-cart fa-lg "></i>
                                 </div>
-                                <small class="text-dark">Cart</small>
+                                <small class="text-dark ">Cart</small>
                             </a>
 
                         </div>
@@ -388,8 +427,8 @@
                                             </a>
                                         </div>
                                         <div class="carousel-caption">
-                                            <h3 class="h3-responsive">First shop item</h3>
-                                                <p>First text</p>
+                                            <h3 class="h3-responsive">Get extra <b>5%</b> discount</h3>
+                                                <p> When you buy your monthly essentials worth of 750$ </p>
                                         </div>
                                     </div>
                                     <div class="carousel-item">
@@ -402,8 +441,8 @@
                                             </a>
                                         </div>
                                         <div class="carousel-caption">
-                                            <h3 class="h3-responsive">Second shop item</h4>
-                                                <p>Secondary text</p>
+                                            <h3 class="h3-responsive">Macbook Pro 13 Inch Retina </h3>
+                                                <p>Pay with installments </p>
                                         </div>
                                     </div>
                                     <div class="carousel-item">
@@ -416,8 +455,8 @@
                                             </a>
                                         </div>
                                         <div class="carousel-caption">
-                                            <h3 class="h3-responsive">Third shop item</h4>
-                                                <p>Third text</p>
+                                            <h3 class="h3-responsive">Apple Iphone XS With Facetime</h3>
+                                                <p>Pay with installments</p>
                                         </div>
                                     </div>
                                 </div>

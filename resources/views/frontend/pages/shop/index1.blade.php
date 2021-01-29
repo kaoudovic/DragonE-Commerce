@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title> Algmdan.com</title>
+    <title>Dragon Web Store</title>
     <!-- Roboto Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700&display=swap">
     <!-- Font Awesome -->
@@ -1176,7 +1176,7 @@
                                     <img class="img-fluid w-100" style="height: 250px"   src="{{asset
                                     ('Pictures_Project/Laptops/9.jpg')}}"
                                          alt="Sample">
-                                    <a href="#!">
+                                    <a href="">
                                         <div class="mask"></div>
                                     </a>
                                 </div>

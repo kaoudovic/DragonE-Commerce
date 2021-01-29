@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title> Algmdan.com</title>
+    <title>Dragon Web Store</title>
     <!-- Roboto Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700&display=swap">
     <!-- Font Awesome -->
@@ -28,11 +28,13 @@
 @include('layouts.header')
     <!-- Navbar -->
 
-    <div class="jumbotron jumbotron-image color-grey-light" style="background-image: url('https://mdbootstrap.com/img/Photos/Others/clothes(3)-crop.jpg'); height: 400px;">
+    <div class="jumbotron jumbotron-image color-grey-light" style="background-image: url('https://mdbootstrap.com/img/Photos/Horizontal/alistyle/img(2).jpg'); height: 400px;">
         <div class="mask rgba-black-strong d-flex align-items-center h-100">
-            <div class="container text-center white-text py-5">
-                <h1 class="mb-3">Fashion Blog</h1>
-                <p class="mb-0"><i class="fas fa-quote-left mr-2"></i>Style is something each of us already has, all we need to do is find it</p>
+            <div class="container text-center white-text py-5" >
+                <h1 class="mb-3">Dragon Blog</h1>
+                <p class="mb-0"><i class="fas fa-quote-left mr-2">
+
+                    </i>Style is something each of us already has, all we need to do is find it</p>
             </div>
         </div>
     </div>

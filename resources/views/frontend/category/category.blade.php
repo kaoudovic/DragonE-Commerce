@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title> Algmdan.com</title>
+    <title>Dragon Web Store</title>
     <!-- Roboto Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700&display=swap">
     <!-- Font Awesome -->
@@ -245,7 +245,7 @@
 
                         <div class="view zoom brighten z-depth-2 rounded">
                             <img class="img-fluid" style="height: 240px ;width: 360px" src="https://mdbootstrap.com/img/Photos/Horizontal/alistyle/img(1).jpg" alt="Sample">
-                            <a href="#!" class="text-white">
+                            <a href="{{route('phone')}}" class="text-white">
                                 <div class="mask card-mask-color waves-effect waves-light">
                                     <div class="d-flex align-items-end h-100 p-3">
                                         <h5 class="mb-0">Mobile Phone</h5>
@@ -267,7 +267,7 @@
 
                         <div class="view zoom brighten z-depth-2 rounded">
                             <img class="img-fluid" style="height: 240px ;width: 360px" src="https://mdbootstrap.com/img/Photos/Horizontal/alistyle/img(2).jpg" alt="Sample">
-                            <a href="#!" class="text-white">
+                            <a href="{{route('laptop')}}" class="text-white">
                                 <div class="mask card-mask-color waves-effect waves-light">
                                     <div class="d-flex align-items-end h-100 p-3">
                                         <h5 class="mb-0">Laptop</h5>
@@ -290,7 +290,7 @@
 
                         <div class="view zoom brighten z-depth-2 rounded">
                             <img class="img-fluid" style="height: 240px ;width: 360px" src="https://mdbootstrap.com/img/Photos/Horizontal/alistyle/img(3).jpg" alt="Sample">
-                            <a href="#!" class="text-white">
+                            <a href="{{route('shop.index')}}" class="text-white">
                                 <div class="mask card-mask-color waves-effect waves-light">
                                     <div class="d-flex align-items-end h-100 p-3">
                                         <h5 class="mb-0">Accessories</h5>
@@ -313,7 +313,7 @@
                         <div class="view zoom brighten z-depth-2 rounded">
                             <img class="img-fluid" style="height: 240px ;width: 340px" src="{{asset
                             ('Pictures_Project/Cameras/1.jpg')}}" alt="Sample">
-                            <a href="#!" class="text-white">
+                            <a href="{{route('camera')}}" class="text-white">
                                 <div class="mask card-mask-color waves-effect waves-light">
                                     <div class="d-flex align-items-end h-100 p-3">
                                         <h5 class="mb-0">Camera</h5>
@@ -336,7 +336,7 @@
                         <div class="view zoom brighten z-depth-2 rounded">
                             <img class="img-fluid" style="height: 240px ;width: 340px"src="{{asset
                             ('Pictures_Project/TV/1.jpg')}}" alt="Sample">
-                            <a href="#!" class="text-white">
+                            <a href="{{route('tv')}}" class="text-white">
                                 <div class="mask card-mask-color waves-effect waves-light">
                                     <div class="d-flex align-items-end h-100 p-3">
                                         <h5 class="mb-0">TV</h5>
@@ -360,7 +360,7 @@
                         <div class="view zoom brighten z-depth-2 rounded">
                             <img class="img-fluid" style="height: 240px ;width: 340px" src="{{asset
                             ('Pictures_Project/Tablets/1.jpg')}}" alt="Sample">
-                            <a href="#!" class="text-white">
+                            <a href="{{route('tablet')}}" class="text-white">
                                 <div class="mask card-mask-color waves-effect waves-light">
                                     <div class="d-flex align-items-end h-100 p-3">
                                         <h5 class="mb-0">Tablet</h5>
@@ -384,7 +384,7 @@
                         <div class="view zoom brighten z-depth-2 rounded">
                             <img class="img-fluid"  style="height: 240px ;width: 340px" src="{{asset
                             ('Pictures_Project/Videogames/1.jpg')}}" alt="Sample">
-                            <a href="#!" class="text-white">
+                            <a href="{{route('game')}}" class="text-white">
                                 <div class="mask card-mask-color waves-effect waves-light">
                                     <div class="d-flex align-items-end h-100 p-3">
                                         <h5 class="mb-0">Video Game</h5>
@@ -408,7 +408,7 @@
                         <div class="view zoom brighten z-depth-2 rounded">
                             <img class="img-fluid"  style="height: 240px ;width: 340px" src="{{asset
                             ('Pictures_Project/Electronics/Headphone/1.jpg')}}" alt="Sample">
-                            <a href="#!" class="text-white">
+                            <a href="{{route('headphone')}}" class="text-white">
                                 <div class="mask card-mask-color waves-effect waves-light">
                                     <div class="d-flex align-items-end h-100 p-3">
                                         <h5 class="mb-0">HeadPhone</h5>
@@ -432,7 +432,7 @@
                         <div class="view zoom brighten z-depth-2 rounded">
                             <img class="img-fluid"  style="height: 240px ;width: 340px" src="{{asset
                             ('Pictures_Project/Electronics/Smartwatch/1.jpg')}}" alt="Sample">
-                            <a href="#!" class="text-white">
+                            <a href="{{route('swatch')}}" class="text-white">
                                 <div class="mask card-mask-color waves-effect waves-light">
                                     <div class="d-flex align-items-end h-100 p-3">
                                         <h5 class="mb-0">Smart Watch</h5>

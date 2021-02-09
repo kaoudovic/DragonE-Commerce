@@ -6,7 +6,7 @@
         <div class="container-fluid">
 
             <!-- Brand -->
-                <a href="{{ route('main') }}">
+                <a href="{{ route('home') }}">
                     <img src="{{asset('Pictures_Project/logo/logo1.jpg')}}" height="50">
                 </a>
 
@@ -114,13 +114,16 @@
                     </div>
 
                     <div class="mr-3">
-                    <li class="nav-item" >
-                            <a href="{{url('/main/cart/1')}}" role="button">
-                                <div> <i class="fas fa-shopping-cart fa-lg "></i></div>
+
+                        <li class="nav-item" >
+                        <a href="{{route('cart.index')}}" role="button">
+                                <i class="fas fa-shopping-cart fa-lg "></i>
+                                <span class="badge badge-pill red">{{ Cart::count() }}</span>
                                 <small class="text-dark">Cart</small>
                             </a>
                     </li>
                     </div>
+
 
 
                 </ul>

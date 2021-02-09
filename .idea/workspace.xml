@@ -2,205 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="db3f713c-9dc8-484a-b484-aecc67d29f1c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/api_test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/api_test.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/cart.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/chackout.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/contact.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/css/addons/datatables-select.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/css/addons/datatables-select.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/css/addons/datatables-select2.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/css/addons/datatables-select2.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/css/addons/datatables.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/css/addons/datatables.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/css/addons/datatables2.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/css/addons/datatables2.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/css/addons/directives.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/css/addons/directives.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/css/addons/flag.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/css/addons/flag.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/css/addons/jquery.zmd.hierarchical-display.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/css/addons/jquery.zmd.hierarchical-display.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/css/addons/rating.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/css/addons/rating.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/css/bootstrap.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/css/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/css/mdb-pro.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/css/mdb.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/css/mdb.ecommerce.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/css/mdb.lite.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/css/mdb.lite.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/css/mdb.lite.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/css/mdb.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/css/modules/animations-extended.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/css/modules/animations-extended.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/home.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/home2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/homepage.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/img/mdb-favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/img/overlays/01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/img/overlays/02.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/img/overlays/03.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/img/overlays/04.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/img/overlays/05.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/img/overlays/06.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/img/overlays/07.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/img/overlays/08.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/img/overlays/09.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/img/svg/arrow_left.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/img/svg/arrow_right.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/js/addons/datatables-select.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/js/addons/datatables-select.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/js/addons/datatables-select2.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/js/addons/datatables-select2.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/js/addons/datatables.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/js/addons/datatables.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/js/addons/datatables2.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/js/addons/datatables2.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/js/addons/directives.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/js/addons/directives.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/js/addons/flag.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/js/addons/flag.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/js/addons/imagesloaded.pkgd.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/js/addons/imagesloaded.pkgd.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/js/addons/jquery.zmd.hierarchical-display.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/js/addons/jquery.zmd.hierarchical-display.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/js/addons/masonry.pkgd.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/js/addons/masonry.pkgd.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/js/addons/rating.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/js/addons/rating.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/js/bootstrap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/js/bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/js/jquery-3.4.1.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/js/jquery.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/js/mdb.ecommerce.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/js/mdb.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/js/mdb.lite.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/js/mdb.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/js/mdb.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/js/modules/animations-extended.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/js/modules/animations-extended.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/js/modules/forms-free.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/js/modules/forms-free.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/js/modules/scrolling-navbar.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/js/modules/scrolling-navbar.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/js/modules/treeview.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/js/modules/treeview.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/js/modules/wow.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/js/modules/wow.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/js/popper.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/js/popper.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/product.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/scss/_custom-styles.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/scss/_custom-variables.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/scss/addons/_datatables-select.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/scss/addons/_datatables-select2.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/scss/addons/_datatables.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/scss/addons/_datatables2.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/scss/addons/_directives.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/scss/addons/_flag.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/scss/addons/_hierarchical-display.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/scss/addons/_rating.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/scss/core/_colors.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/scss/core/_global.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/scss/core/_helpers.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/scss/core/_masks.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/scss/core/_mixins.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/scss/core/_typography.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/scss/core/_variables.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/scss/core/_waves.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/scss/core/bootstrap/_functions.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/scss/core/bootstrap/_rfs.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/scss/core/bootstrap/_variables.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/scss/free/_animations-basic.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/scss/free/_badges.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/scss/free/_buttons.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/scss/free/_cards.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/scss/free/_carousels.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/scss/free/_depreciated.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/scss/free/_dropdowns.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/scss/free/_footers.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/scss/free/_forms.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/scss/free/_input-group.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/scss/free/_list-group.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/scss/free/_loader.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/scss/free/_modals.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/scss/free/_msc.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/scss/free/_navbars.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/scss/free/_pagination.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/scss/free/_steppers.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/scss/free/_tables.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/scss/free/_treeview.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/scss/free/modules/animations-extended/_module.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/scss/free/modules/animations-extended/animations-extended.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/scss/mdb-free.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/scss/mdb-lite-free.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/shop.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/sign_in.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/sign_up.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/src/js/free/forms-free.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/src/js/free/scrolling-navbar.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/src/js/free/treeview.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/src/js/free/wow.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/src/js/vendor/addons/datatables-select.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/src/js/vendor/addons/datatables-select2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/src/js/vendor/addons/datatables.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/src/js/vendor/addons/datatables2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/src/js/vendor/addons/imagesloaded.pkgd.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/src/js/vendor/addons/jquery.zmd.hierarchical-display.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/src/js/vendor/addons/masonry.pkgd.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/src/js/vendor/addons/rating.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/src/js/vendor/free/bs-custom-file-input.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/src/js/vendor/free/chart.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/src/js/vendor/free/chartjs-datalabels.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/src/js/vendor/free/enhanced-modals.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/src/js/vendor/free/jquery.easing.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/src/js/vendor/free/velocity.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ecommerce/src/js/vendor/free/waves.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/ExampleComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/ExampleComponent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/_variables.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/passwords/email.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/passwords/email.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/passwords/reset.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/passwords/reset.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/verify.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/verify.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/category/camera.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/category/camera.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/category/category.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/category/category.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/category/headphone.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/category/headphone.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/category/laptop.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/category/laptop.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/category/phone.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/category/phone.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/category/smartwatch.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/category/smartwatch.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/category/tablet.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/category/tablet.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/category/tv.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/category/tv.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/category/videogame.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/category/videogame.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/pages/aboutus.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/pages/aboutus.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/pages/blog/index1.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/pages/blog/index1.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/pages/cart/cart.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/pages/cart/cart.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/pages/checkout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/pages/checkout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/pages/contact/contact-us.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/pages/contact/contact-us.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/pages/shop/index1.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/pages/shop/index1.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/pages/trackorder.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/pages/trackorder.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/pages/wishlist/wishlist.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/pages/wishlist/wishlist.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/products/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/products/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -319,6 +121,9 @@
       <path value="$PROJECT_DIR$/vendor/symfony/http-client-contracts" />
       <path value="$PROJECT_DIR$/vendor/symfony/deprecation-contracts" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/vendor/hardevine/shoppingcart" />
+      <path value="$PROJECT_DIR$/vendor/christiankuri/laravel-favorite" />
+      <path value="$PROJECT_DIR$/vendor/lamalama/laravel-wishlist" />
     </include_path>
   </component>
   <component name="ProjectId" id="1dNFBNEF1IhdwuUK8wvptNvtx8e" />
@@ -331,7 +136,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -342,11 +147,28 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\work\course\Laravel5.8\My projects\4tech1.1\app" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\work\course\Laravel5.8\My projects\4tech1.1\app\Models" />
+      <recent name="G:\Last tearm\project\4tech1.1\app\Http\Controllers\FrontEnd" />
+    </key>
+  </component>
+  <component name="RunManager" selected="PHP Script.helper.php">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
       <method v="2" />
     </configuration>
+    <configuration name="helper.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/app/helper.php">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHP Script.helper.php" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
@@ -380,7 +202,20 @@
       <workItem from="1611821918056" duration="8943000" />
       <workItem from="1611898806358" duration="471000" />
       <workItem from="1611899427986" duration="973000" />
-      <workItem from="1611900533983" duration="17762000" />
+      <workItem from="1611900533983" duration="18688000" />
+      <workItem from="1611958052128" duration="868000" />
+      <workItem from="1612000843818" duration="12677000" />
+      <workItem from="1612083045899" duration="2671000" />
+      <workItem from="1612257276199" duration="2174000" />
+      <workItem from="1612508566325" duration="136000" />
+      <workItem from="1612511388022" duration="1275000" />
+      <workItem from="1612528324098" duration="693000" />
+      <workItem from="1612529048604" duration="16885000" />
+      <workItem from="1612642188765" duration="7659000" />
+      <workItem from="1612724641969" duration="18181000" />
+      <workItem from="1612776102436" duration="9648000" />
+      <workItem from="1612889155551" duration="3380000" />
+      <workItem from="1612892940947" duration="901000" />
     </task>
     <servers />
   </component>
@@ -397,27 +232,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/resources/views/frontend/pages/wishlist/wishlist.blade.php</url>
-          <line>237</line>
+          <line>163</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/resources/views/frontend/pages/wishlist/wishlist.blade.php</url>
           <line>158</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/resources/views/frontend/pages/wishlist/wishlist.blade.php</url>
-          <line>219</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/resources/views/frontend/pages/wishlist/wishlist.blade.php</url>
-          <line>232</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/resources/views/frontend/pages/wishlist/wishlist.blade.php</url>
-          <line>69</line>
+          <line>87</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
@@ -439,6 +264,21 @@
           <url>file://$PROJECT_DIR$/resources/views/auth/login.blade.php</url>
           <line>30</line>
           <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/frontend/pages/shop/shop.blade.php</url>
+          <line>230</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/frontend/pages/cart/cart.blade.php</url>
+          <line>77</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/layouts/footer.blade.php</url>
+          <line>72</line>
+          <option name="timeStamp" value="24" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

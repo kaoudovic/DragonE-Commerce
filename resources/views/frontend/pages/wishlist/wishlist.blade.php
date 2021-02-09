@@ -43,22 +43,40 @@
 <main>
     <div class="container">
 
+        @if(session()->has('success_massage') )
+            <div class="alert alert-success" >
+                {{ session()->get('success_massage') }}
+            </div>
+        @endif
+
+        @if(count($errors) >0)
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach($errors->all() as $error)
+                        <li>{{$error}}</li>
+                    @endforeach
+                </ul>
+            </div>
+    @endif
         <!--Section: Block Content-->
         <section>
 
             <!-- Grid row -->
             <div class="row">
+{{--            @if(Cart::count()>0 )--}}
+                @if(Cart::instance('moveToWishlist')->count() > 0)
 
                 <!-- Grid column -->
-                <div class="col-md-4 mb-5">
+                    @foreach(Cart::instance('moveToWishlist')->content() as $item)
 
+                    <div class="col-md-4 mb-5">
                     <!-- Card -->
                     <div class="">
 
                         <div class="view zoom overlay z-depth-2 rounded">
                             <img class="img-fluid w-100"
                                  src="https://mdbootstrap.com/img/Photos/Horizontal/alistyle/img(1).jpg">
-                            <a href="#!">
+                            <a href="{{route('shop.show',$item->model->slug)}}">
                                 <div class="mask">
                                     <img class="img-fluid w-100"
                                          src="https://mdbootstrap.com/img/Photos/Horizontal/alistyle/img(1).jpg">
@@ -69,8 +87,8 @@
 
                         <div class="text-center pt-4">
 
-                            <h5>Blue denim shirt</h5>
-                            <p class="mb-2 text-muted text-uppercase small">Shirts</p>
+                            <h5>{{$item->model->name}}</h5>
+                            <p class="mb-2 text-muted text-uppercase small">{{$item->model->details}}</p>
                             <ul class="rating">
                                 <li>
                                     <i class="fas fa-star fa-sm text-primary"></i>
@@ -89,141 +107,49 @@
                                 </li>
                             </ul>
                             <hr>
-                            <h6 class="mb-3">17.99 $</h6>
-                            <button type="button" class="btn btn-primary btn-sm mr-1 mb-2"><i
-                                    class="fas fa-shopping-cart pr-2"></i>Add to cart</button>
-                            <button type="button" class="btn btn-light btn-sm mr-1 mb-2"><i
-                                    class="fas fa-info-circle pr-2"></i>Details</button>
-                            <button type="button" class="btn btn-elegant btn-sm px-3 mb-2 material-tooltip-main"
-                                    data-toggle="tooltip" data-placement="top" title="Remove from wishlist"><i
-                                    class="fas fa-times"></i></button>
+                            <h6 class="mb-3">{{$item->model->price}}$</h6>
+
+                            <div class="mr-3">
+                               <div>
+                                <form action="{{route('cart.store')}}" method="POST" >
+                                    {{csrf_field()}}
+                                    <input type="hidden" name="id" value="{{$item->model->id}}">
+                                    <input type="hidden" name="name" value="{{$item->model->name}}">
+                                    <input type="hidden" name="price" value=10.00>
+                                    <button type="submit" class="btn btn-primary btn-sm mr-1 waves-effect waves-light"><i
+                                            class="fas fa-shopping-cart pr-2"></i>Add to cart</button>
+                                    <button type="button" class="btn btn-light btn-sm mr-1  "><i
+                                            class="fas fa-info-circle pr-2"></i><a href="{{route('shop.show',$item->model->slug)
+                                    }}">Details</a></button>
+                                </form>
+
+                                <form method="post" action="{{route('wishlist.destroy' ,$item->rowId)}}">
+                                    {{csrf_field()}}
+                                    {{method_field('DELETE')}}
+                                    <button  style="margin-right:-300px;margin-bottom:-10px "type="submit"
+                                              class="btn
+                                    btn-elegant btn-sm px-3 mb-2
+                                    material-tooltip-main"
+                                            data-toggle="tooltip" data-placement="top" title="Remove from wishlist"><i
+                                            class="fas fa-times"></i></button>
+                                </form>
+                               </div>
+                            </div>
 
                         </div>
 
                     </div>
                     <!-- Card -->
-
                 </div>
                 <!-- Grid column -->
+                    @endforeach
 
-                <!-- Grid column -->
-                <div class="col-md-4 mb-5">
-
-                    <!-- Card -->
-                    <div class="">
-
-                        <div class="view zoom overlay z-depth-2 rounded">
-                            <img class="img-fluid w-100"
-                                 src="https://mdbootstrap.com/img/Photos/Horizontal/alistyle/img(2).jpg" alt="Sample">
-                            <a href="#!">
-                                <div class="mask">
-                                    <img class="img-fluid w-100"
-                                         src="https://mdbootstrap.com/img/Photos/Horizontal/alistyle/img(2).jpg">
-                                    <div class="mask rgba-black-slight"></div>
-                                </div>
-                            </a>
+                    @else
+                        <div>
+                            <h3> You have No items moved in wishlist yet!</h3><br>
+                            <a href="{{ route('shop.index') }}" class="btn btn-primary btn-sm">Continue Shopping</a>
                         </div>
-
-                        <div class="text-center pt-4">
-
-                            <h5>Red hoodie</h5>
-                            <p class="mb-2 text-muted text-uppercase small">Hoodies</p>
-                            <ul class="rating">
-                                <li>
-                                    <i class="fas fa-star fa-sm text-primary"></i>
-                                </li>
-                                <li>
-                                    <i class="fas fa-star fa-sm text-primary"></i>
-                                </li>
-                                <li>
-                                    <i class="fas fa-star fa-sm text-primary"></i>
-                                </li>
-                                <li>
-                                    <i class="fas fa-star fa-sm text-primary"></i>
-                                </li>
-                                <li>
-                                    <i class="far fa-star fa-sm text-primary"></i>
-                                </li>
-                            </ul>
-                            <hr>
-                            <h6 class="mb-3">35.99 $</h6>
-                            <button type="button" class="btn btn-primary btn-sm mr-1 mb-2"><i
-                                    class="fas fa-shopping-cart pr-2"></i>Add to cart</button>
-                            <button type="button" class="btn btn-light btn-sm mr-1 mb-2"><i
-                                    class="fas fa-info-circle pr-2"></i>Details</button>
-                            <button type="button" class="btn btn-elegant btn-sm px-3 mb-2 material-tooltip-main"
-                                    data-toggle="tooltip" data-placement="top" title="Remove from wishlist"><i
-                                    class="fas fa-times"></i></button>
-
-                        </div>
-
-                    </div>
-                    <!-- Card -->
-
-                </div>
-                <!-- Grid column -->
-
-                <!-- Grid column -->
-                <div class="col-md-4 mb-5">
-
-                    <!-- Card -->
-                    <div class="">
-
-                        <div class="view zoom overlay z-depth-2 rounded">
-                            <img class="img-fluid w-100"
-                                 src="https://mdbootstrap.com/img/Photos/Horizontal/alistyle/img(3).jpg"  >
-                            <h4 class="mb-0"><span class="badge badge-primary badge-pill badge-news">Sale</span></h4>
-                            <a href="#!">
-                                <div class="mask">
-                                    <img class="img-fluid w-100"
-                                         src="https://mdbootstrap.com/img/Photos/Horizontal/alistyle/img(3).jpg">
-                                    <div class="mask rgba-black-slight"></div>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="text-center pt-4">
-
-                            <h5>Grey sweater</h5>
-                            <p class="mb-2 text-muted text-uppercase small">Sweaters</p>
-                            <ul class="rating">
-                                <li>
-                                    <i class="fas fa-star fa-sm text-primary"></i>
-                                </li>
-                                <li>
-                                    <i class="fas fa-star fa-sm text-primary"></i>
-                                </li>
-                                <li>
-                                    <i class="fas fa-star fa-sm text-primary"></i>
-                                </li>
-                                <li>
-                                    <i class="fas fa-star fa-sm text-primary"></i>
-                                </li>
-                                <li>
-                                    <i class="fas fa-star fa-sm text-primary"></i>
-                                </li>
-                            </ul>
-                            <hr>
-                            <h6 class="mb-3">
-                                <span class="text-danger mr-1">$21.99</span>
-                                <span class="text-grey"><s>$36.99</s></span>
-                            </h6>
-                            <button type="button" class="btn btn-primary btn-sm mr-1 mb-2"><i
-                                    class="fas fa-shopping-cart pr-2"></i>Add to cart</button>
-                            <button type="button" class="btn btn-light btn-sm mr-1 mb-2"><i
-                                    class="fas fa-info-circle pr-2"></i>Details</button>
-                            <button type="button" class="btn btn-elegant btn-sm px-3 mb-2 material-tooltip-main"
-                                    data-toggle="tooltip" data-placement="top" title="Remove from wishlist"><i
-                                    class="fas fa-times"></i></button>
-
-                        </div>
-
-                    </div>
-                    <!-- Card -->
-
-                </div>
-                <!-- Grid column -->
-
+                    @endif
             </div>
             <!-- Grid row -->
 

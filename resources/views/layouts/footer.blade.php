@@ -66,15 +66,15 @@
                         <a  href="{{ route('blog.index')}}">Blog</a>
                     </li>
                     <li class="mb-2">
-                        <a href="{{ route('about_us')}}">About Algmdan </a>
+                        <a href="{{ route('about_us')}}">About Dragon </a>
                     </li>
                     <li class="mb-2">
                         <a href="#!">Investor Relations</a>
                     </li>
                     <li class="mb-2">
-                        <a href="#!">Algmdan Tours</a>
+                        <a href="#!">Dragon Tours</a>
                     </li> <li class="mb-2">
-                        <a href="#!"> Algmdan Devices</a>
+                        <a href="#!"> Dragon Devices</a>
                 </ul>
             </div>
             <!-- Grid column -->
@@ -129,10 +129,10 @@
                         <a href="#!">Become an Affiliate</a>
                     </li>
                     <li class="mb-2">
-                        <a href="#!">Sell products on Algmdan</a>
+                        <a href="#!">Sell products on Dragon</a>
                     </li>
                     <li class="mb-2">
-                        <a href="#!">  Sell apps on Algmdan</a>
+                        <a href="#!">  Sell apps on Dragon</a>
                     </li>
                     <li class="mb-2">
                         <a href="#!">Shipping Rates</a>
@@ -158,7 +158,7 @@
                     <li class="mb-2"><span class="fa-li"><i class="far fa-map"></i></span>Cairo, Alm3z Street 10
                     </li>
                     <li class="mb-2"><span class="fa-li"><i class="fas fa-phone-alt"></i></span>0114 838 1637</li>
-                    <li class="mb-2"><span class="fa-li"><i class="far fa-envelope"></i></span>algmdan@gmail.com</li>
+                    <li class="mb-2"><span class="fa-li"><i class="far fa-envelope"></i></span>dragon@gmail.com</li>
                     <li><span class="fa-li"><i class="far fa-clock"></i></span>Monday - Friday: 10-17</li>
                 </ul>
 
@@ -173,7 +173,7 @@
 
     <!-- Copyright -->
     <div class="footer-copyright text-center py-3">© 2021 Copyright:
-        <a href="http://127.0.0.1:8000/main"> Algmdan.com</a>
+        <a href="{{route('home')}}"> Dragon.com</a>
     </div>
     <!-- Copyright -->
 

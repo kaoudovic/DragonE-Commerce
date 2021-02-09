@@ -97,6 +97,9 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/http-client-contracts" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/deprecation-contracts" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-intl-normalizer" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/hardevine/shoppingcart" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/christiankuri/laravel-favorite" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/lamalama/laravel-wishlist" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

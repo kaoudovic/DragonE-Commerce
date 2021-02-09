@@ -4,8 +4,78 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "52ba2f7b901e34f553aece003f44ff2e",
+    "content-hash": "a1c0335d011e27167adf7d1e9910826b",
     "packages": [
+        {
+            "name": "christiankuri/laravel-favorite",
+            "version": "v1.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ChristianKuri/laravel-favorite.git",
+                "reference": "e3e0b9cfc8bbbb5efbf6e6e78ee31cd9646f1b51"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ChristianKuri/laravel-favorite/zipball/e3e0b9cfc8bbbb5efbf6e6e78ee31cd9646f1b51",
+                "reference": "e3e0b9cfc8bbbb5efbf6e6e78ee31cd9646f1b51",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/database": ">=5.4",
+                "illuminate/support": ">=5.4",
+                "php": ">=5.6.4"
+            },
+            "require-dev": {
+                "orchestra/database": "~3.4",
+                "orchestra/testbench": "~3.4",
+                "phpunit/phpunit": "~5.7"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "ChristianKuri\\LaravelFavorite\\FavoriteServiceProvider"
+                    ]
+                },
+                "branch-alias": {
+                    "dev-master": "1.3.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ChristianKuri\\LaravelFavorite\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christian Kuri",
+                    "email": "christian.kuri.martinez@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Allows Laravel Eloquent models to implement a 'favorite' or 'remember' or 'follow' feature.",
+            "homepage": "https://github.com/ChristianKuri/laravel-favorite",
+            "keywords": [
+                "ChristianKuri",
+                "Follow",
+                "favoritable",
+                "favorite",
+                "favourite",
+                "laravel",
+                "laravel-favorite",
+                "package",
+                "remember"
+            ],
+            "support": {
+                "issues": "https://github.com/ChristianKuri/laravel-favorite/issues",
+                "source": "https://github.com/ChristianKuri/laravel-favorite/tree/master"
+            },
+            "time": "2019-10-28T22:37:14+00:00"
+        },
         {
             "name": "dnoegel/php-xdg-base-dir",
             "version": "v0.1.1",
@@ -407,6 +477,125 @@
                 "source": "https://github.com/fideloper/TrustedProxy/tree/4.4.1"
             },
             "time": "2020-10-22T13:48:01+00:00"
+        },
+        {
+            "name": "hardevine/shoppingcart",
+            "version": "2.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hardevine/LaravelShoppingcart.git",
+                "reference": "2fc6eff895ae6d94978125f6bc65aceadc4873c5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hardevine/LaravelShoppingcart/zipball/2fc6eff895ae6d94978125f6bc65aceadc4873c5",
+                "reference": "2fc6eff895ae6d94978125f6bc65aceadc4873c5",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/events": "5.1.*|5.2.*|5.3.*|5.4.*|5.5.*|5.6.*|5.7.*|5.8.*|^6|^7|^8",
+                "illuminate/session": "5.1.*|5.2.*|5.3.*|5.4.*|5.5.*|5.6.*|5.7.*|5.8.*|^6|^7|^8",
+                "illuminate/support": "5.1.*|5.2.*|5.3.*|5.4.*|5.5.*|5.6.*|5.7.*|5.8.*|^6|^7|^8"
+            },
+            "require-dev": {
+                "mockery/mockery": "~0.9.0",
+                "orchestra/testbench": "~3.1",
+                "phpunit/phpunit": "~5.0 || ~6.0 || ~7.0"
+            },
+            "suggest": {
+                "gloudemans/notify": "Simple flash notifications for Laravel"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Gloudemans\\Shoppingcart\\ShoppingcartServiceProvider"
+                    ],
+                    "aliases": {
+                        "Cart": "Gloudemans\\Shoppingcart\\Facades\\Cart"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Gloudemans\\Shoppingcart\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Rob Gloudemans",
+                    "email": "info@robgloudemans.nl"
+                }
+            ],
+            "description": "Laravel Shoppingcart",
+            "keywords": [
+                "laravel",
+                "shoppingcart"
+            ],
+            "support": {
+                "source": "https://github.com/hardevine/LaravelShoppingcart/tree/2.9"
+            },
+            "time": "2020-09-06T07:46:29+00:00"
+        },
+        {
+            "name": "lamalama/laravel-wishlist",
+            "version": "0.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lamalamaNL/laravel-wishlist.git",
+                "reference": "cb0438d97f6d303dbbadd9259d0042fb4e438f49"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lamalamaNL/laravel-wishlist/zipball/cb0438d97f6d303dbbadd9259d0042fb4e438f49",
+                "reference": "cb0438d97f6d303dbbadd9259d0042fb4e438f49",
+                "shasum": ""
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "LamaLama\\Wishlist\\WishlistServiceProvider"
+                    ],
+                    "aliases": {
+                        "Wishlist": "LamaLama\\Wishlist\\WishlistFacade"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "LamaLama\\Wishlist\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Lama Lama BV",
+                    "email": "info@lamalama.nl"
+                },
+                {
+                    "name": "Mark de Vries",
+                    "email": "mark@lamalama.nl"
+                }
+            ],
+            "description": "Make your models wishlistable",
+            "homepage": "https://github.com/lamalamaNL/laravel-wishlist",
+            "keywords": [
+                "laravel",
+                "wishlist"
+            ],
+            "support": {
+                "issues": "https://github.com/lamalamaNL/laravel-wishlist/issues",
+                "source": "https://github.com/lamalamaNL/laravel-wishlist/tree/0.2.1"
+            },
+            "time": "2020-12-06T08:07:07+00:00"
         },
         {
             "name": "laravel/framework",
@@ -979,16 +1168,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "2.43.0",
+            "version": "2.44.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "d32c57d8389113742f4a88725a170236470012e2"
+                "reference": "e6ef33cb1f67a4bed831ed6d0f7e156739a5d8cd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/d32c57d8389113742f4a88725a170236470012e2",
-                "reference": "d32c57d8389113742f4a88725a170236470012e2",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/e6ef33cb1f67a4bed831ed6d0f7e156739a5d8cd",
+                "reference": "e6ef33cb1f67a4bed831ed6d0f7e156739a5d8cd",
                 "shasum": ""
             },
             "require": {
@@ -1004,7 +1193,7 @@
                 "phpmd/phpmd": "^2.9",
                 "phpstan/extension-installer": "^1.0",
                 "phpstan/phpstan": "^0.12.54",
-                "phpunit/phpunit": "^7.5 || ^8.0",
+                "phpunit/phpunit": "^7.5.20 || ^8.5.14",
                 "squizlabs/php_codesniffer": "^3.4"
             },
             "bin": [
@@ -1068,7 +1257,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-12-17T20:55:32+00:00"
+            "time": "2021-01-26T20:46:41+00:00"
         },
         {
             "name": "nikic/php-parser",

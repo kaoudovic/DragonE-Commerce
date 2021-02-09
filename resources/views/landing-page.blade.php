@@ -133,8 +133,11 @@
 
                 </div>
                 <div class="col-md-6">
-                    <h5>{{$product->details}}</h5>
-                    <p class="mb-2 text-muted text-uppercase small">{{$product->name}}</p>
+
+                    <h5>
+                        New Apple iPhone 12 Pro Max (256GB, Pacific Blue) [Locked] + Carrier Subscription
+                        by Apple</h5>
+                    <p class="mb-2 text-muted text-uppercase small">IPhone</p>
                     <ul class="rating">
                         <li>
                             <i class="fas fa-star fa-sm text-primary"></i>
@@ -152,8 +155,9 @@
                             <i class="far fa-star fa-sm text-primary"></i>
                         </li>
                     </ul>
-                    <p><span class="mr-1"><strong>${{$product->price}} </strong></span></p>
-                    <p class="pt-1">{{$product->description}}</p>
+                    <p><span class="mr-1"><strong>$100.00 </strong></span></p>
+                    <p class="pt-1">This phone must be purchased with a monthly carrier plan and will be locked to the selected carrier.
+                        Get up to $100.00 over 24 months added to your Amazon.com Gift Card balance ($4.17/month every month you’re subscribed). Limit 1 iPhone and wireless plan per account. Learn more.</p>
                     <div class="table-responsive">
                         <table class="table table-sm table-borderless mb-0">
                             <tbody>
@@ -213,20 +217,10 @@
                             </tbody>
                         </table>
                     </div>
-                    <form action="{{route('cart.store')}}" method="POST">
-                        {{csrf_field()}}
-                        <input type="hidden" name="id" value="{{$product->id}}">
-                        <input type="hidden" name="name" value="{{$product->name}}">
-                        <input type="hidden" name="price" value={{$product->price}}>
-                        <a  href="{{route('checkout')}}">
-                            <button type="button" class="btn btn-primary btn-md mr-1 mb-2">Buy now</button>
-                        </a>
-                        <button type="submit" class="btn btn-light btn-md mr-1 mb-2"><i class="fas fa-shopping-cart
-                        pr-2"></i>Add to
-                            cart</button>
-                    </form>
-                </div>
 
+                    <button type="button" class="btn btn-light btn-md mr-1 mb-2"><i class="fas fa-shopping-cart pr-2"></i>Add to
+                        cart</button>
+                </div>
             </div>
 
         </section>
@@ -237,52 +231,51 @@
         <section>
 
             <h3 class="text-center pt-5 mb-0">Our latest collection</h3>
+
             <!-- Grid row -->
             <div class="row mt-5 mb-4">
 
                 <!-- Card -->
-                @foreach($our_latest_collection as $product)
-                    <div class="col-md-6 col-lg-3 mb-4">
-                        <div class="">
+                @foreach($products as $product)
 
-                            <div class="view zoom z-depth-2 rounded">
-                                <img class="img-fluid w-100" style="max-height:280px " src="{{asset
+                    <div class="col-md-6 col-lg-3 mb-4">
+                      <div class="">
+
+                        <div class="view zoom z-depth-2 rounded">
+                            <img class="img-fluid w-100" style="max-height:280px " src="{{asset
                             ('Pictures_Project/phone/Apple/12.jpg')
                             }}"alt="Sample">
-                                <a href="{{route('shop.show',$product->slug)}}">
-                                    <div class="mask waves-effect waves-light"></div>
+                            <a href="{{route('shop.show',$product->slug)}}">
+                                <div class="mask waves-effect waves-light"></div>
+                            </a>
+                        </div>
+
+                        <div class="text-center pt-4">
+
+                            <h5>{{$product->name}}</h5>
+                            <h6 class="mb-3">$ {{$product->price}}</h6>
+
+                            <form action="{{route('cart.store')}}" method="POST">
+                                {{csrf_field()}}
+                                <input type="hidden" name="id" value="{{$product->id}}">
+                                <input type="hidden" name="name" value="{{$product->name}}">
+                                <input type="hidden" name="price" value=10.00>
+                                <button type="submit" class="btn btn-primary btn-sm mr-1 waves-effect waves-light"><i
+                                        class="fas fa-shopping-cart pr-2"></i>Add to cart</button>
+                                <a href="{{url('/wishlist/')}}">
+                                    <button type="button" class="btn btn-danger btn-sm px-3 material-tooltip-main" data-toggle="tooltip"
+                                            data-placement="top" title="Add to wishlist"><i class="far fa-heart"></i></button>
                                 </a>
-                            </div>
-
-                            <div class="text-center pt-4">
-                               <a href="{{route('shop.show',$product->slug)}}" >
-                                <h5>{{$product->name}}</h5>
-                                <h6 class="mb-3">$ {{$product->price}}</h6>
-                               </a>
-
-                                <form action="{{route('cart.store')}}" method="POST">
-                                    {{csrf_field()}}
-                                    <input type="hidden" name="id" value="{{$product->id}}">
-                                    <input type="hidden" name="name" value="{{$product->name}}">
-                                    <input type="hidden" name="price" value=10.00>
-                                    <button type="submit" class="btn btn-primary btn-sm mr-1 waves-effect waves-light"><i
-                                            class="fas fa-shopping-cart pr-2"></i>Add to cart</button>
-                                    <a href="{{url('/wishlist/')}}">
-                                        <button type="button" class="btn btn-danger btn-sm px-3 material-tooltip-main" data-toggle="tooltip"
-                                                data-placement="top" title="Add to wishlist"><i class="far fa-heart"></i></button>
-                                    </a>
-                                </form>
-                            </div>
+                            </form>
 
                         </div>
+
+                       </div>
                     </div>
                 @endforeach
 
             </div>
             <!-- Grid row -->
-
-
-
 
         </section>        <!--Section: Block Content-->
 
@@ -293,7 +286,7 @@
 
 
 <!-- Footer -->
-{{--@include('layouts.footer')--}}
+@include('layouts.footer')
 
 <!-- Footer -->
 

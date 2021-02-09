@@ -1,7 +1,9 @@
 <?php
 
 namespace App\Models;
+use LamaLama\Wishlist\HasWishlists;
 
+use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;

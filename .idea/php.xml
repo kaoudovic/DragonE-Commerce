@@ -94,6 +94,9 @@
       <path value="$PROJECT_DIR$/vendor/symfony/http-client-contracts" />
       <path value="$PROJECT_DIR$/vendor/symfony/deprecation-contracts" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/vendor/hardevine/shoppingcart" />
+      <path value="$PROJECT_DIR$/vendor/christiankuri/laravel-favorite" />
+      <path value="$PROJECT_DIR$/vendor/lamalama/laravel-wishlist" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.2" />

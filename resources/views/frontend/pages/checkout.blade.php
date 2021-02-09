@@ -45,11 +45,31 @@
 <main>
     <div class="container">
 
+        <div class="container">
+
+            @if (session()->has('success_message'))
+                <div class="spacer"></div>
+                <div class="alert alert-success">
+                    {{ session()->get('success_message') }}
+                </div>
+            @endif
+
+            @if(count($errors) > 0)
+                <div class="spacer"></div>
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{!! $error !!}</li>
+                        @endforeach
+                    </ul>
+                </div>
+        @endif
         <!--Section: Block Content-->
         <section class="mt-5 mb-4">
 
             <!--Grid row-->
             <div class="row">
+
 
                 <!--Grid column-->
                 <div class="col-lg-8 mb-4">
@@ -59,7 +79,8 @@
                         <div class="card-body">
 
                             <h5 class="mb-2">Billing details</h5>
-
+                            <form action="{{route('checkout.store')}}" method="post">
+                            {{csrf_field()}}
                             <!-- Grid row -->
                             <div class="row">
 
@@ -67,7 +88,8 @@
                                 <div class="col-lg-6">
                                     <!-- First name -->
                                     <div class="md-form md-outline mb-0 mb-lg-4">
-                                        <input type="text" id="firstName" class="form-control mb-0 mb-lg-2">
+                                        <input type="text" id="firstName" name="fname"  value="{{ old('fname')}}"class="form-control mb-0
+                                        mb-lg-2">
                                         <label for="firstName">First name</label>
                                     </div>
                                 </div>
@@ -76,7 +98,8 @@
                                 <div class="col-lg-6">
                                     <!-- Last name -->
                                     <div class="md-form md-outline">
-                                        <input type="text" id="lastName" class="form-control">
+                                        <input type="text" name="lname" id="lastName" value="{{ old('lname')
+                                        }}"class="form-control">
                                         <label for="lastName">Last name</label>
                                     </div>
 
@@ -84,110 +107,86 @@
                                 <!-- Grid column -->
 
                             </div>
-                            <!-- Grid row -->
-
-                            <!-- Company name -->
-                            <div class="md-form md-outline my-0">
-                                <input type="text" id="companyName" class="form-control mb-0">
-                                <label for="companyName">Company name (optional)</label>
-                            </div>
-
-                            <!-- Country -->
-                            <div class="d-flex flex-wrap">
-                                <div class="select-outline position-relative w-100">
-                                    <select class="mdb-select md-form md-outline">
-                                        <option value="" disabled selected>Choose your option</option>
-                                        <option value="1">Egypt</option>
-                                        <option value="2">USA</option>
-                                        <option value="3">Italy</option>
-                                    </select>
-                                    <label>Country Or Region</label>
-                                </div>
-                            </div>
 
                             <!-- Address Part 1 -->
                             <div class="md-form md-outline mt-0">
-                                <input type="text" id="form14" placeholder="House number and street name" class="form-control">
+                                <input type="text" id="form14"name="address" placeholder="House number and street name"
+                                       class="form-control" value="{{ old('address')}}">
                                 <label for="form14">Address</label>
                             </div>
 
-                            <!-- Address Part 2 -->
-                            <div class="md-form md-outline">
-                                <input type="text" id="form15" placeholder="Apartment, suite, unit etc. (optional)"
-                                       class="form-control">
-                                <label for="form15">Address</label>
-                            </div>
 
                             <!-- Postcode / ZIP -->
                             <div class="md-form md-outline">
-                                <input type="text" id="form16" class="form-control">
-                                <label for="form16">Postcode / ZIP</label>
+                                <input type="text"name="postcode" id="form16" class="form-control">
+                                <label for="form16" value="{{ old('postcode')}}">Postcode / ZIP</label>
                             </div>
 
                             <!-- Town / City -->
                             <div class="md-form md-outline">
-                                <input type="text" id="form17" class="form-control">
+                                <input type="text" id="form17" name="city" class="form-control" value="{{ old('city')
+                                }}">
                                 <label for="form17">Town / City</label>
                             </div>
 
                             <!-- Phone -->
                             <div class="md-form md-outline">
-                                <input type="number" id="form18" class="form-control">
+                                <input type="number"name="phone" id="form18" class="form-control" value="{{ old('phone')
+                                }}">
                                 <label for="form18">Phone</label>
                             </div>
 
                             <!-- Email address -->
                             <div class="md-form md-outline">
-                                <input type="email" id="form19" class="form-control">
                                 <label for="form19">Email address</label>
+                                @if (auth()->user())
+                                    <input type="email" class="form-control" id="email" name="email" value="{{ auth()->user()->email }}" readonly>
+                                @else
+                                    <input type="email" class="form-control" id="email" name="email" value="{{ old('email') }}" required>
+                                @endif
                             </div>
 
-                             <!-- Email address -->
-                            <div class="md-form md-outline">
-                                <input type="email" id="form19" class="form-control">
-                                <label for="form19">Credit Card Number</label>
-                            </div>
                           <!-- Additional information -->
                             <div class="md-form md-outline">
-                                <textarea id="form76" class="md-textarea form-control" rows="4"></textarea>
+                                <textarea id="form76" name="info" class="md-textarea form-control" rows="4" value="{{
+                                 old('info')}}"></textarea>
                                 <label for="form76">Additional information</label>
                             </div>
 
-                            <h2>Payment Details</h2>
+                                <h2>Payment Details</h2>
 
-                            <div class="form-group">
-                                <label for="name_on_card">Name on Card</label>
-                                <input type="text" class="form-control" id="name_on_card" name="name_on_card" value="">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="card-element">
-                                    Credit or debit card
-                                </label>
-                                <div id="card-element">
-                                    <!-- a Stripe Element will be inserted here. -->
+                                <div class="form-group">
+                                    <label for="name_on_card">Name on Card</label>
+                                    <input type="text" class="form-control" id="name_on_card" name="name_on_card" value="">
                                 </div>
 
-                                <!-- Used to display form errors -->
-                                <div id="card-errors" role="alert"></div>
-                            </div>
-                            <div class="spacer"></div>
+                                <div class="form-group">
+                                    <label for="card-element">
+                                        Credit or debit card
+                                    </label>
+                                    <div id="card-element">
+                                        <!-- a Stripe Element will be inserted here. -->
+                                    </div>
 
-                            <button type="submit" id="complete-order" class="button-primary full-width">Complete Order</button>
+                                    <!-- Used to display form errors -->
+                                    <div id="card-errors" role="alert"></div>
+                                </div>
+                                <div class="spacer"></div>
 
+                                <button type="submit" id="complete-order" class="button-primary full-width">Complete Order</button>
 
                             <div class="form-check pl-0 mb-4 mb-lg-0">
                                 <input type="checkbox" class="form-check-input filled-in" id="new3">
                                 <label class="form-check-label small text-uppercase card-link-secondary" for="new3">Create an
                                     account?</label>
                             </div>
-
+                            </form>
                         </div>
                     </div>
                     <!-- Card -->
-
                 </div>
                 <!--Grid column-->
+
 
                 <!--Grid column-->
                 <div class="col-lg-4">
@@ -259,7 +258,7 @@
         </section>
         <!--Section: Block Content-->
 
-
+        </div>
     </div>
 </main>
 <!--Main layout-->
@@ -300,31 +299,123 @@
         $(this).closest('.select-outline').find('.caret').toggleClass('active');
     });
     });
-    (function () {
-            var stripe = Stripe("pk_test_TYooMQauvdEDq54NiTphI7jx");
-            var checkoutButton = document.getElementById("checkout-button");
-            checkoutButton.addEventListener("click", function () {
-            fetch("/create-checkout-session", {
-                method: "POST",
-            })
-                .then(function (response) {
-                    return response.json();
-                })
-                .then(function (session) {
-                    return stripe.redirectToCheckout({ sessionId: session.id });
-                })
-                .then(function (result) {
-                    // If redirectToCheckout fails due to a browser or network
-                    // error, you should display the localized error message to your
-                    // customer using error.message.
-                    if (result.error) {
-                        alert(result.error.message);
-                    }
-                })
-                .catch(function (error) {
-                    console.error("Error:", error);
-                });
+</script>
+
+
+<script src="https://js.braintreegateway.com/web/dropin/1.13.0/js/dropin.min.js"></script>
+
+<script>
+    (function(){
+        // Create a Stripe client
+        var stripe = Stripe('{{ config('services.stripe.key') }}');
+
+        // Create an instance of Elements
+        var elements = stripe.elements();
+
+        // Custom styling can be passed to options when creating an Element.
+        // (Note that this demo uses a wider set of styles than the guide below.)
+        var style = {
+            base: {
+                color: '#32325d',
+                lineHeight: '18px',
+                fontFamily: '"Roboto", Helvetica Neue", Helvetica, sans-serif',
+                fontSmoothing: 'antialiased',
+                fontSize: '16px',
+                '::placeholder': {
+                    color: '#aab7c4'
+                }
+            },
+            invalid: {
+                color: '#fa755a',
+                iconColor: '#fa755a'
+            }
+        };
+
+        // Create an instance of the card Element
+        var card = elements.create('card', {
+            style: style,
+            hidePostalCode: true
         });
+
+        // Add an instance of the card Element into the `card-element` <div>
+        card.mount('#card-element');
+
+        // Handle real-time validation errors from the card Element.
+        card.addEventListener('change', function(event) {
+            var displayError = document.getElementById('card-errors');
+            if (event.error) {
+                displayError.textContent = event.error.message;
+            } else {
+                displayError.textContent = '';
+            }
+        });
+
+        // Handle form submission
+        var form = document.getElementById('payment-form');
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Disable the submit button to prevent repeated clicks
+            document.getElementById('complete-order').disabled = true;
+
+            var options = {
+                name: document.getElementById('name_on_card').value,
+                address_line1: document.getElementById('address').value,
+                address_city: document.getElementById('city').value,
+                address_state: document.getElementById('province').value,
+                address_zip: document.getElementById('postalcode').value
+            }
+
+            stripe.createToken(card, options).then(function(result) {
+                if (result.error) {
+                    // Inform the user if there was an error
+                    var errorElement = document.getElementById('card-errors');
+                    errorElement.textContent = result.error.message;
+
+                    // Enable the submit button
+                    document.getElementById('complete-order').disabled = false;
+                } else {
+                    // Send the token to your server
+                    stripeTokenHandler(result.token);
+                }
+            });
+        });
+
+        function stripeTokenHandler(token) {
+            // Insert the token ID into the form so it gets submitted to the server
+            var form = document.getElementById('payment-form');
+            var hiddenInput = document.createElement('input');
+            hiddenInput.setAttribute('type', 'hidden');
+            hiddenInput.setAttribute('name', 'stripeToken');
+            hiddenInput.setAttribute('value', token.id);
+            form.appendChild(hiddenInput);
+
+            // Submit the form
+            form.submit();
+        }
+
+        // PayPal Stuff
+
+            // remove credit card option
+            var elem = document.querySelector('.braintree-option__card');
+            elem.parentNode.removeChild(elem);
+
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                instance.requestPaymentMethod(function (err, payload) {
+                    if (err) {
+                        console.log('Request Payment Method Error', err);
+                        return;
+                    }
+
+                    // Add the nonce to the form and submit
+                    document.querySelector('#nonce').value = payload.nonce;
+                    form.submit();
+                });
+            });
+
+
     })();
 </script>
 </body>

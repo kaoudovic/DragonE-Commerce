@@ -117,6 +117,10 @@ Route::delete('/wishlist/{product}', 'WishlistController@destroy')->name('wishli
 
 
 Route::get('/checkout', 'CheckoutController@index')->name('checkout');
+Route::post('/checkout', 'CheckoutController@store')->name('checkout.store');
+
+Route::get('/thankyou', 'ConfirmationController@index')->name('confirmation.index');
+
 
 
 

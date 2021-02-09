@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CheckoutRequest;
+use Cartalyst\Stripe\Exception\CardErrorException;
+use Cartalyst\Stripe\Laravel\Facades\Stripe;
+use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 
-class ChechoutController extends Controller
+class CheckoutController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -30,11 +34,31 @@ class ChechoutController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CheckoutRequest $request)
     {
-        //
+        $contents =Cart::content()->map(function ($item){
+            return $item->model->slug.', '.$item->qty;
+        })->values()->toJson();
+
+        try {
+            $charge = Stripe::charges()->create([
+                'amount' => Cart::total()/ 100,
+                'currency' => 'usd',
+                'source' => $request->stripeToken,
+                'description' => 'Order',
+                'receipt_email' => $request->email,
+                'metadata' => [
+                    'contents' => $contents,
+                    'quantity' => Cart::instance('default')->count(),
+//                    'discount' => collect(session()->get('coupon'))->toJson(),
+                ],
+            ]);
+            return redirect()->route('confirmation.index')->with('success_message', 'Thank you! Your payment has been successfully accepted!');
+           } catch (CardErrorException $e) {
+               return back()->withErrors('Error!',$e->getMessage());
+             }
     }
 
     /**

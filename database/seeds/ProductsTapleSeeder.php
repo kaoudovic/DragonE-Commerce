@@ -14,7 +14,8 @@ class ProductsTapleSeeder extends Seeder
         Product::create([
             'name'=>'MacBook Pro',
             'slug'=>'macbook-pro',
-            'price'=>24000,
+            'price'=>2000,
+            'quantity'=>6,
             'details'=>'15 inch 1T SSD',
             'description'=>'Seeder created successfullySeeder created successfully',
         ]);
@@ -23,7 +24,8 @@ class ProductsTapleSeeder extends Seeder
         Product::create([
             'name'=>'LabTop1',
             'slug'=>'laptop-top1',
-            'price'=>24000,
+            'price'=>4000,
+            'quantity'=>2,
             'details'=>'15 inch 1T SSD',
             'description'=>'Seeder created successfullySeeder created successfully',
         ]);
@@ -32,7 +34,8 @@ class ProductsTapleSeeder extends Seeder
         Product::create([
             'name'=>'LapTop2',
             'slug'=>'laptop-top2',
-            'price'=>24000,
+            'price'=>3500,
+            'quantity'=>5,
             'details'=>'15 inch 1T SSD',
             'description'=>'Seeder created successfullySeeder created successfully',
         ]);
@@ -41,7 +44,8 @@ class ProductsTapleSeeder extends Seeder
         Product::create([
             'name'=>'Iphone',
             'slug'=>'Iphone12pro',
-            'price'=>24000,
+            'price'=>1500,
+            'quantity'=>3,
             'details'=>'1T SSD',
             'description'=>'Seeder created successfullySeeder created successfully',
         ]);

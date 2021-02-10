@@ -172,14 +172,13 @@
                                     <div id="card-errors" role="alert"></div>
                                 </div>
                                 <div class="spacer"></div>
-
-                                <button type="submit" id="complete-order" class="button-primary full-width">Complete Order</button>
-
                             <div class="form-check pl-0 mb-4 mb-lg-0">
                                 <input type="checkbox" class="form-check-input filled-in" id="new3">
                                 <label class="form-check-label small text-uppercase card-link-secondary" for="new3">Create an
                                     account?</label>
                             </div>
+                                <button type="submit" id="complete-order" class="btn btn-primary btn-block waves-effect waves-light">Complete Order</button>
+
                             </form>
                         </div>
                     </div>

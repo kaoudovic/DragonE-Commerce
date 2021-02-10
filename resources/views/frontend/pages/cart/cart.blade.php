@@ -115,14 +115,22 @@
                                             <div>
                                                 <div class="def-number-input number-input safari_only mb-0 w-100">
                                                     <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
-                                                            class="minus"></button>
-                                                    <input class="quantity" min="0" name="quantity" value="1" type="number">
+                                                            class="minus" data-id="{{ $item->rowId }}" data-productQuantity="{{ $item->model->quantity }}"></button>
+                                                    <input class="quantity" min="0" name="quantity" value="1"
+                                                           type="number">
                                                     <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
-                                                            class="plus"></button>
+                                                            class="plus" data-id="{{ $item->rowId }}" data-productQuantity="{{ $item->model->quantity }}"></button>
                                                 </div>
                                                 <small id="passwordHelpBlock" class="form-text text-muted text-center">
                                                     (Note, 1 piece)
                                                 </small>
+                                            </div>
+                                            <div>
+                                                <select class="quantity" data-id="{{ $item->rowId }}" data-productQuantity="{{ $item->model->quantity }}">
+                                                    @for ($i = 1; $i < 5 + 1 ; $i++)
+                                                        <option {{ $item->qty == $i ? 'selected' : '' }}>{{ $i }}</option>
+                                                    @endfor
+                                                </select>
                                             </div>
                                         </div>
                                         <div class="d-flex justify-content-between align-items-center">
@@ -308,9 +316,35 @@
             $(this).closest('.select-outline').find('.caret').toggleClass('active');
         });
     });
-
-
 </script>
+
+    <script src="{{ asset('js/app.js') }}"></script>
+    <script>
+        (function(){
+            const classname = document.querySelectorAll('.quantity')
+
+            Array.from(classname).forEach(function(element) {
+                element.addEventListener('change', function() {
+                    const id = element.getAttribute('data-id')
+                    const productQuantity = element.getAttribute('data-productQuantity')
+
+                    axios.patch(`cart/${id}`, {
+                        quantity: this.value,
+                        productQuantity: productQuantity
+                    })
+                        .then(function (response) {
+                            // console.log(response);
+                            window.location.href = '{{ route('cart.index') }}'
+                        })
+                        .catch(function (error) {
+                            // console.log(error);
+                            window.location.href = '{{ route('cart.index') }}'
+                        });
+                })
+            })
+        })();
+    </script>
+
 </body>
 
 </html>

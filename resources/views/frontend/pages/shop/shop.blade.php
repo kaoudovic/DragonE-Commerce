@@ -242,16 +242,21 @@
                     <h5 class="mb-3">Categories</h5>
 
                     <div class="text-muted small text-uppercase mb-5">
+                        @foreach($categories as $category)
+                            <p class="mb-3">
+                                <a href="{{ route('shop.index',['category'=>$category->slug])}}" class="card-link-secondary">{{$category->name}}</a>
+                            </p>
+                        @endforeach
 
-                        <p class="mb-3"><a href="{{ route('home')}}" class="card-link-secondary">Mobilephone</a></p>
-                        <p class="mb-3"><a href="{{ route('home')}}" class="card-link-secondary">Laptop</a></p>
-                        <p class="mb-3"><a href="{{ route('home')}}" class="card-link-secondary">Tablet</a></p>
-                        <p class="mb-3"><a href="{{ route('home')}}" class="card-link-secondary">Camera</a></p>
-                        <p class="mb-3"><a href="{{ route('home')}}"   class="card-link-secondary">Video Game</a></p>
-                        <p class="mb-3"><a href="{{ route('home')}}" class="card-link-secondary">Electronics</a></p>
-                        <p class="mb-3"><a href="{{ route('home')}}" class="card-link-secondary">Headphone</a></p>
-                        <p class="mb-3"><a href="{{ route('home')}}" class="card-link-secondary">Smart Watch</a></p>
-                        <p class="mb-3"><a href="{{ route('home')}}" class="card-link-secondary">TV</a></p>
+{{--                        <p class="mb-3"><a href="{{ route('home')}}" class="card-link-secondary">Mobilephone</a></p>--}}
+{{--                        <p class="mb-3"><a href="{{ route('home')}}" class="card-link-secondary">Laptop</a></p>--}}
+{{--                        <p class="mb-3"><a href="{{ route('home')}}" class="card-link-secondary">Tablet</a></p>--}}
+{{--                        <p class="mb-3"><a href="{{ route('home')}}" class="card-link-secondary">Camera</a></p>--}}
+{{--                        <p class="mb-3"><a href="{{ route('home')}}"   class="card-link-secondary">Video Game</a></p>--}}
+{{--                        <p class="mb-3"><a href="{{ route('home')}}" class="card-link-secondary">Electronics</a></p>--}}
+{{--                        <p class="mb-3"><a href="{{ route('home')}}" class="card-link-secondary">Headphone</a></p>--}}
+{{--                        <p class="mb-3"><a href="{{ route('home')}}" class="card-link-secondary">Smart Watch</a></p>--}}
+{{--                        <p class="mb-3"><a href="{{ route('home')}}" class="card-link-secondary">TV</a></p>--}}
                     </div>
 
                 </section>
@@ -438,33 +443,18 @@
 
                     <div class="row d-flex justify-content-around align-items-center mb-4">
                         <div class="col-12 col-md-3 text-center text-md-left">
-                            <a href="#!" class="text-reset"><i class="fas fa-th-list fa-lg mr-1"></i></a href="#!">
-                            <a href="#!" class="text-reset"><i class="fas fa-th-large fa-lg"></i></a href="#!">
+                            <a href="#!" class="text-reset"><i class="fas fa-th-list fa-lg mr-1"></i></a>
+                            <a href="#!" class="text-reset"><i class="fas fa-th-large fa-lg"></i></a>
                         </div>
                         <div class="col-12 col-md-5">
                             <div class="d-flex flex-wrap">
-                                <div class="select-outline position-relative w-100">
-                                    <div class="select-wrapper mdb-select md-outline md-form"><span class="caret">▼</span><input type="text" class="select-dropdown form-control" readonly="true" required="false" data-activates="select-options-c7815c75-8400-4d54-93ab-2fd4c8efd9e6" value="" role="listbox" aria-multiselectable="false" aria-disabled="false" aria-required="false" aria-haspopup="true" aria-expanded="false"><ul id="select-options-c7815c75-8400-4d54-93ab-2fd4c8efd9e6" class="dropdown-content select-dropdown w-100" style="display: none; width: 286.656px; position: absolute; top: 0px; left: 0px; opacity: 1;"><li class="disabled active " role="option" aria-selected="true" aria-disabled="true"><span class="filtrable "> Sort by    </span></li><li class="  " role="option" aria-selected="false" aria-disabled="false"><span class="filtrable "> Popularity    </span></li><li class="  " role="option" aria-selected="false" aria-disabled="false"><span class="filtrable "> Price: lowest to highest    </span></li><li class="  " role="option" aria-selected="false" aria-disabled="false"><span class="filtrable "> Price: highest to lowest    </span></li><li class="  " role="option" aria-selected="false" aria-disabled="false"><span class="filtrable "> Newest    </span></li><li class="  " role="option" aria-selected="false" aria-disabled="false"><span class="filtrable "> Most rated    </span></li></ul><select class="mdb-select md-outline md-form initialized">
-                                            <option value="" disabled="" selected="">Sort by</option>
-                                            <option value="1">Popularity</option>
-                                            <option value="2">Price: lowest to highest</option>
-                                            <option value="3">Price: highest to lowest</option>
-                                            <option value="4">Newest</option>
-                                            <option value="5">Most rated</option>
-                                        </select></div>
-                                    <label class="">Sorting</label>
+                                <div>
+                                    <strong>Sorting : </strong>
+                                    <a  href="{{ route('shop.index', ['category'=> request()->category, 'sort' =>'low_high']) }}">Low to High</a> |
+                                    <a  href="{{ route('shop.index', ['category'=> request()->category, 'sort' =>'high_low']) }}">High to Low</a>
+
                                 </div>
                             </div>
-                        </div>                        <div class="col-12 col-md-4 text-center">
-                            <nav aria-label="Page navigation example">
-                                <ul class="pagination justify-content-center float-md-right mb-0">
-                                    <li class="page-item"><a class="page-link"><i class="fas fa-chevron-left"></i></a></li>
-                                    <li class="page-item active"><a class="page-link">1</a></li>
-                                    <li class="page-item"><a class="page-link">2</a></li>
-                                    <li class="page-item"><a class="page-link">3</a></li>
-                                    <li class="page-item"><a class="page-link"><i class="fas fa-chevron-right"></i></a></li>
-                                </ul>
-                            </nav>
                         </div>
                     </div>
 
@@ -514,15 +504,21 @@
                                     </div>
 
                                 </div>
+
                                 <!-- Card -->
 
                             </div>
 
                     @endforeach
 
+                            </div>
 
-                    </div>
                     <!-- Grid row -->
+                    <div class="align-content-md-center">
+                        <ul class="pagination justify-content-center float-md-center ">
+                            {{ $products->appends(request()->input())->links() }}
+                        </ul>
+                    </div>
 
                 </section>
                <!--Section: Block Content-->
@@ -578,34 +574,6 @@
         rangeLength: 1
     },
     }
-    });
-
-        $(function () {
-        $('.material-tooltip-main').tooltip({
-            template: '<div class="tooltip md-tooltip-main"><div class="tooltip-arrow md-arrow"></div><div class="tooltip-inner md-inner-main"></div></div>'
-        });
-    });
-
-        $(document).ready(function () {
-        $('.mdb-select').materialSelect();
-        $('.select-wrapper.md-form.md-outline input.select-dropdown').bind('focus blur', function () {
-        $(this).closest('.select-outline').find('label').toggleClass('active');
-        $(this).closest('.select-outline').find('.caret').toggleClass('active');
-    });
-    });
-
-        $(function () {
-        $('.material-tooltip-main').tooltip({
-            template: '<div class="tooltip md-tooltip-main"><div class="tooltip-arrow md-arrow"></div><div class="tooltip-inner md-inner-main"></div></div>'
-        });
-    });
-
-        $(document).ready(function () {
-        $('.mdb-select').materialSelect();
-        $('.select-wrapper.md-form.md-outline input.select-dropdown').bind('focus blur', function () {
-        $(this).closest('.select-outline').find('label').toggleClass('active');
-        $(this).closest('.select-outline').find('.caret').toggleClass('active');
-    });
     });
 </script>
 </body>

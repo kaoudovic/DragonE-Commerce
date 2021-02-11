@@ -21,6 +21,7 @@ class CreateProductsTable extends Migration
             $table->integer('price');
             $table->integer('quantity');
             $table->text('description');
+            $table->boolean('featured')->default(false);
             $table->timestamps();
         });
     }

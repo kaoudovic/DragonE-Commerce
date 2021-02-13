@@ -18,8 +18,8 @@ class ProductsTapleSeeder extends Seeder
                 'name' => 'Laptop '.$i,
                 'slug' => 'laptop-'.$i,
                 'details' => [13,14,15][array_rand([13,14,15])] . ' inch, ' . [1, 2, 3][array_rand([1, 2, 3])] .' TB SSD, 32GB RAM',
-                'price' => rand(1999, 2999),
-                'quantity' => rand(1, 5),
+                'price' => rand(1000, 1999),
+                'quantity' => rand(2, 5),
                 'description' =>'Lorem '. $i . ' ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!',
 //                'image' => 'products/dummy/laptop-'.$i.'.jpg',
 //                'images' => '["products\/dummy\/laptop-2.jpg","products\/dummy\/laptop-3.jpg","products\/dummy\/laptop-4.jpg"]',
@@ -38,11 +38,11 @@ class ProductsTapleSeeder extends Seeder
                 'slug' => 'smartwatch-' . $i,
                 'details' =>'Carrier Subscription inch screen, 4GHz Quad Core',
                 'description' => 'Willful Smart Watch for Android Phones and iOS Phones Compatible iPhone Samsung, IP68 Swimming Waterproof Smartwatch Fitness Tracker Fitness Watch Heart Rate Monitor Watches for Women (Dark Purple)',
-                'price' => rand(99, 190),
-                'quantity' => rand(1, 5),
+                'price' => rand(20, 80),
+                'quantity' => rand(2, 5),
 //                'image' => 'products/dummy/desktop-'.$i.'.jpg',
 //                'images' => '["products\/dummy\/laptop-2.jpg","products\/dummy\/laptop-3.jpg","products\/dummy\/laptop-4.jpg"]',
-                ])->categories()->attach(2);
+                ])->categories()->attach(8);
         }
 
         // Phones
@@ -51,8 +51,8 @@ class ProductsTapleSeeder extends Seeder
                 'name' => 'Phone ' . $i,
                 'slug' => 'phone-' . $i,
                 'details' =>'New Apple iPhone 12 Pro Max (128GB, Pacific Blue) [Locked],4GHz Quad Core',
-                'price' => rand(1999, 3999),
-                'quantity' => rand(1, 5),
+                'price' => rand(999, 1999),
+                'quantity' => rand(2, 5),
                 'description' => 'Lorem ' . $i . ' ipsum dolor sit amet, consectetur adipisicing elit., asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!',
 //                'image' => 'products/dummy/phone-'.$i.'.jpg',
 //                'images' => '["products\/dummy\/laptop-2.jpg","products\/dummy\/laptop-3.jpg","products\/dummy\/laptop-4.jpg"]',
@@ -68,8 +68,8 @@ class ProductsTapleSeeder extends Seeder
                 'slug' => 'tablet-' . $i,
                 'details' =>'New Apple iPhone 12 Pro Max (128GB, Pacific Blue) [Locked],4GHz Quad Core',
                 'description' => 'Android tablets possess plenty of allure, standing out among its competitors with more than just a ‘pretty face’,inch screen, 4GHz Quad Core',
-                'price' => rand(499, 699),
-                'quantity' => rand(1, 5),
+                'price' => rand(299, 499),
+                'quantity' => rand(2, 5),
 //                'image' => 'products/dummy/tablet-'.$i.'.jpg',
 //                'images' => '["products\/dummy\/laptop-2.jpg","products\/dummy\/laptop-3.jpg","products\/dummy\/laptop-4.jpg"]',
 //            ])->categories()->attach(4);
@@ -97,8 +97,8 @@ class ProductsTapleSeeder extends Seeder
                 'name' => 'Camera ' . $i,
                 'slug' => 'camera-' . $i,
                 'details' => 'Full Frame DSLR, with 18-55mm kit lens.',
-                'price' => rand(200, 499),
-                'quantity' => rand(1, 5),
+                'price' => rand(80, 199),
+                'quantity' => rand(2, 5),
                 'description' => 'Lorem ' . $i . ' ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!',
 //                'image' => 'products/dummy/camera-'.$i.'.jpg',
 //                'images' => '["products\/dummy\/laptop-2.jpg","products\/dummy\/laptop-3.jpg","products\/dummy\/laptop-4.jpg"]',
@@ -112,7 +112,7 @@ class ProductsTapleSeeder extends Seeder
                 'name' => 'Headphone ' . $i,
                 'slug' => 'headphone-' . $i,
                 'details' => 'MDRZX110/BLK ZX Series Stereo Headphones (Black)!',
-                'price' => rand(50,90 ),
+                'price' => rand(20,90 ),
                 'quantity' => rand(1, 5),
                 'description' => 'Lorem ' . $i . ' ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!',
 //                'image' => 'products/dummy/appliance-'.$i.'.jpg',
@@ -128,13 +128,13 @@ class ProductsTapleSeeder extends Seeder
                 'name' => 'VideoGame ' . $i,
                 'slug' => 'video-game-' . $i,
                 'details' => 'PS5 | The future of gaming!',
-                'price' => rand(1999, 6999),
+                'price' => rand(999, 3999),
                 'quantity' => rand(1, 5),
                 'description' => 'Lorem ' . $i . ' ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!',
 //                'image' => 'products/dummy/appliance-'.$i.'.jpg',
 //                'images' => '["products\/dummy\/laptop-2.jpg","products\/dummy\/laptop-3.jpg","products\/dummy\/laptop-4.jpg"]',
 //            ])->categories()->attach(7);
-            ])->categories()->attach(8);
+            ])->categories()->attach(2);
         }
 
         // Select random entries to be featured

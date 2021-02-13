@@ -15,6 +15,7 @@ class CartController extends Controller
      */
     public function index()
     {
+        date_default_timezone_set('Africa/Cairo');
         return view('frontend.pages.cart.cart');
     }
 
@@ -44,7 +45,7 @@ class CartController extends Controller
             return redirect()->route('cart.index')->with('success_massage','Item is already in your cart!');
         }
 
-        Cart::add($request->id,$request->name,$request->price)
+        Cart::add($request->id,$request->name,1,$request->price)
                ->associate('App\Models\Product');
 
         return redirect()->route('cart.index')->with('success_massage','Item was added to your cart');

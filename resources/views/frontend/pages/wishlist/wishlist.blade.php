@@ -107,7 +107,7 @@
                                 </li>
                             </ul>
                             <hr>
-                            <h6 class="mb-3">{{$item->model->price}}$</h6>
+                            <h6 class="mb-3">${{test_x($item->model->price)}}</h6>
 
                             <div class="mr-3">
                                <div>
@@ -127,9 +127,7 @@
                                     {{csrf_field()}}
                                     {{method_field('DELETE')}}
                                     <button  style="margin-right:-300px;margin-bottom:-10px "type="submit"
-                                              class="btn
-                                    btn-elegant btn-sm px-3 mb-2
-                                    material-tooltip-main"
+                                              class="btn btn-elegant btn-sm px-3 mb-2 material-tooltip-main"
                                             data-toggle="tooltip" data-placement="top" title="Remove from wishlist"><i
                                             class="fas fa-times"></i></button>
                                 </form>

@@ -117,6 +117,10 @@ Route::post('/cart/moveToWishlist/{product}', 'CartController@moveToWishlist')->
 Route::delete('/wishlist/{product}', 'WishlistController@destroy')->name('wishlist.destroy');
 
 
+Route::post('/coupon', 'CouponsController@store')->name('coupon.store');
+Route::delete('/coupon', 'CouponsController@destroy')->name('coupon.destroy');
+
+
 Route::get('/checkout', 'CheckoutController@index')->name('checkout');
 Route::post('/checkout', 'CheckoutController@store')->name('checkout.store');
 

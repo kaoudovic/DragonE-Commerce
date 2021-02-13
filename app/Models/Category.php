@@ -9,4 +9,13 @@ class Category extends Model
      public function product(){
          return $this->belongsToMany('App\Models\Product');
      }
+
+    protected $guarded = [];
+
+    protected $table = 'categories';
+
+    public function products()
+    {
+        return $this->belongsToMany('App\Models\Product');
+    }
 }

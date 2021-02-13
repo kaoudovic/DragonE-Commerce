@@ -195,12 +195,28 @@
                         <div class="card-body">
 
                             <h5 class="mb-3">The total amount of</h5>
-
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
                                     Temporary amount
                                     <span>${{Cart::subtotal()}}</span>
                                 </li>
+                                @if (session()->has('coupon'))
+
+                                <li class="list-group-item d-flex justify-content-between align-items-center border-0
+                                 px-0 pb-0" style="">
+                                        Code ({{ session()->get('coupon')['name'] }})
+                                        <form action="{{ route('coupon.destroy') }}" method="POST" style="display:block">
+                                            {{ csrf_field() }}
+                                            {{ method_field('delete') }}
+                                            <button type="submit" title="Remove" class="btn btn-link
+                                            material-tooltip-main"><i
+                                                    class="fas fa-times"></i></button>
+                                        </form>
+                                        <hr>
+                                    <span>-${{ session()->get('coupon')['discount']}}</span>
+                                    @endif
+                                </li>
+
                                 <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
                                     Taxes(10%)
                                     <span>${{Cart::tax()}}</span>
@@ -219,41 +235,42 @@
                                     <span><strong>${{Cart::total()}}</strong></span>
                                 </li>
                             </ul>
+                            @if (! session()->has('coupon'))
 
-                            <button type="button" class="btn btn-primary btn-block waves-effect waves-light">Make purchase</button>
-
-                        </div>
-                    </div>
-                    <!-- Card -->
-
-                    <!-- Card -->
-                    <div class="card mb-4">
-                        <div class="card-body">
-
-                            <a class="dark-grey-text d-flex justify-content-between" data-toggle="collapse" href="#collapseExample"
-                               aria-expanded="false" aria-controls="collapseExample">
-                                Add a discount code (optional)
-                                <span><i class="fas fa-chevron-down pt-1"></i></span>
-                            </a>
-
-                            <div class="collapse" id="collapseExample">
-                                <div class="mt-3">
-                                    <div class="md-form md-outline mb-0">
-                                        <input type="text" id="discount-code" class="form-control font-weight-light"
-                                               placeholder="Enter discount code">
+                            <div class="card mb-4">
+                                    <div class="card-body">
+                                        <form action="{{route('coupon.store')}}" method="post">
+                                            {{csrf_field()}}
+                                            <a class="dark-grey-text d-flex justify-content-between" data-toggle="collapse" href="#collapseExample"
+                                               aria-expanded="false" aria-controls="collapseExample">
+                                                Add a discount code (optional)
+                                                <span><i class="fas fa-chevron-down pt-1"></i></span>
+                                            </a>
+                                            <div class="collapse" id="collapseExample">
+                                                <div class="mt-3">
+                                                    <div class="md-form md-outline mb-0">
+                                                        <input type="text" id="coupon-code" class="form-control font-weight-light"
+                                                               name="coupon_code" placeholder="Enter discount code">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button type="submit">Apply</button>
+                                        </form>
                                     </div>
                                 </div>
-                            </div>
+                            @endif
+
+                                <button type="button" class="btn btn-primary btn-block waves-effect waves-light">Make purchase</button>
+
                         </div>
                     </div>
                     <!-- Card -->
 
-                </div>
                 <!--Grid column-->
 
             </div>
             <!--Grid row-->
-
+            </div>
         </section>
         <!--Section: Block Content-->
 

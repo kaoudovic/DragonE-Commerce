@@ -152,7 +152,7 @@
                             <i class="far fa-star fa-sm text-primary"></i>
                         </li>
                     </ul>
-                    <p><span class="mr-1"><strong>${{$product->price}} </strong></span></p>
+                    <p><span class="mr-1"><strong>${{test_x($product->price)}} </strong></span></p>
                     <p class="pt-1">{{$product->description}}</p>
                     <div class="table-responsive">
                         <table class="table table-sm table-borderless mb-0">
@@ -257,7 +257,7 @@
                             <div class="text-center pt-4">
                                <a href="{{route('shop.show',$product->slug)}}" >
                                 <h5>{{$product->name}}</h5>
-                                <h6 class="mb-3">$ {{$product->price}}</h6>
+                                <h6 class="mb-3">$ {{test_x($product->price)}}</h6>
                                </a>
 
                                 <form action="{{route('cart.store')}}" method="POST">

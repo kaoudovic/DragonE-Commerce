@@ -46,7 +46,7 @@
     <div class="jumbotron color-grey-light mt-70">
         <div class="d-flex align-items-center h-100">
             <div class="container text-center py-5">
-                <h3 class="mb-0">Shopping cart</h3>
+                <h1 class="mb-0">Shopping cart</h1>
             </div>
         </div>
     </div>
@@ -87,11 +87,9 @@
                     <!-- Card -->
                     <div class="card wish-list mb-4">
                         <div class="card-body">
-
-                            <h5 class="mb-4">{{ Cart::count()}} item(s) in the
-                              shopping cart</h5>
+                            <h5 class="mb-4">{{ Cart::count()}} item(s) in the shopping cart</h5>
                             @foreach(Cart::content() as $item)
-                            <div class="row mb-4" >
+                                <div class="row mb-4" >
                                 <div class="col-md-5 col-lg-3 col-xl-3">
                                     <div class="view zoom overlay z-depth-1 rounded mb-3 mb-md-0">
                                         <img class="img-fluid w-100"
@@ -112,19 +110,19 @@
                                                 <h5>{{$item->model->name}}</h5>
                                                 <p class="mb-3 text-muted text-uppercase small">{{$item->model->details}}</p>
                                             </div>
-                                            <div>
-                                                <div class="def-number-input number-input safari_only mb-0 w-100">
-                                                    <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
-                                                            class="minus" data-id="{{ $item->rowId }}" data-productQuantity="{{ $item->model->quantity }}"></button>
-                                                    <input class="quantity" min="0" name="quantity" value="1"
-                                                           type="number">
-                                                    <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
-                                                            class="plus" data-id="{{ $item->rowId }}" data-productQuantity="{{ $item->model->quantity }}"></button>
-                                                </div>
-                                                <small id="passwordHelpBlock" class="form-text text-muted text-center">
-                                                    (Note, 1 piece)
-                                                </small>
-                                            </div>
+{{--                                            <div>--}}
+{{--                                                <div class="def-number-input number-input safari_only mb-0 w-100">--}}
+{{--                                                    <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"--}}
+{{--                                                            class="minus" data-id="{{ $item->rowId }}" data-productQuantity="{{ $item->model->quantity }}"></button>--}}
+{{--                                                    <input class="quantity" min="0" name="quantity" value="1"--}}
+{{--                                                           type="number">--}}
+{{--                                                    <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()"--}}
+{{--                                                            class="plus" data-id="{{ $item->rowId }}" data-productQuantity="{{ $item->model->quantity }}"></button>--}}
+{{--                                                </div>--}}
+{{--                                                <small id="passwordHelpBlock" class="form-text text-muted text-center">--}}
+{{--                                                    (Note, 1 piece)--}}
+{{--                                                </small>--}}
+{{--                                            </div>--}}
                                             <div>
                                                 <select class="quantity" data-id="{{ $item->rowId }}" data-productQuantity="{{ $item->model->quantity }}">
                                                     @for ($i = 1; $i < 5 + 1 ; $i++)
@@ -144,8 +142,7 @@
                                                             class="fas fa-trash-alt mr-1"></i> Remove item</button>
                                                 </form>
 
-                                                <form method="post" action="{{route('cart.moveToWishlist' ,$item->rowId)
-                                                }}">
+                                                <form method="post" action="{{route('cart.moveToWishlist' ,$item->rowId) }}">
                                                     {{csrf_field()}}
                                                     <button type="submit" class="btn btn-flat btn-sm small
                                                     text-uppercase"><i
@@ -153,7 +150,8 @@
                                                         list</button>
                                                 </form>
                                             </div>
-                                            <p class="mb-0"><span><strong>${{$item->model->price}}</strong></span></p>
+                                            <p
+                                                class="mb-0"><span><strong>${{test_x($item->model->price)}}</strong></span></p>
                                         </div>
                                     </div>
                                 </div>
@@ -218,11 +216,11 @@
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
                                     Temporary amount
-                                    <span>${{Cart::subtotal()}}</span>
+                                    <span>${{Cart::subtotal(2,'.',',')}}</span>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
                                     Taxes(10%)
-                                    <span>${{Cart::tax()}}</span>
+                                    <span>${{Cart::tax(2,'.',',')}}</span>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center px-0">
                                     Shipping
@@ -235,7 +233,7 @@
                                             <p class="mb-0">(including VAT)</p>
                                         </strong>
                                     </div>
-                                    <span><strong>${{Cart::total()}}</strong></span>
+                                    <span><strong>${{Cart::total(2,'.',',')}}</strong></span>
                                 </li>
                             </ul>
                             <a  href="{{route('checkout')}}" class=" btn btn-primary btn-block waves-effect waves-light">
@@ -267,7 +265,7 @@
                         </div>
                     </div>
                     <!-- Card -->
-
+{{--                    <span>{{ date("Y-m-d H-i-s a")  }}</span>--}}
                 </div>
                 <!--Grid column-->
                 @else

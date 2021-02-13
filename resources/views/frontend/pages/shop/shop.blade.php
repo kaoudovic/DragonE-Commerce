@@ -485,13 +485,13 @@
                                     <div class="text-center pt-4">
                                         <a  href="{{route('shop.show',$product->slug)}}">
                                             <h5>{{$product->name}}</h5>
-                                            <h6 class="mb-3">$ {{$product->price}}</h6>
+                                            <h6 class="mb-3">${{test_x($product->price)}}</h6>
                                         </a>
                                         <form action="{{route('cart.store')}}" method="POST">
                                             {{csrf_field()}}
                                             <input type="hidden" name="id" value="{{$product->id}}">
                                             <input type="hidden" name="name" value="{{$product->name}}">
-                                            <input type="hidden" name="price" value=10.00>
+                                            <input type="hidden" name="price" value="{{$product->price}}">
                                             <button type="submit" class="btn btn-primary btn-sm mr-1 waves-effect waves-light"><i
                                                     class="fas fa-shopping-cart pr-2"></i>Add to cart</button>
                                             <a href="{{url('/wishlist/')}}">

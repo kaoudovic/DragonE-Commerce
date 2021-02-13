@@ -42,16 +42,17 @@
         "classmap": [
             "database/seeds",
             "database/factories"
+        ],
+        "files": [
+            "app/helper.php",
+            "app/helpers/admin.php"
         ]
     },
     "autoload-dev": {
         "psr-4": {
             "Tests\\": "tests/"
-        },
-        "files": [
-            "app/helper.php",
-            "app/helpers/admin.php"
-        ]
+        }
+
     },
     "minimum-stability": "dev",
     "prefer-stable": true,

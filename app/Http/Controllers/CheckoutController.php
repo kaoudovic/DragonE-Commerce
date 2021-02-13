@@ -17,7 +17,24 @@ class CheckoutController extends Controller
      */
     public function index()
     {
-        return view('frontend.pages.checkout');
+        $tax=config('cart.tax')/100;
+        $discount = session()->get('coupon')['discount'] ?? 0;
+        $code = session()->get('coupon')['name'] ?? null;
+        $newSubtotal = (Cart::subtotal() - $discount);
+        if ($newSubtotal < 0) {
+            $newSubtotal = 0;
+        }
+        $newTax = $newSubtotal * $tax;
+        $newTotal = $newSubtotal * (1 + $tax);
+        $test="hello";
+
+        return view('frontend.pages.checkout')->with([
+//            'paypalToken' =>$paypalToken,
+            'discount' =>$this->getNumbers()->get('discount'),
+            'newSubtotal' =>$this->getNumbers()->get('newSubtotal'),
+            'newTax' =>$this->getNumbers()->get('newTax'),
+            'newTotal' =>$this->getNumbers()->get('newTotal'),
+        ]);
     }
 
     /**
@@ -52,7 +69,7 @@ class CheckoutController extends Controller
                 'metadata' => [
                     'contents' => $contents,
                     'quantity' => Cart::instance('default')->count(),
-//                    'discount' => collect(session()->get('coupon'))->toJson(),
+                    'discount' => collect(session()->get('coupon'))->toJson(),
                 ],
             ]);
             return redirect()->route('confirmation.index')->with('success_message', 'Thank you! Your payment has been successfully accepted!');
@@ -104,5 +121,28 @@ class CheckoutController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+
+    function getNumbers()
+    {
+        $tax=config('cart.tax')/100;
+        $discount = session()->get('coupon')['discount'] ?? 0;
+        $code = session()->get('coupon')['name'] ?? null;
+        $newSubtotal = (Cart::subtotal() - $discount);
+        if ($newSubtotal < 0) {
+            $newSubtotal = 0;
+        }
+        $newTax = $newSubtotal * $tax;
+        $newTotal = $newSubtotal * (1 + $tax);
+
+        return collect([
+            'tax' => $tax,
+            'discount' => $discount,
+            'code' => $code,
+            'newSubtotal' => $newSubtotal,
+            'newTax' => $newTax,
+            'newTotal' => $newTotal,
+        ]);
     }
 }

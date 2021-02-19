@@ -11,6 +11,9 @@
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/ramsey/uuid" />
@@ -133,6 +136,7 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1ogpsDvVzqIzi274W0xyJFdzKqp" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -172,7 +176,7 @@
       <updated>1613718293209</updated>
       <workItem from="1613718294910" duration="1459000" />
       <workItem from="1613719787546" duration="3199000" />
-      <workItem from="1613723643600" duration="1349000" />
+      <workItem from="1613723643600" duration="4396000" />
     </task>
     <servers />
   </component>

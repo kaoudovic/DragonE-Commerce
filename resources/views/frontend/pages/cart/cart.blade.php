@@ -151,7 +151,7 @@
                                                 </form>
                                             </div>
                                             <p
-                                                class="mb-0"><span><strong>${{test_x($item->model->price)}}</strong></span></p>
+                                                class="mb-0"><span><strong>${{$item->model->price}}</strong></span></p>
                                         </div>
                                     </div>
                                 </div>

@@ -107,7 +107,7 @@
                                 </li>
                             </ul>
                             <hr>
-                            <h6 class="mb-3">${{test_x($item->model->price)}}</h6>
+                            <h6 class="mb-3">${{$item->model->price}}</h6>
 
                             <div class="mr-3">
                                <div>

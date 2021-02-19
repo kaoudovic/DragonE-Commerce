@@ -12,7 +12,7 @@ class Category extends Model
 
     protected $guarded = [];
 
-    protected $table = 'categories';
+    protected $table = 'category';
 
     public function products()
     {

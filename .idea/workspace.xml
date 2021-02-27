@@ -1,7 +1,119 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4556d6fa-4bc5-4613-8cb3-63cc47f7a892" name="Default Changelist" comment="" />
+    <list default="true" id="4556d6fa-4bc5-4613-8cb3-63cc47f7a892" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/camera-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/camera-10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/camera-11.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/camera-12.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/camera-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/camera-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/camera-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/camera-5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/camera-6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/camera-7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/camera-8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/camera-9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/headphone-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/headphone-10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/headphone-11.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/headphone-12.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/headphone-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/headphone-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/headphone-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/headphone-5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/headphone-6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/headphone-7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/headphone-8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/headphone-9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/laptop-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/laptop-10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/laptop-11.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/laptop-12.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/laptop-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/laptop-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/laptop-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/laptop-5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/laptop-6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/laptop-7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/laptop-8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/laptop-9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/phone-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/phone-10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/phone-11.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/phone-12.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/phone-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/phone-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/phone-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/phone-5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/phone-6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/phone-7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/phone-8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/phone-9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/smartwatch-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/smartwatch-10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/smartwatch-11.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/smartwatch-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/smartwatch-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/smartwatch-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/smartwatch-5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/smartwatch-6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/smartwatch-7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/smartwatch-8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/smartwatch-9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/tablet-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/tablet-10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/tablet-11.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/tablet-12.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/tablet-13.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/tablet-14.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/tablet-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/tablet-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/tablet-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/tablet-5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/tablet-6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/tablet-7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/tablet-8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/tablet-9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/tv-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/tv-10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/tv-11.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/tv-12.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/tv-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/tv-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/tv-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/tv-5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/tv-6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/tv-7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/tv-8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/tv-9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/video-game-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/video-game-10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/video-game-11.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/video-game-12.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/video-game-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/video-game-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/video-game-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/video-game-5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/video-game-6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/video-game-7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/video-game-8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Pictures_Project/video-game-9.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/helper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_02_11_090858_create_category_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_02_19_121040_add_images_to_products_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/CategoryTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/CategoryTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/CouponsTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/CouponsTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/ProductsTapleSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/ProductsTapleSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/pages/cart/cart.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/pages/cart/cart.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/pages/shop/shop.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/pages/shop/shop.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/pages/wishlist/wishlist.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/pages/wishlist/wishlist.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/products/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/products/show.blade.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -145,7 +257,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/database/migrations" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -157,7 +269,16 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="H:\DragonE-Commerce-master\deagon\database\migrations" />
+      <recent name="H:\DragonE-Commerce-master\deagon\public\Pictures_Project" />
+      <recent name="H:\DragonE-Commerce-master\deagon\public\storage\products" />
       <recent name="H:\DragonE-Commerce-master\deagon\app" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="H:\DragonE-Commerce-master\deagon\database\migrations" />
+      <recent name="H:\DragonE-Commerce-master\deagon\database\seeds" />
+      <recent name="H:\DragonE-Commerce-master\deagon\app\Providers" />
+      <recent name="H:\DragonE-Commerce-master\deagon\database" />
     </key>
   </component>
   <component name="RunManager">
@@ -176,7 +297,11 @@
       <updated>1613718293209</updated>
       <workItem from="1613718294910" duration="1459000" />
       <workItem from="1613719787546" duration="3199000" />
-      <workItem from="1613723643600" duration="4396000" />
+      <workItem from="1613723643600" duration="7768000" />
+      <workItem from="1613906349978" duration="6360000" />
+      <workItem from="1613919809618" duration="13089000" />
+      <workItem from="1614183976433" duration="3365000" />
+      <workItem from="1614448940227" duration="3963000" />
     </task>
     <servers />
   </component>

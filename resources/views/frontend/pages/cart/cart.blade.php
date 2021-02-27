@@ -92,7 +92,7 @@
                                 <div class="row mb-4" >
                                 <div class="col-md-5 col-lg-3 col-xl-3">
                                     <div class="view zoom overlay z-depth-1 rounded mb-3 mb-md-0">
-                                        <img class="img-fluid w-100"
+                                        <img class="img-fluid w-100 "
                                              src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12a.jpg" alt="Sample">
                                         <a href="{{route('shop.show',$item->model->slug)}}">
                                             <div class="mask waves-effect waves-light">
@@ -151,7 +151,8 @@
                                                 </form>
                                             </div>
                                             <p
-                                                class="mb-0"><span><strong>${{$item->model->price}}</strong></span></p>
+                                                class="mb-0"><span><strong>${{test_x($item->model->price)
+                                                }}</strong></span></p>
                                         </div>
                                     </div>
                                 </div>

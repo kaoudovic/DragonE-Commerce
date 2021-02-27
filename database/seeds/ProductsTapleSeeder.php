@@ -1,14 +1,10 @@
 <?php
-use App\Models\Product;
+use App\Product;
 use Illuminate\Database\Seeder;
 
 class ProductsTapleSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
+
     public function run()
     {
 
@@ -24,15 +20,16 @@ class ProductsTapleSeeder extends Seeder
 //                'image' => 'products/dummy/laptop-'.$i.'.jpg',
 //                'images' => '["products\/dummy\/laptop-2.jpg","products\/dummy\/laptop-3.jpg","products\/dummy\/laptop-4.jpg"]',
 
+//            ])->categories()->attach(1);
             ])->categories()->attach(1);
         }
 
         // Make Laptop 1 a Desktop as well. Just to test multiple categories
-        $product = Product::find(1);
-        $product->categories()->attach(2);
+//        $product = Product::find(1);
+//        $product->categories()->attach(2);
 
         // Smart Watch
-        for ($i = 1; $i <= 12; $i++) {
+        for ($i = 1; $i <= 11; $i++) {
             Product::create([
                 'name' => 'Smartwatch ' . $i,
                 'slug' => 'smartwatch-' . $i,
@@ -62,7 +59,7 @@ class ProductsTapleSeeder extends Seeder
         }
 
         // Tablets
-        for ($i = 1; $i <= 12; $i++) {
+        for ($i = 1; $i <= 14; $i++) {
             Product::create([
                 'name' => 'Tablet ' . $i,
                 'slug' => 'tablet-' . $i,
@@ -73,11 +70,11 @@ class ProductsTapleSeeder extends Seeder
 //                'image' => 'products/dummy/tablet-'.$i.'.jpg',
 //                'images' => '["products\/dummy\/laptop-2.jpg","products\/dummy\/laptop-3.jpg","products\/dummy\/laptop-4.jpg"]',
 //            ])->categories()->attach(4);
-            ])->categories()->attach(4);
+            ])->categories()->attach(4);;
         }
 
         // TVs
-        for ($i = 1; $i <= 11; $i++) {
+        for ($i = 1; $i <= 12; $i++) {
             Product::create([
                 'name' => 'TV ' . $i,
                 'slug' => 'tv-' . $i,
@@ -92,7 +89,7 @@ class ProductsTapleSeeder extends Seeder
         }
 
         // Cameras
-        for ($i = 1; $i <= 10; $i++) {
+        for ($i = 1; $i <= 12; $i++) {
             Product::create([
                 'name' => 'Camera ' . $i,
                 'slug' => 'camera-' . $i,
@@ -107,7 +104,7 @@ class ProductsTapleSeeder extends Seeder
         }
 
         // Headphone
-        for ($i = 1; $i <= 9; $i++) {
+        for ($i = 1; $i <= 12; $i++) {
             Product::create([
                 'name' => 'Headphone ' . $i,
                 'slug' => 'headphone-' . $i,
@@ -123,7 +120,7 @@ class ProductsTapleSeeder extends Seeder
 
 
         // Video Games
-        for ($i = 1; $i <= 15; $i++) {
+        for ($i = 1; $i <= 12; $i++) {
             Product::create([
                 'name' => 'VideoGame ' . $i,
                 'slug' => 'video-game-' . $i,
@@ -138,7 +135,7 @@ class ProductsTapleSeeder extends Seeder
         }
 
         // Select random entries to be featured
-//        Product::whereIn('id', [1, 12, 22, 31, 41, 43, 47, 51, 53,61, 69, 73, 80])->update(['featured' => true]);
+        Product::whereIn('id', [1, 12, 22, 31, 41, 43, 47, 51, 53,61, 69, 73, 80])->update(['featured' => true]);
     }
 
 

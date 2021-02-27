@@ -58,8 +58,9 @@
 
                             <div class="col-12 mb-0">
                                 <figure class="view overlay rounded z-depth-1 main-img" style="max-height: 450px;">
-                                    <a  src="{{asset ('Pictures_Project/phone/product/1.webp')}}" data-size="710x823">
-                                        <img  src="{{asset('Pictures_Project/phone/product/1.webp')}}"
+                                    <a  src="{{ asset('Pictures_Project/'.$product->slug.'.jpg')}}" data-size="710x823">
+{{--                                        <img  src="{{ asset('Pictures_Project/'.$product->slug.'.jpg')}}"--}}
+                                        <img  src="{{ asset('Pictures_Project/'.$product->slug.'.jpg')}}"
                                               class="img-fluid z-depth-1" style="margin-top: -30px;">
                                     </a>
                                 </figure>
@@ -119,8 +120,7 @@
                                     </div>
                                     <div class="col-3">
                                         <div class="view overlay rounded z-depth-1 gallery-item hoverable">
-                                            <img src="{{asset
-                                    ('Pictures_Project/phone/product/2.jpg')}}"
+                                            <img src="{{ asset('Pictures_Project/'.$product->slug.'.jpg')}}"
                                                  class="img-fluid">
                                             <div class="mask rgba-white-slight"></div>
                                         </div>
@@ -133,7 +133,7 @@
 
                 </div>
                 <div class="col-md-6">
-                    <h5>{{$product->details}}</h5>
+                    <h5>{{$product->details }}</h5>
                     <p class="mb-2 text-muted text-uppercase small">{{$product->name}}</p>
                     <ul class="rating">
                         <li>
@@ -153,7 +153,7 @@
                         </li>
                     </ul>
                     <p><span class="mr-1"><strong>${{$product->price}} </strong></span></p>
-                    <p class="pt-1">{{$product->description}}</p>
+                    <p class="pt-1"> {!! $product->description !!} </p>
                     <div class="table-responsive">
                         <table class="table table-sm table-borderless mb-0">
                             <tbody>
@@ -217,7 +217,7 @@
                         {{csrf_field()}}
                         <input type="hidden" name="id" value="{{$product->id}}">
                         <input type="hidden" name="name" value="{{$product->name}}">
-                        <input type="hidden" name="price" value={{$product->price}}>
+                        <input type="hidden" name="price" value={{test_x($product->price)}}>
                         <a  href="{{route('checkout')}}">
                             <button type="button" class="btn btn-primary btn-md mr-1 mb-2">Buy now</button>
                         </a>
@@ -246,9 +246,7 @@
                         <div class="">
 
                             <div class="view zoom z-depth-2 rounded">
-                                <img class="img-fluid w-100" style="max-height:280px " src="{{asset
-                            ('Pictures_Project/phone/Apple/12.jpg')
-                            }}"alt="Sample">
+                                <img class="img-fluid w-100" style="max-height:280px" src="{{ asset('Pictures_Project/'.$product->slug.'.jpg')}}"alt="Sample">
                                 <a href="{{route('shop.show',$product->slug)}}">
                                     <div class="mask waves-effect waves-light"></div>
                                 </a>

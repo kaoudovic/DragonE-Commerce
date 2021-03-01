@@ -38,12 +38,13 @@ Route::post('/coupon', 'CouponsController@store')->name('coupon.store');
 Route::delete('/coupon', 'CouponsController@destroy')->name('coupon.destroy');
 
 
-Route::get('/checkout', 'CheckoutController@index')->name('checkout');
+Route::get('/checkout', 'CheckoutController@index')->name('checkout')->middleware('auth');
 Route::post('/checkout', 'CheckoutController@store')->name('checkout.store');
 
 Route::get('/thankyou', 'ConfirmationController@index')->name('confirmation.index');
 
 
+Route::get('/search', 'ShopController@search')->name('search');
 
 
 Route::get('/wishlist',function(){

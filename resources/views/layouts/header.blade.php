@@ -31,14 +31,15 @@
                             </select>
                         </div>
 
-                        <input type="text" class="form-control mb-0" placeholder="Search">
-
-                        <div class="input-group-append">
-                            <button class="btn btn-primary btn-md px-3" type="submit">
-                                <i class="fa fa-search"></i> Search
-                            </button>
-                        </div>
-
+                        <form action="{{ route('search') }}" method="GET" class="search-form">
+                            <input type="text"  name="query" id="query"
+                                   class="form-control mb-0" placeholder="Search for product" required>
+                            <div class="input-group-append">
+                                <button class="btn btn-primary btn-md px-3" type="submit">
+                                    <i class="fa fa-search"></i> Search
+                                </button>
+                            </div>
+                        </form>
                     </div>
 
                 </form>
@@ -116,10 +117,12 @@
                     <div class="mr-3">
 
                         <li class="nav-item" >
-                        <a href="{{route('cart.index')}}" role="button">
-                                <i class="fas fa-shopping-cart fa-lg "></i>
-                                <span class="badge badge-pill red">{{ Cart::count() }}</span>
+                            <a href="{{route('cart.index')}}" role="button">
+                                <div> <i class="fas fa-shopping-cart fa-lg "></i></div>
                                 <small class="text-dark">Cart</small>
+                                 @if (Cart::instance('default')->count() > 0)
+                                <span class="badge badge-pill red">{{ Cart::count() }}</span>
+                                 @endif
                             </a>
                     </li>
                     </div>

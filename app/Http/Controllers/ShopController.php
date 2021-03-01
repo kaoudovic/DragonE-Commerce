@@ -113,4 +113,28 @@ class ShopController extends Controller
     {
         //
     }
+
+
+    public function search(Request $request)
+    {
+        $request->validate([
+            'query' => 'required|min:3',
+        ]);
+
+        $query = $request->input('query');
+//
+         $products = Product::where('name', 'like', "%$query%")
+                            ->orWhere('details', 'like', "%$query%")
+                            ->orWhere('description', 'like', "%$query%")
+                            ->orWhere('price', 'like', "%$query%")
+                            ->paginate(8);
+        return view('frontend.pages.search_results')->with('products', $products);
+    }
+
+    public function searchAlgolia(Request $request)
+    {
+        return view('search-results-algolia');
+    }
+
+
 }

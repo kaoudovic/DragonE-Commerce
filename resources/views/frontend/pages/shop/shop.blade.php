@@ -17,6 +17,9 @@
     <link rel="stylesheet" href="{{asset('assets/new/css/mdb-pro.min.css')}}">
     <!-- Material Design Bootstrap Ecommerce -->
     <link rel="stylesheet" href="{{asset('assets/new/css/mdb.ecommerce.min.css')}}">
+
+    <link rel="stylesheet" href="{{ asset('assets/new/css/algolia.css') }}">
+
     <!-- Your custom styles (optional) -->
     <style>
         @supports (--css: variables) {
@@ -535,8 +538,6 @@
 <!-- Footer -->
 @include('layouts.footer')
 <!-- Footer -->
-
-
 <!-- SCRIPTS -->
 <!-- JQuery -->
 <script type="text/javascript" src="{{asset('assets/new/js/jquery-3.4.1.min.js')}}"></script>
@@ -549,6 +550,12 @@
 <!-- MDB Ecommerce JavaScript -->
 <script type="text/javascript" src="{{asset('assets/new/js/mdb.ecommerce.min.js')}}"></script>
 <!-- Your custom scripts (optional) -->
+
+<!-- Include AlgoliaSearch JS Client and autocomplete.js library -->
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
+<script src="{{ asset('assets/new/js/algolia.js') }}"></script>
+
 <script type="text/javascript">
     <script>
         $(document).ready(function () {
@@ -577,6 +584,8 @@
     }
     });
 </script>
+
+
 </body>
 
 </html>

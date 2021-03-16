@@ -126,11 +126,18 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/fzaninotto/faker" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/laravel/scout" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/algolia/algoliasearch-client-php" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/stripe/stripe-php" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="autocomplete" level="application" />
     <orderEntry type="library" name="algoliasearch" level="application" />
     <orderEntry type="library" name="all" level="application" />
+    <orderEntry type="library" name="instantsearch.js" level="application" />
+    <orderEntry type="library" name="algoliasearch" level="application" />
+    <orderEntry type="library" name="instantsearch.js" level="application" />
+    <orderEntry type="library" name="all" level="application" />
+    <orderEntry type="library" name="instantsearch.css" level="application" />
+    <orderEntry type="library" name="autocomplete" level="application" />
   </component>
 </module>

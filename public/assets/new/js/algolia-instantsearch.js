@@ -1,11 +1,10 @@
 (function() {
     const search = instantsearch({
-        appId: 'P53SZUIML8',
-        apiKey: '19f54cccab5efbeb0d351b307326a864',
+        appId: '1Y2IQ8FSHY',
+        apiKey: '61f3a23b364a7ee3640fb9f42cb9b1a3',
         indexName: 'products',
         urlSync: true
     });
-
     search.addWidget(
         instantsearch.widgets.hits({
             container: '#hits',
@@ -18,6 +17,7 @@
                                 <div>
                                     <img src="${window.location.origin}/storage/${item.image}" alt="img" class="algolia-thumb-result">
                                 </div>
+
                                 <div>
                                     <div class="result-title">
                                         ${item._highlightResult.name.value}
@@ -26,7 +26,7 @@
                                         ${item._highlightResult.details.value}
                                     </div>
                                     <div class="result-price">
-                                        $${(item.price / 100).toFixed(2)}
+                                       $${(item.price / 100).toFixed(2)}
                                     </div>
                                 </div>
                             </div>
@@ -55,13 +55,11 @@
             scrollTo: false
         })
     );
-
     search.addWidget(
         instantsearch.widgets.stats({
             container: '#stats-container'
         })
     );
-
     // initialize RefinementList
     search.addWidget(
         instantsearch.widgets.refinementList({
@@ -70,6 +68,5 @@
             sortBy: ['name:asc']
         })
     );
-
     search.start();
 })();

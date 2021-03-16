@@ -92,3 +92,56 @@
 .ais-hits--item em {
     background-color: rgba(58, 150, 207, 0.3);
 }
+
+.search-results-container {
+    min-height: 500px;
+    margin: 20px auto;
+}
+
+.search-results-container a {
+    color: darkblue;
+}
+
+.search-results-container a:hover {
+    text-decoration: underline;
+}
+
+.search-results-count {
+    margin-bottom: 20px;
+}
+
+.search-results-container-algolia {
+    min-height: 400px;
+    margin: 40px 0;
+    display: grid;
+    grid-template-columns: 3fr 7fr;
+    grid-gap: 20px;
+}
+
+.ais-hits--item .instantsearch-result {
+    display: flex;
+    align-items: center;
+}
+
+.ais-hits--item .instantsearch-result img {
+    margin-right: 40px;
+    width: 80px;
+    height: 110px;
+}
+
+.ais-hits--item .result-details {
+    color: #919191;
+}
+
+.ais-hits--item .result-price {
+    margin-top: 6px;
+    font-weight: 500;
+}
+
+.ais-hits--item .algolia-thumb-result {
+    max-height: 50px;
+}
+
+.ais-hits--item hr {
+    border: 0.5px solid #CDCDCD;
+}

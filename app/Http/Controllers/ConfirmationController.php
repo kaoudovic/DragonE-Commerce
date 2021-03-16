@@ -12,6 +12,6 @@ class ConfirmationController extends Controller
             return redirect('/');
         }
 
-        return view('thank you');
+        return view('frontend.pages.thankyou');
     }
 }

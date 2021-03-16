@@ -2,20 +2,42 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4556d6fa-4bc5-4613-8cb3-63cc47f7a892" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/assets/new/css/algolia.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/new/js/algolia.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/new/js/algolia_instantsearch.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/CheckoutTestController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/pages/checkout_test.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/pages/thankyou.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/deagon.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deagon.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CheckoutController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CheckoutController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ConfirmationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ConfirmationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ShopController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ShopController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/CategoryProduct.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/CategoryProduct.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/services.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_02_13_094759_create_category_product_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/2021_02_13_094759_create_category_product_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/new/css/algolia.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/new/css/algolia.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/new/js/algolia.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/new/js/algolia.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/new/js/algolia_instantsearch.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/new/js/algolia-instantsearch.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/pages/aboutus.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/pages/aboutus.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/pages/cart/cart.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/pages/cart/cart.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/frontend/pages/checkout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/pages/checkout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/pages/search_results.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/pages/search_results.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/pages/shop/shop.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/pages/shop/shop.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/pages/contact/contact-us.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/pages/contact/contact-us.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/pages/test.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/pages/test.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/pages/trackorder.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/pages/trackorder.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/pages/wishlist/wishlist.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/pages/wishlist/wishlist.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/frontend/products/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/products/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/landing-page.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/landing-page.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +47,13 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="composer.json" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -158,6 +187,7 @@
       <path value="$PROJECT_DIR$/vendor/fzaninotto/faker" />
       <path value="$PROJECT_DIR$/vendor/laravel/scout" />
       <path value="$PROJECT_DIR$/vendor/algolia/algoliasearch-client-php" />
+      <path value="$PROJECT_DIR$/vendor/stripe/stripe-php" />
     </include_path>
   </component>
   <component name="ProjectId" id="1ogpsDvVzqIzi274W0xyJFdzKqp" />
@@ -170,7 +200,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/frontend/pages" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -182,15 +212,16 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="H:\DragonE-Commerce-master\deagon\app\Http\Controllers" />
       <recent name="H:\DragonE-Commerce-master\deagon\resources\views\frontend\pages" />
+      <recent name="H:\DragonE-Commerce-master\deagon\resources\views\frontend" />
       <recent name="H:\DragonE-Commerce-master\deagon\database\migrations" />
       <recent name="H:\DragonE-Commerce-master\deagon\public\Pictures_Project" />
-      <recent name="H:\DragonE-Commerce-master\deagon\public\storage\products" />
-      <recent name="H:\DragonE-Commerce-master\deagon\app" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="H:\DragonE-Commerce-master\deagon\database\migrations" />
+      <recent name="H:\DragonE-Commerce-master\deagon\app\Models" />
       <recent name="H:\DragonE-Commerce-master\deagon\database\seeds" />
+      <recent name="H:\DragonE-Commerce-master\deagon\database\migrations" />
       <recent name="H:\DragonE-Commerce-master\deagon\app\Providers" />
       <recent name="H:\DragonE-Commerce-master\deagon\database" />
     </key>
@@ -215,7 +246,14 @@
       <workItem from="1613906349978" duration="6360000" />
       <workItem from="1613919809618" duration="13089000" />
       <workItem from="1614183976433" duration="3365000" />
-      <workItem from="1614448940227" duration="20238000" />
+      <workItem from="1614448940227" duration="23478000" />
+      <workItem from="1614756374594" duration="8433000" />
+      <workItem from="1614954802758" duration="17000" />
+      <workItem from="1615567516106" duration="1115000" />
+      <workItem from="1615569814752" duration="628000" />
+      <workItem from="1615664053660" duration="8690000" />
+      <workItem from="1615800792549" duration="8019000" />
+      <workItem from="1615905827069" duration="9439000" />
     </task>
     <servers />
   </component>

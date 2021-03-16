@@ -41,10 +41,20 @@ Route::delete('/coupon', 'CouponsController@destroy')->name('coupon.destroy');
 Route::get('/checkout', 'CheckoutController@index')->name('checkout')->middleware('auth');
 Route::post('/checkout', 'CheckoutController@store')->name('checkout.store');
 
+
+Route::get('/checkout/test', 'CheckoutController@index_test')->name('checkout')->middleware('auth');
+Route::post('/checkout/test', 'CheckoutController@store_test')->name('checkout.store');
+
+
+Route::get('/checkout', 'CheckoutController@index')->name('checkout.index')->middleware('auth');
+Route::post('/paypal-checkout', 'CheckoutController@paypalCheckout')->name('checkout.paypal');
+
 Route::get('/thankyou', 'ConfirmationController@index')->name('confirmation.index');
 
 
 Route::get('/search', 'ShopController@search')->name('search');
+Route::get('/search-algolia', 'ShopController@searchAlgolia')->name('search-algolia');
+
 
 
 Route::get('/wishlist',function(){

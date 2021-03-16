@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
-     public function product(){
-         return $this->belongsToMany('App\Models\Product');
-     }
+//     public function product(){
+//         return $this->belongsToMany('App\Models\Product');
+//     }
 
     protected $guarded = [];
 
@@ -16,6 +16,6 @@ class Category extends Model
 
     public function products()
     {
-        return $this->belongsToMany('App\Models\Product');
+        return $this->belongsToMany(Product::class,'category_product');
     }
 }

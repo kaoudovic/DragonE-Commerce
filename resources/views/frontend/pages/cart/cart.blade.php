@@ -17,6 +17,9 @@
     <link rel="stylesheet" href="{{asset('assets/new/css/mdb-pro.min.css')}}">
     <!-- Material Design Bootstrap Ecommerce -->
     <link rel="stylesheet" href="{{asset('assets/new/css/mdb.ecommerce.min.css')}}">
+
+    <link rel="stylesheet" href="{{ asset('assets/new/css/algolia.css') }}">
+
     <style>
         @media (min-width: 1100px) {
             .container-xl {
@@ -300,22 +303,28 @@
 <script type="text/javascript" src="{{asset('assets/new/js/mdb.min.js')}}"></script>
 <!-- MDB Ecommerce JavaScript -->
 <script type="text/javascript" src="{{asset('assets/new/js/mdb.ecommerce.min.js')}}"></script>
-<!-- Your custom scripts (optional) -->
-<script type="text/javascript">
-    $(function () {
-        $('.material-tooltip-main').tooltip({
-            template: '<div class="tooltip md-tooltip-main"><div class="tooltip-arrow md-arrow"></div><div class="tooltip-inner md-inner-main"></div></div>'
-        });
-    });
 
-    $(document).ready(function () {
-        $('.mdb-select').materialSelect();
-        $('.select-wrapper.md-form.md-outline input.select-dropdown').bind('focus blur', function () {
-            $(this).closest('.select-outline').find('label').toggleClass('active');
-            $(this).closest('.select-outline').find('.caret').toggleClass('active');
-        });
-    });
-</script>
+
+<!-- Include AlgoliaSearch JS Client and autocomplete.js library -->
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
+<script src="{{ asset('assets/new/js/algolia.js') }}"></script>
+<!-- Your custom scripts (optional) -->
+{{--<script type="text/javascript">--}}
+{{--    $(function () {--}}
+{{--        $('.material-tooltip-main').tooltip({--}}
+{{--            template: '<div class="tooltip md-tooltip-main"><div class="tooltip-arrow md-arrow"></div><div class="tooltip-inner md-inner-main"></div></div>'--}}
+{{--        });--}}
+{{--    });--}}
+
+{{--    $(document).ready(function () {--}}
+{{--        $('.mdb-select').materialSelect();--}}
+{{--        $('.select-wrapper.md-form.md-outline input.select-dropdown').bind('focus blur', function () {--}}
+{{--            $(this).closest('.select-outline').find('label').toggleClass('active');--}}
+{{--            $(this).closest('.select-outline').find('.caret').toggleClass('active');--}}
+{{--        });--}}
+{{--    });--}}
+{{--</script>--}}
 
     <script src="{{ asset('js/app.js') }}"></script>
     <script>

@@ -133,7 +133,7 @@ class ShopController extends Controller
 
     public function searchAlgolia(Request $request)
     {
-        return view('search-results-algolia');
+        return view('frontend.pages.search_results_algolia');
     }
 
 

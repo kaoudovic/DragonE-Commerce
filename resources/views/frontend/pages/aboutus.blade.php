@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="{{asset('assets/new/css/mdb-pro.min.css')}}">
     <!-- Material Design Bootstrap Ecommerce -->
     <link rel="stylesheet" href="{{asset('assets/new/css/mdb.ecommerce.min.css')}}">
+
+    <link rel="stylesheet" href="{{ asset('assets/new/css/algolia.css') }}">
 </head>
 
 <body class="skin-light">
@@ -80,27 +82,26 @@
 
 <!-- SCRIPTS -->
 <!-- JQuery -->
-<script type="text/javascript" src="{{asset('assets/new/js/jquery-3.4.1.min.js')}}"></script>
+<<script src="{{asset('assets/new/js/jquery-3.4.1.min.js')}}"></script>
 <!-- Bootstrap tooltips -->
 <script type="text/javascript" src="{{asset('assets/new/js/popper.min.js')}}"></script>
 <!-- Bootstrap core JavaScript -->
-<script type="text/javascript" src="{{asset('assets/new/js/bootstrap.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('assets/new/js/bootstrap.js')}}"></script>
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="{{asset('assets/new/js/mdb.min.js')}}"></script>
 <!-- MDB Ecommerce JavaScript -->
 <script type="text/javascript" src="{{asset('assets/new/js/mdb.ecommerce.min.js')}}"></script>
-<script type="text/javascript">
-    $(function () {
-        $('.material-tooltip-main').tooltip({
-            template: '<div class="tooltip md-tooltip-main"><div class="tooltip-arrow md-arrow"></div><div class="tooltip-inner md-inner-main"></div></div>'
-        });
-    });
 
+
+<!-- Include AlgoliaSearch JS Client and autocomplete.js library -->
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
+<script src="{{ asset('assets/new/js/algolia.js') }}"></script>
+<script>
     $(document).ready(function () {
-        $('.mdb-select').materialSelect();
-        $('.select-wrapper.md-form.md-outline input.select-dropdown').bind('focus blur', function () {
-            $(this).closest('.select-outline').find('label').toggleClass('active');
-            $(this).closest('.select-outline').find('.caret').toggleClass('active');
+        // MDB Lightbox Init
+        $(function () {
+            $("#mdb-lightbox-ui").load("../../../mdb-addons/mdb-lightbox-ui.html");
         });
     });
 </script>

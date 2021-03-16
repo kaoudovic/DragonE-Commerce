@@ -2,13 +2,13 @@
 
 namespace App\Models;
 use Laravel\Scout\Searchable;
-
 use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
     use Searchable;
 
+    protected $fillable = ['quantity'];
 
     protected $searchable = [
         /**
@@ -26,11 +26,10 @@ class Product extends Model
     ];
 
     public function categories(){
-        return $this->belongsToMany('App\Models\Category');
+        return $this->belongsToMany(Category::class,'category_product');
     }
 
-    protected $fillable = ['quantity'];
-
+    //for instant searching with algolia
     public function toSearchableArray()
     {
         $array = $this->toArray();
@@ -38,7 +37,11 @@ class Product extends Model
         $extraFields = [
             'categories' => $this->categories->pluck('name')->toArray(),
         ];
-
         return array_merge($array, $extraFields);
+    }
+
+    public function orders()
+    {
+        return $this->hasMany('App\Models\Order');
     }
 }

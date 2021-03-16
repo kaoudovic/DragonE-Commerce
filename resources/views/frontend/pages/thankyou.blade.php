@@ -64,27 +64,14 @@
                     <h5 class="text-center mt-1 mb-4">Contact us</h5>
 
                     <p>To track your order please enter your Order ID in the box below and press the "Track" button. This was given to you on your receipt and in the confirmation email you should have received.</p>
-
-                    <form action="#!">
-
-                        <div class="md-form md-outline">
-                            <input type="text" id="orderID" class="form-control">
-                            <label for="orderID">Order ID</label>
+                    <div class="thank-you-section">
+                        <h1>Thank you for <br> Your Order!</h1>
+                        <p>A confirmation email was sent</p>
+                        <div class="spacer"></div>
+                        <div>
+                            <a href="{{ url('/') }}" class="button">Home Page</a>
                         </div>
-
-                        <div class="md-form md-outline">
-                            <input type="email" id="billingEmail" class="form-control">
-                            <label for="billingEmail">Billing email</label>
-                        </div>
-
-                    </form>
-
-                    <div class="text-center pt-2 mb-4">
-
-                        <button type="submit" class="btn btn-primary mb-4">Sign Up</button>
-
                     </div>
-
                 </section>
                 <!--Section: Block Content-->
 

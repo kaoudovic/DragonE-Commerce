@@ -1,28 +1,4 @@
-{{--@extends('layouts.master')--}}
-
-{{--@push('head')--}}
-
-{{--<link rel="stylesheet" type="text/css" href="{{asset('assets/styles/bootstrap4/bootstrap.min.css')}}">--}}
-{{--<link href="{{asset('assets/plugins/fontawesome-free-5.0.1/css/fontawesome-all.css')}}" rel="stylesheet" type="text/css">--}}
-{{--<link rel="stylesheet" type="text/css" href="{{asset('assets/styles/contact_styles.css')}}">--}}
-{{--<link rel="stylesheet" type="text/css" href="{{asset('assets/styles/blog_styles.css')}}">--}}
-{{--<link rel="stylesheet" type="text/css" href="{{asset('assets/styles/contact_responsive.css')}}">--}}
-
-{{--@endpush--}}
-
-{{--@push('footer')--}}
-{{--<!-- <script src="{{asset('assets/js/contact_custom.js')}}"></script> -->--}}
-{{--@endpush--}}
-{{--@section('banner', $banner)--}}
-{{--@section('content')--}}
-
-{{--    @include('frontend.pages.contact.contact-info')--}}
-{{--    @include('frontend.pages.contact.contact-form')--}}
-
-{{--@endsection--}}
-
-
-    <!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -39,8 +15,7 @@
     <link rel="stylesheet" href="{{asset('assets/new/css/mdb-pro.min.css')}}">
     <!-- Material Design Bootstrap Ecommerce -->
     <link rel="stylesheet" href="{{asset('assets/new/css/mdb.ecommerce.min.css')}}">
-
-    <!-- Your custom styles (optional) -->
+    <link rel="stylesheet" href="{{ asset('assets/new/css/algolia.css') }}">
 </head>
 
 
@@ -186,31 +161,12 @@
 <script type="text/javascript" src="{{asset('assets/new/js/mdb.min.js')}}"></script>
 <!-- MDB Ecommerce JavaScript -->
 <script type="text/javascript" src="{{asset('assets/new/js/mdb.ecommerce.min.js')}}"></script>
-<script>
 
-</script>
-<script>
-    $(document).ready(function () {
-        // MDB Lightbox Init
-        $(function () {
-            $("#mdb-lightbox-ui").load("../../../mdb-addons/mdb-lightbox-ui.html");
-        });
-    });
 
-        $(function () {
-        $('.material-tooltip-main').tooltip({
-            template: '<div class="tooltip md-tooltip-main"><div class="tooltip-arrow md-arrow"></div><div class="tooltip-inner md-inner-main"></div></div>'
-        });
-    });
-
-        $(document).ready(function () {
-        $('.mdb-select').materialSelect();
-        $('.select-wrapper.md-form.md-outline input.select-dropdown').bind('focus blur', function () {
-        $(this).closest('.select-outline').find('label').toggleClass('active');
-        $(this).closest('.select-outline').find('.caret').toggleClass('active');
-    });
-    });
-</script>
+<!-- Include AlgoliaSearch JS Client and autocomplete.js library -->
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
+<script src="{{ asset('assets/new/js/algolia.js') }}"></script>
 </body>
 
 </html>

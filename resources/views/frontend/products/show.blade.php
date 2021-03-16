@@ -18,6 +18,9 @@
     <!-- Material Design Bootstrap Ecommerce -->
     <link rel="stylesheet" href="{{asset('assets/new/css/mdb.ecommerce.min.css')}}">
 
+    <link rel="stylesheet" href="{{ asset('assets/new/css/algolia.css') }}">
+
+
 </head>
 
 <body class="skin-light">

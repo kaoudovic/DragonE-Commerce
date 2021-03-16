@@ -17,15 +17,10 @@
     <link rel="stylesheet" href="{{asset('assets/new/css/mdb-pro.min.css')}}">
     <!-- Material Design Bootstrap Ecommerce -->
     <link rel="stylesheet" href="{{asset('assets/new/css/mdb.ecommerce.min.css')}}">
-    {{--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.css@7.3.1/themes/reset-min.css" integrity="sha256-t2ATOGCtAIZNnzER679jwcFcKYfLlw01gli6F6oszk8=" crossorigin="anonymous">--}}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.css@7.4.5/themes/satellite-min.css" integrity="sha256-TehzF/2QvNKhGQrrNpoOb2Ck4iGZ1J/DI4pkd2oUsBc=" crossorigin="anonymous">
 
     <link rel="stylesheet" href="{{ asset('assets/new/css/algolia.css') }}">
-    {{--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch.min.css">--}}
-    {{--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch-theme-algolia.min.css">--}}
-
-    <script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.5.1/dist/algoliasearch-lite.umd.js" integrity="sha256-EXPXz4W6pQgfYY3yTpnDa3OH8/EPn16ciVsPQ/ypsjk=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.8.3/dist/instantsearch.production.min.js" integrity="sha256-LAGhRRdtVoD6RLo2qDQsU2mp+XVSciKRC8XPOBWmofM=" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch-theme-algolia.min.css">
 
     <!-- Your custom styles (optional) -->
     <style>
@@ -299,12 +294,12 @@
                                     </div>
                                 </div>
 
-                                <div>
+                                <div  style="margin-right:20%;margin-left: 20%">
                                     <div id="hits">
                                         <!-- Hits widget will appear here -->
                                     </div>
 
-                                    <div id="pagination">
+                                    <div style="margin-left:35%;margin-right: 35% " id="pagination">
                                         <!-- Pagination widget will appear here -->
                                     </div>
                                 </div>
@@ -344,8 +339,6 @@
 <script src="{{ asset('assets/new/js/algolia.js') }}"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.0"></script>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=default%2CArray.prototype.find%2CArray.prototype.includes%2CPromise%2CObject.assign%2CObject.entries"></script>
-
 <script src="{{ asset('assets/new/js/algolia-instantsearch.js') }}"></script>
 <!-- Your custom scripts (optional) -->
 <script type="text/javascript">

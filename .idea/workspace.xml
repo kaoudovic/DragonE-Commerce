@@ -2,42 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4556d6fa-4bc5-4613-8cb3-63cc47f7a892" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/CheckoutTestController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/pages/checkout_test.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/pages/thankyou.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deagon.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deagon.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CheckoutController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CheckoutController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ConfirmationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ConfirmationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ShopController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ShopController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/CategoryProduct.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/CategoryProduct.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/services.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_02_13_094759_create_category_product_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/2021_02_13_094759_create_category_product_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/2021_02_13_094759_create_category_product_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/2021_02_13_094759_create_category_product_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/CategoryTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/CategoryTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/CouponsTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/CouponsTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/ProductsTapleSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/ProductsTapleSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/assets/new/css/algolia.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/new/css/algolia.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/new/js/algolia.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/new/js/algolia.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/new/js/algolia_instantsearch.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/new/js/algolia-instantsearch.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/pages/aboutus.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/pages/aboutus.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/pages/cart/cart.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/pages/cart/cart.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/pages/checkout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/pages/checkout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/pages/contact/contact-us.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/pages/contact/contact-us.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/pages/test.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/pages/test.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/pages/trackorder.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/pages/trackorder.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/pages/wishlist/wishlist.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/pages/wishlist/wishlist.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/products/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/products/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/landing-page.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/landing-page.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/new/js/algolia-instantsearch.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/new/js/algolia-instantsearch.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/pages/search_results_algolia.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/pages/search_results_algolia.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -253,7 +228,9 @@
       <workItem from="1615569814752" duration="628000" />
       <workItem from="1615664053660" duration="8690000" />
       <workItem from="1615800792549" duration="8019000" />
-      <workItem from="1615905827069" duration="9439000" />
+      <workItem from="1615905827069" duration="17838000" />
+      <workItem from="1616020528892" duration="2584000" />
+      <workItem from="1616128295206" duration="6735000" />
     </task>
     <servers />
   </component>

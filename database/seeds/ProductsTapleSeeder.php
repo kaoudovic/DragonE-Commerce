@@ -17,8 +17,8 @@ class ProductsTapleSeeder extends Seeder
                 'price' => rand(1000, 1999),
                 'quantity' => rand(2, 5),
                 'description' =>'Lorem '. $i . ' ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!',
-//                'image' => 'products/dummy/laptop-'.$i.'.jpg',
-//                'images' => '["products\/dummy\/laptop-2.jpg","products\/dummy\/laptop-3.jpg","products\/dummy\/laptop-4.jpg"]',
+                'image' => 'products/dummy/laptop-'.$i.'.jpg',
+                'images' => '["products\/dummy\/laptop-2.jpg","products\/dummy\/laptop-3.jpg","products\/dummy\/laptop-4.jpg"]',
 
 //            ])->categories()->attach(1);
             ])->categories()->attach(1);
@@ -132,6 +132,19 @@ class ProductsTapleSeeder extends Seeder
 //                'images' => '["products\/dummy\/laptop-2.jpg","products\/dummy\/laptop-3.jpg","products\/dummy\/laptop-4.jpg"]',
 //            ])->categories()->attach(7);
             ])->categories()->attach(2);
+        }
+        // Desktops
+        for ($i = 1; $i <= 9; $i++) {
+            Product::create([
+                'name' => 'Desktop ' . $i,
+                'slug' => 'desktop-' . $i,
+                'details' => 'Desktop | The future of gaming!',
+                'price' => rand(2499, 4499),
+                'quantity' => rand(1, 5),
+                'description' => 'Lorem ' . $i . ' ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!',
+//                'image' => 'products/dummy/desktop-'.$i.'.jpg',
+//                'images' => '["products\/dummy\/laptop-2.jpg","products\/dummy\/laptop-3.jpg","products\/dummy\/laptop-4.jpg"]',
+            ])->categories()->attach(9);
         }
 
         // Select random entries to be featured

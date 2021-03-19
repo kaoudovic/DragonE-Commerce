@@ -50,7 +50,7 @@
     search.addWidget(
         instantsearch.widgets.pagination({
             container: '#pagination',
-            maxPages: 20,
+            maxPages:2,
             // default is to scroll to 'body', here we disable this behavior
             scrollTo: false
         })

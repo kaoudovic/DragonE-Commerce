@@ -29,6 +29,7 @@ class Product extends Model
         return $this->belongsToMany(Category::class,'category_product');
     }
 
+
     //for instant searching with algolia
     public function toSearchableArray()
     {

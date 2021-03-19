@@ -299,7 +299,7 @@
                                         <!-- Hits widget will appear here -->
                                     </div>
 
-                                    <div style="margin-left:35%;margin-right: 35% " id="pagination">
+                                    <div style="margin-right: 25%;margin-left:25%;" id="pagination" >
                                         <!-- Pagination widget will appear here -->
                                     </div>
                                 </div>
@@ -353,7 +353,7 @@
 
         $(function () {
         $('.material-tooltip-main').tooltip({
-            template: '<div class="tooltip md-tooltip-main"><div class="tooltip-arrow md-arrow"></div><div class="tooltip-inner md-inner-main"></div></div>'
+            template:'<div class="tooltip md-tooltip-main"><div class="tooltip-arrow md-arrow"></div><div class="tooltip-inner md-inner-main"></div></div>'
         })
     })
 
@@ -369,6 +369,10 @@
     }
     });
 </script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.0"></script>
+
 </body>
 
 </html>

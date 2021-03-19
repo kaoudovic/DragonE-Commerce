@@ -42,7 +42,8 @@
 {{--                        </form>--}}
 
                         <div class="aa-input-container" id="aa-input-container">
-                            <input type="search" id="aa-search-input" class="aa-input-search" placeholder="Search with algolia..." name="search"
+                            <input type="search" id="aa-search-input" class="aa-input-search" placeholder="Search....
+                            ." name="search"
                                    autocomplete="off" />
                             <svg class="aa-input-icon" viewBox="654 -372 1664 1664">
                                 <path d="M1806,332c0-123.3-43.8-228.8-131.5-316.5C1586.8-72.2,

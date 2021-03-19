@@ -24,6 +24,7 @@ class CategoryTableSeeder extends Seeder
             ['name' => 'Digital Cameras', 'slug' => 'digital-cameras', 'created_at' => $now, 'updated_at' => $now],
             ['name' => 'Headphones', 'slug' => 'headphones', 'created_at' => $now, 'updated_at' => $now],
             ['name' => 'Smart Watch', 'slug' => 'smart-watch', 'created_at' => $now, 'updated_at' => $now],
+            ['name' => 'Desktop', 'slug' => 'desktops', 'created_at' => $now, 'updated_at' => $now],
         ]);
     }
 }

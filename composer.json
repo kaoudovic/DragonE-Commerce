@@ -10,11 +10,13 @@
     "require": {
         "php": "^7.2.5|^8.0",
         "algolia/algoliasearch-client-php": "2.2",
+        "cartalyst/stripe-laravel": "11.0.*",
         "fideloper/proxy": "^4.4",
         "hardevine/shoppingcart": "^2.9",
         "laravel/framework": "^6.20",
         "laravel/scout": "^8.6",
         "laravel/tinker": "^2.5",
+        "realrashid/sweet-alert": "^3.2",
         "stripe/stripe-php": "^7.75",
         "tcg/voyager": "^1.4"
     },

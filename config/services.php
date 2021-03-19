@@ -29,10 +29,12 @@ return [
         'secret' => env('AWS_SECRET_ACCESS_KEY'),
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
+
     'stripe' => [
         'model' => App\User::class,
-        'key' => env('STRIPE_KEY'),
-        'secret' => env('STRIPE_SECRET'),
+        'key' => env('pk_test_51IWeaaGbZUDH5gEQtPEBIhUnLuPjxhS9kvgmtTkc1SYb3dz97ddGWyWCEfvskxkOMDH7Dz7uvXV4x1Fn1X8fV8xd00PPFFhlB6'),
+        'secret' => env('sk_test_51IWeaaGbZUDH5gEQ4etkzdwrzyDLk5zP9L5qJ8v8Wd0n1jL7OKJJPsoBUiyasewYltxaZjEJKSeGcuKaiCof3xUY00QJpzvJKM'),
+//        'secret' => 'your-stripe-key-here',
     ],
 
     'braintree' => [
@@ -41,5 +43,7 @@ return [
         'publicKey' => env('BT_PUBLIC_KEY'),
         'privateKey' => env('BT_PRIVATE_KEY'),
     ],
+
+    ''
 
 ];

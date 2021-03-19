@@ -16,27 +16,27 @@
                 <div class="col-md-6 col-lg-7 text-center text-md-right">
 
                     <!-- Facebook -->
-                    <a class="fb-ic">
+                    <a class="fb-ic" href="https://www.facebook.com/profile.php?id=100008334753375">
                         <i class="fab fa-facebook-f white-text mr-4"> </i>
                     </a>
                     <!-- Twitter -->
-                    <a class="tw-ic">
+                    <a class="tw-ic" href="https://twitter.com/mostafakaoud6">
                         <i class="fab fa-twitter white-text mr-4"> </i>
                     </a>
                     <!-- Google +-->
-                    <a class="gplus-ic">
+                    <a class="gplus-ic" href="">
                         <i class="fab fa-google-plus-g white-text mr-4"> </i>
                     </a>
 
-                    <a class="git-ic">
+                    <a class="git-ic" href="https://github.com/kaoudovic">
                         <i class="fab fa-github white-text mr-4"> </i>
                     </a>
                     <!--Linkedin -->
-                    <a class="li-ic">
+                    <a class="li-ic" href="https://www.linkedin.com/in/mostafa-kaoud-986a44196/">
                         <i class="fab fa-linkedin-in white-text mr-4"> </i>
                     </a>
                     <!--Instagram-->
-                    <a class="ins-ic">
+                    <a class="ins-ic" href="https://www.instagram.com/eng_kaoudovic/">
                         <i class="fab fa-instagram white-text"> </i>
                     </a>
 

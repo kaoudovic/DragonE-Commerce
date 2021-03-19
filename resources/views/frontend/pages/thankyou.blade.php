@@ -36,20 +36,27 @@
     <!-- Navbar -->
 @include('layouts.header')
     <!-- Navbar -->
-
-    <div class="jumbotron color-grey-light mt-70">
-        <div class="d-flex align-items-center h-100">
-            <div class="container text-center py-5">
-                <h3 class="mb-0">Order tracking</h3>
-            </div>
-        </div>
-    </div>
-
 </header>
 <!-- Main Navigation -->
 
 <!-- Main layout -->
 <main>
+
+    @if(session()->has('success_massage') )
+        <div class="alert alert-success" >
+            {{ session()->get('success_massage') }}
+        </div>
+    @endif
+
+    @if(count($errors) >0)
+        <div class="alert alert-danger">
+            <ul>
+                @foreach($errors->all() as $error)
+                    <li>{{$error}}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
     <div class="container">
 
         <!-- Grid row -->
@@ -57,20 +64,17 @@
 
             <!-- Grid column -->
             <div class="col-md-6">
-
+                <br><br><br>
+                <br><br><br>
                 <!--Section: Block Content-->
-                <section class="my-4">
-
-                    <h5 class="text-center mt-1 mb-4">Contact us</h5>
-
-                    <p>To track your order please enter your Order ID in the box below and press the "Track" button. This was given to you on your receipt and in the confirmation email you should have received.</p>
-                    <div class="thank-you-section">
-                        <h1>Thank you for <br> Your Order!</h1>
-                        <p>A confirmation email was sent</p>
+                <section class="my-7">
+                    <div class="row d-flex justify-content-center">
+                        <h1>Thank you for Your Order...!</h1>
+                        <p>A confirmation email was sent....!</p>
                         <div class="spacer"></div>
-                        <div>
-                            <a href="{{ url('/') }}" class="button">Home Page</a>
-                        </div>
+                    </div>
+                    <div class="row d-flex justify-content-center">
+                        <a  href="{{ url('/') }}" class="btn btn-primary"> Go To Home Page</a>
                     </div>
                 </section>
                 <!--Section: Block Content-->
@@ -102,24 +106,37 @@
 <!-- MDB Ecommerce JavaScript -->
 <script type="text/javascript" src="{{asset('assets/new/js/mdb.ecommerce.min.js')}}"></script>
 
+
 <!-- Include AlgoliaSearch JS Client and autocomplete.js library -->
 <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
 <script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
 <script src="{{ asset('assets/new/js/algolia.js') }}"></script>
-<script type="text/javascript">
-    $(function () {
-        $('.material-tooltip-main').tooltip({
-            template: '<div class="tooltip md-tooltip-main"><div class="tooltip-arrow md-arrow"></div><div class="tooltip-inner md-inner-main"></div></div>'
-        });
-    });
 
-    $(document).ready(function () {
-        $('.mdb-select').materialSelect();
-        $('.select-wrapper.md-form.md-outline input.select-dropdown').bind('focus blur', function () {
-            $(this).closest('.select-outline').find('label').toggleClass('active');
-            $(this).closest('.select-outline').find('.caret').toggleClass('active');
-        });
-    });
+<script src="{{ asset('js/app.js') }}"></script>
+<script>
+    (function(){
+        const classname = document.querySelectorAll('.quantity')
+
+        Array.from(classname).forEach(function(element) {
+            element.addEventListener('change', function() {
+                const id = element.getAttribute('data-id')
+                const productQuantity = element.getAttribute('data-productQuantity')
+
+                axios.patch(`cart/${id}`, {
+                    quantity: this.value,
+                    productQuantity: productQuantity
+                })
+                    .then(function (response) {
+                        // console.log(response);
+                        window.location.href = '{{ route('cart.index') }}'
+                    })
+                    .catch(function (error) {
+                        // console.log(error);
+                        window.location.href = '{{ route('cart.index') }}'
+                    });
+            })
+        })
+    })();
 </script>
 </body>
 

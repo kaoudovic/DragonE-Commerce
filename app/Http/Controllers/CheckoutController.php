@@ -244,5 +244,42 @@ class CheckoutController extends Controller
         ]);
     }
 
+    public function checkout($amount){
 
+        return view('frontend.pages.checkout_byStripe',compact('amount'));
+    }
+
+    public function charge(Request $request){
+        Stripe::setApiKey('sk_test_51IWeaaGbZUDH5gEQ4etkzdwrzyDLk5zP9L5qJ8v8Wd0n1jL7OKJJPsoBUiyasewYltxaZjEJKSeGcuKaiCof3xUY00QJpzvJKM');
+        $token = $_POST['stripeToken'];
+        $charge=Stripe::charges()->create([
+            'amount' => $request->amount,
+            'currency' => 'usd',
+            'description' => 'Dragon Store checkout',
+            'source' => $token,
+        ]);
+
+        $chargeId=$charge['id'];
+
+        if($chargeId){
+
+            session()->forget('cart');
+            return redirect()->route('confirmation.index')->with('success',"Payment was done. Thanks");
+        } else{
+            return redirect()->back();
+        }
+
+    }
+
+//\Stripe\Stripe::setApiKey('sk_test_51IWeaaGbZUDH5gEQ4etkzdwrzyDLk5zP9L5qJ8v8Wd0n1jL7OKJJPsoBUiyasewYltxaZjEJKSeGcuKaiCof3xUY00QJpzvJKM');
+//
+//    // Token is created using Stripe Checkout or Elements!
+//    // Get the payment token ID submitted by the form:
+//$token = $_POST['stripeToken'];
+//$charge =Stripe::Charge::create([
+//'amount' => 999,
+//'currency' => 'usd',
+//'description' => 'Example charge',
+//'source' => $token,
+//]);
 }

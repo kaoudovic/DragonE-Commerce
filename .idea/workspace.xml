@@ -2,17 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4556d6fa-4bc5-4613-8cb3-63cc47f7a892" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/pages/checkout_byStripe.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/pages/thanks.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deagon.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deagon.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/2021_02_13_094759_create_category_product_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/2021_02_13_094759_create_category_product_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/CategoryTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/CategoryTableSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/CouponsTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/CouponsTableSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/ProductsTapleSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/ProductsTapleSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/new/css/algolia.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/new/css/algolia.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/new/js/algolia-instantsearch.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/new/js/algolia-instantsearch.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/pages/search_results_algolia.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/pages/search_results_algolia.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CheckoutController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CheckoutController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ConfirmationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ConfirmationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ShopController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ShopController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/Category.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/services.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/pages/cart/cart.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/pages/cart/cart.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/pages/checkout_test.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/pages/checkout_test.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/pages/shop/shop.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/pages/shop/shop.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/pages/thankyou.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/pages/thankyou.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/pages/trackorder.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/pages/trackorder.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/footer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -163,6 +173,12 @@
       <path value="$PROJECT_DIR$/vendor/laravel/scout" />
       <path value="$PROJECT_DIR$/vendor/algolia/algoliasearch-client-php" />
       <path value="$PROJECT_DIR$/vendor/stripe/stripe-php" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-client" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/vendor/cartalyst/stripe" />
+      <path value="$PROJECT_DIR$/vendor/cartalyst/stripe-laravel" />
+      <path value="$PROJECT_DIR$/vendor/realrashid/sweet-alert" />
     </include_path>
   </component>
   <component name="ProjectId" id="1ogpsDvVzqIzi274W0xyJFdzKqp" />
@@ -194,11 +210,11 @@
       <recent name="H:\DragonE-Commerce-master\deagon\public\Pictures_Project" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="H:\DragonE-Commerce-master\deagon\resources\views\frontend\pages" />
       <recent name="H:\DragonE-Commerce-master\deagon\app\Models" />
       <recent name="H:\DragonE-Commerce-master\deagon\database\seeds" />
       <recent name="H:\DragonE-Commerce-master\deagon\database\migrations" />
       <recent name="H:\DragonE-Commerce-master\deagon\app\Providers" />
-      <recent name="H:\DragonE-Commerce-master\deagon\database" />
     </key>
   </component>
   <component name="RunManager">
@@ -230,7 +246,7 @@
       <workItem from="1615800792549" duration="8019000" />
       <workItem from="1615905827069" duration="17838000" />
       <workItem from="1616020528892" duration="2584000" />
-      <workItem from="1616128295206" duration="6735000" />
+      <workItem from="1616128295206" duration="28796000" />
     </task>
     <servers />
   </component>

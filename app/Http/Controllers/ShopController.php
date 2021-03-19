@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class ShopController extends Controller
 {
@@ -15,6 +16,13 @@ class ShopController extends Controller
      */
     public function index()
     {
+
+        if( session('success'))
+        {
+            toast(session('success'),'success');
+        }
+        Alert::info('Info Title', 'Info Message');
+
         $categories = Category::all();
         $pagination =9;
         if (request()->category) {

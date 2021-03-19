@@ -518,8 +518,8 @@
                             </div>
 
                     <!-- Grid row -->
-                    <div class="align-content-md-center">
-                        <ul class="pagination justify-content-center float-md-center ">
+                    <div class="row justify-content-center mb-4">
+                        <ul class="pagination pagination-circle pg-blue mb-0 ">
                             {{ $products->appends(request()->input())->links() }}
                         </ul>
                     </div>
@@ -534,7 +534,7 @@
 
 </main>
 <!-- Main layout -->
-
+@include('sweetalert::alert')
 <!-- Footer -->
 @include('layouts.footer')
 <!-- Footer -->

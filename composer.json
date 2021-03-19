@@ -18,7 +18,8 @@
         "laravel/tinker": "^2.5",
         "realrashid/sweet-alert": "^3.2",
         "stripe/stripe-php": "^7.75",
-        "tcg/voyager": "^1.4"
+        "tcg/voyager": "^1.4",
+        "ext-json": "*"
     },
     "require-dev": {
         "facade/ignition": "^1.16.4",

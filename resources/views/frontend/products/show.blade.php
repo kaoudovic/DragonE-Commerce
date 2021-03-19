@@ -56,12 +56,11 @@
                     <div id="mdb-lightbox-ui"></div>
 
                     <div class="mdb-lightbox">
-
-                        <div class="row product-gallery mx-1">
-
-                            <div class="col-12 mb-0">
-                                <figure class="view overlay rounded z-depth-1 main-img" style="max-height: 450px;">
-                                    <a  src="{{ asset('Pictures_Project/'.$product->slug.'.jpg')}}" data-size="710x823">
+                        <div class="row product-gallery mx-0">
+                            <div class="col-8 mb-0">
+                                <figure class="view overlay rounded z-depth-1 main-img">
+                                    <a  src="{{ asset('Pictures_Project/'.$product->slug.'.jpg')}}"
+                                        data-size="610x623">
 {{--                                        <img  src="{{ asset('Pictures_Project/'.$product->slug.'.jpg')}}"--}}
                                         <img  src="{{ asset('Pictures_Project/'.$product->slug.'.jpg')}}"
                                               class="img-fluid z-depth-1" style="margin-top: -30px;">
@@ -97,30 +96,18 @@
                             </div>
                             <div class="col-12">
                                 <div class="row">
-                                    <div class="col-3">
-                                        <div class="view overlay rounded z-depth-1 gallery-item hoverable">
-                                            <img src="{{asset
-                                    ('Pictures_Project/phone/product/5.jpg')}}"
-                                                 class="img-fluid">
-                                            <div class="mask rgba-white-slight"></div>
-                                        </div>
-                                    </div>
-                                    <div class="col-3">
-                                        <div class="view overlay rounded z-depth-1 gallery-item hoverable">
-                                            <img src="{{asset
-                                    ('Pictures_Project/phone/product/4.jpg')}}"
-                                                 class="img-fluid">
-                                            <div class="mask rgba-white-slight"></div>
-                                        </div>
-                                    </div>
-                                    <div class="col-3">
-                                        <div class="view overlay rounded z-depth-1 gallery-item hoverable">
-                                            <img src="{{asset
-                                    ('Pictures_Project/phone/product/3.jpg')}}"
-                                                 class="img-fluid">
-                                            <div class="mask rgba-white-slight"></div>
-                                        </div>
-                                    </div>
+
+                                    @if ($product->images)
+                                        @foreach (json_decode($product->images, true) as $image)
+                                            <div class="col-3" style="width: 100px; height:250px">
+                                                <div class="view overlay rounded z-depth-1 gallery-item hoverable" >
+                                                    <img src="{{ productImage($image) }}" style="width:100px;
+                                                    max-height:250px">
+                                                </div>
+                                            </div>
+                                        @endforeach
+                                    @endif
+
                                     <div class="col-3">
                                         <div class="view overlay rounded z-depth-1 gallery-item hoverable">
                                             <img src="{{ asset('Pictures_Project/'.$product->slug.'.jpg')}}"
@@ -128,6 +115,8 @@
                                             <div class="mask rgba-white-slight"></div>
                                         </div>
                                     </div>
+
+
                                 </div>
                             </div>
                         </div>

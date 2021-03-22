@@ -16,59 +16,51 @@ class ShopController extends Controller
      */
     public function index()
     {
-
         if( session('success'))
         {
             toast(session('success'),'success');
         }
-        Alert::info('Info Title', 'Info Message');
+//        Alert::info('Info Title', 'Info Message');
 
         $categories = Category::all();
-        $pagination =9;
+        $pagination = 9;
+
         if (request()->category) {
-            $products = Product::with('categories')->whereHas('categories', function ($query) {
+            $products = Product::with(['categories','options.property'])->whereHas('categories', function ($query) {
                 $query->where('slug', request()->category);
             });
             $categoryName = optional($categories->where('slug', request()->category)->first())->name;
         } else {
-            $products = Product::where('featured',false);
+            $products = Product::with(['options.property'])->where('featured',false);
             $categoryName = 'Featured';
+
         }
 
+        // get applied options
+        $appliedFilters = $this->applyFilters(request(),$products);
+
+
         if (request()->sort == 'low_high') {
-            $products = $products->orderBy('price')->paginate($pagination);
+            $products = $products->orderBy('price');
         } elseif (request()->sort == 'high_low') {
-            $products = $products->orderByDesc('price')->paginate($pagination);
-        }else{
-            $products=$products->paginate($pagination);
+            $products = $products->orderByDesc('price');
         }
+
+        // get options
+        $options = $this->handleOptionsForFilters($products->get());
+
+        // fetch required data
+        $products = $products->paginate($pagination);
+
+
 
         return view('frontend.pages.shop.shop')->with([
             'products' => $products,
             'categories' => $categories,
             'categoryName' => $categoryName,
+            'options' => $options,
+            'appliedFilters' => $appliedFilters
         ]);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
     }
 
     /**
@@ -88,41 +80,6 @@ class ShopController extends Controller
        ]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
-
-
     public function search(Request $request)
     {
         $request->validate([
@@ -130,7 +87,7 @@ class ShopController extends Controller
         ]);
 
         $query = $request->input('query');
-//
+
          $products = Product::where('name', 'like', "%$query%")
                             ->orWhere('details', 'like', "%$query%")
                             ->orWhere('description', 'like', "%$query%")
@@ -144,5 +101,67 @@ class ShopController extends Controller
         return view('frontend.pages.search_results_algolia');
     }
 
+    private function handleOptionsForFilters($products)
+    {
+        $options = [];
+        foreach ($products as $product)
+        {
+            if(!empty($product->options))
+            {
+                foreach ($product->options as &$option)
+                {
+                    if(!key_exists($option->property->name,$options))
+                        $options [$option->property->name] = [$option->name];
+                    else
+                        array_push($options [$option->property->name],$option->name);
+
+                    $options[$option->property->name] = array_unique($options[$option->property->name]);
+                }
+            }
+        }
+
+        return $options;
+    }
+
+
+    private function applyFilters($request, &$products)
+    {
+        $filters = $request->request->all();
+        $allFilters = [];
+
+        $min_price = 0;
+        $max_price = 0;
+
+
+        if(isset($filters['filter']) && !empty($filters['filter']))
+        {
+            // handle price filter
+            $min_price = intval($filters['filter']['price']['min_price']);
+            $max_price = intval($filters['filter']['price']['max_price']);
+
+            foreach ($filters['filter'] as $key => $filter)
+            {
+                if($key != 'price')
+                {
+                    foreach ($filter as $key2 => $item)
+                        array_push($allFilters,$key2);
+                }
+            }
+            if(count($allFilters))
+            {
+                $products->whereHas('options',function ($query) use ($allFilters){
+                    $query->whereIn('name',$allFilters);
+                });
+            }
+
+           // price filter
+            if($min_price)
+                $products->where('price','>=', $min_price);
+            if($max_price)
+                $products->where('price','<=', $max_price);
+
+        }
+        return ['filters' => $allFilters, 'min_price'=> $min_price , 'max_price' => $max_price];
+    }
 
 }

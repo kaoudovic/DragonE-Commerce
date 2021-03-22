@@ -251,218 +251,92 @@
                             </p>
                         @endforeach
 
-{{--                        <p class="mb-3"><a href="{{ route('home')}}" class="card-link-secondary">Mobilephone</a></p>--}}
-{{--                        <p class="mb-3"><a href="{{ route('home')}}" class="card-link-secondary">Laptop</a></p>--}}
-{{--                        <p class="mb-3"><a href="{{ route('home')}}" class="card-link-secondary">Tablet</a></p>--}}
-{{--                        <p class="mb-3"><a href="{{ route('home')}}" class="card-link-secondary">Camera</a></p>--}}
-{{--                        <p class="mb-3"><a href="{{ route('home')}}"   class="card-link-secondary">Video Game</a></p>--}}
-{{--                        <p class="mb-3"><a href="{{ route('home')}}" class="card-link-secondary">Electronics</a></p>--}}
-{{--                        <p class="mb-3"><a href="{{ route('home')}}" class="card-link-secondary">Headphone</a></p>--}}
-{{--                        <p class="mb-3"><a href="{{ route('home')}}" class="card-link-secondary">Smart Watch</a></p>--}}
-{{--                        <p class="mb-3"><a href="{{ route('home')}}" class="card-link-secondary">TV</a></p>--}}
                     </div>
 
                 </section>
                 <!-- Section: Categories -->
 
                 <!-- Section: Filters -->
-                <section>
+                <form action="{{route('shop.index')}}?{{!empty(request()->category) ? request()->category : ''}}" method="post">
+                    @csrf
+                    @if(isset(Request::all()['category']))
+                        <input type="hidden" value="{{Request::all()['category']}}" name="category">
+                    @endif
 
-                    <h5 class="mb-4">Filters</h5>
+                        @if(count($options) > 0)
+                            <section>
+                            <h5 class="mb-4">Filters</h5> <hr class="w-20">
 
-                    <section class="mb-4">
+                            @foreach($options as $key =>  $option)
+                                @if(strtolower($key) != 'color')
+                                    <section class="mb-4">
 
-                        <div class="md-form md-outline mt-0 d-flex justify-content-between align-items-center">
-                            <input type="text" id="search12" class="form-control mb-0" placeholder="Search...">
-                            <a href="#!" class="btn btn-flat btn-md px-3 waves-effect"><i class="fas fa-search fa-lg"></i></a>
-                        </div>
+                                        <h6 class="font-weight-bold mb-3">{{$key}}</h6>
+                                        @foreach($option as $value)
+                                            <div class="form-check pl-0 mb-3">
+                                                <input name="filter[{{$key}}][{{$value}}]" type="checkbox" {{in_array($value,$appliedFilters['filters']) ? 'checked' : ''}} class="form-check-input filled-in" id="{{$value}}">
+                                                <label class="form-check-label small text-uppercase card-link-secondary" for="{{$value}}">{{$value}}</label>
+                                            </div>
+                                        @endforeach
 
-                    </section>
+                                    </section>
 
-                    <section class="mb-4">
+                                @else
+                                <!-- Section: Color -->
+                                    <section class="mb-4" filter="color">
+                                        <h6 class="font-weight-bold mb-3">Color</h6>
 
-                        <h6 class="font-weight-bold mb-3">Avg. Customer Review</h6>
+                                        <div
+                                            class="btn-group btn-group-toggle btn-color-group d-block mt-n2 ml-n2"
+                                            data-toggle="buttons"
+                                        >
+                                            @foreach($option as $value)
+                                                <label style="background-color: {{$value}}" for="color-{{$value}}" class="btn rounded-circle {{$value}} p-3 m-2">
+                                                    <input name="filter[{{$key}}][{{$value}}]"
+                                                           id="color-{{$value}}"
+                                                           class="filter-option"
+                                                           type="checkbox"
+                                                           color="{{$value}}"
+                                                    />
+                                                </label>
+                                            @endforeach
+                                        </div>
+                                    </section>
+                                    <!-- Section: Color -->
+                                @endif
+                            @endforeach
+                            </section>
+                        @endif
 
-                        <a href="#!">
-                            <ul class="rating">
-                                <li>
-                                    <i class="fas fa-star fa-sm text-primary"></i>
-                                </li>
-                                <li>
-                                    <i class="fas fa-star fa-sm text-primary"></i>
-                                </li>
-                                <li>
-                                    <i class="fas fa-star fa-sm text-primary"></i>
-                                </li>
-                                <li>
-                                    <i class="fas fa-star fa-sm text-primary"></i>
-                                </li>
-                                <li>
-                                    <i class="far fa-star fa-sm text-primary"></i>
-                                </li>
-                                <li>
-                                    <p class="small text-uppercase card-link-secondary px-2">&amp; Up</p>
-                                </li>
-                            </ul>
-                        </a>
-                        <a href="#!">
-                            <ul class="rating">
-                                <li>
-                                    <i class="fas fa-star fa-sm text-primary"></i>
-                                </li>
-                                <li>
-                                    <i class="fas fa-star fa-sm text-primary"></i>
-                                </li>
-                                <li>
-                                    <i class="fas fa-star fa-sm text-primary"></i>
-                                </li>
-                                <li>
-                                    <i class="far fa-star fa-sm text-primary"></i>
-                                </li>
-                                <li>
-                                    <i class="far fa-star fa-sm text-primary"></i>
-                                </li>
-                                <li>
-                                    <p class="small text-uppercase card-link-secondary px-2">&amp; Up</p>
-                                </li>
-                            </ul>
-                        </a>
-                        <a href="#!">
-                            <ul class="rating">
-                                <li>
-                                    <i class="fas fa-star fa-sm text-primary"></i>
-                                </li>
-                                <li>
-                                    <i class="fas fa-star fa-sm text-primary"></i>
-                                </li>
-                                <li>
-                                    <i class="far fa-star fa-sm text-primary"></i>
-                                </li>
-                                <li>
-                                    <i class="far fa-star fa-sm text-primary"></i>
-                                </li>
-                                <li>
-                                    <i class="far fa-star fa-sm text-primary"></i>
-                                </li>
-                                <li>
-                                    <p class="small text-uppercase card-link-secondary px-2">&amp; Up</p>
-                                </li>
-                            </ul>
-                        </a>
-                        <a href="#!">
-                            <ul class="rating">
-                                <li>
-                                    <i class="fas fa-star fa-sm text-primary"></i>
-                                </li>
-                                <li>
-                                    <i class="far fa-star fa-sm text-primary"></i>
-                                </li>
-                                <li>
-                                    <i class="far fa-star fa-sm text-primary"></i>
-                                </li>
-                                <li>
-                                    <i class="far fa-star fa-sm text-primary"></i>
-                                </li>
-                                <li>
-                                    <i class="far fa-star fa-sm text-primary"></i>
-                                </li>
-                                <li>
-                                    <p class="small text-uppercase card-link-secondary px-2">&amp; Up</p>
-                                </li>
-                            </ul>
-                        </a>
-
-                    </section>
-
+                    <!-- Section: Price version 2 -->
                     <section class="mb-4">
 
                         <h6 class="font-weight-bold mb-3">Price</h6>
 
-                        <div class="form-check pl-0 mb-3">
-                            <input type="radio" class="form-check-input" id="under25" name="materialExampleRadios">
-                            <label class="form-check-label small text-uppercase card-link-secondary" for="under25">Under
-                                $25</label>
-                        </div>
-                        <div class="form-check pl-0 mb-3">
-                            <input type="radio" class="form-check-input" id="2550" name="materialExampleRadios">
-                            <label class="form-check-label small text-uppercase card-link-secondary" for="2550">$25 to $50</label>
-                        </div>
-                        <div class="form-check pl-0 mb-3">
-                            <input type="radio" class="form-check-input" id="50100" name="materialExampleRadios">
-                            <label class="form-check-label small text-uppercase card-link-secondary" for="50100">$50 to
-                                $100</label>
-                        </div>
-                        <div class="form-check pl-0 mb-3">
-                            <input type="radio" class="form-check-input" id="100200" name="materialExampleRadios">
-                            <label class="form-check-label small text-uppercase card-link-secondary" for="100200">$100 to
-                                $200</label>
-                        </div>
-                        <div class="form-check pl-0 mb-3">
-                            <input type="radio" class="form-check-input" id="200above" name="materialExampleRadios">
-                            <label class="form-check-label small text-uppercase card-link-secondary" for="200above">$200 &amp;
-                                Above</label>
-                        </div>
-                        <form>
                             <div class="d-flex align-items-center mt-4 pb-1">
                                 <div class="md-form md-outline my-0">
-                                    <input id="from" type="text" class="form-control mb-0">
+                                    <input name="filter[price][min_price]" id="from" type="text" value="{{$appliedFilters['min_price']!= 0 ?$appliedFilters['min_price'] : ''}}" class="form-control mb-0">
                                     <label for="form">$ Min</label>
                                 </div>
                                 <p class="px-2 mb-0 text-muted"> - </p>
                                 <div class="md-form md-outline my-0">
-                                    <input id="to" type="text" class="form-control mb-0">
+                                    <input name="filter[price][max_price]" id="to" type="text" value="{{$appliedFilters['max_price']!= 0 ?$appliedFilters['max_price'] : ''}}" class="form-control mb-0">
                                     <label for="to">$ Max</label>
                                 </div>
                             </div>
-                        </form>
-
-                    </section>
-
-                    <!-- Section: Price version 2 -->
-                    <section class="mb-4">
-
-                        <h6 class="font-weight-bold mb-3">Price</h6>
-
-                        <div class="slider-price d-flex align-items-center my-4">
-                            <span class="font-weight-normal small text-muted mr-2">$0</span>
-                            <form class="multi-range-field w-100">
-                                <input id="multi" class="multi-range" type="range" />
-                            </form>
-                            <span class="font-weight-normal small text-muted ml-2">$500</span>
-                        </div>
-
                     </section>
                     <!-- Section: Price version 2 -->
 
                 </section>
+                        <button type="submit" class="btn btn-primary btn-sm mr-1 waves-effect waves-light"><i class="fas fa-angle-double-right pr-2"></i>Apply filters</button>
+                        <a type="button" href="{{route('shop.index')}}" class="btn btn-danger btn-sm mr-1 waves-effect waves-light"><i class="fas fa-minus-circle pr-2"></i>Reset</a>
+
+                </form>
                 <!-- Section: Filters -->
 
             </div>
             <div class="col-lg-8">
-                <br><br><br><br>
-
-                <!-- Section: Block Content -->
-                <section>
-
-                    <div class="row d-flex justify-content-around align-items-center mb-4">
-                        <div class="col-12 col-md-3 text-center text-md-left">
-                            <a href="#!" class="text-reset"><i class="fas fa-th-list fa-lg mr-1"></i></a>
-                            <a href="#!" class="text-reset"><i class="fas fa-th-large fa-lg"></i></a>
-                        </div>
-                        <div class="col-12 col-md-5">
-                            <div class="d-flex flex-wrap">
-                                <div>
-                                    <strong>Sorting : </strong>
-                                    <a  href="{{ route('shop.index', ['category'=> request()->category, 'sort' =>'low_high']) }}">Low to High</a> |
-                                    <a  href="{{ route('shop.index', ['category'=> request()->category, 'sort' =>'high_low']) }}">High to Low</a>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </section>
-                <!-- Section: Block Content -->
+                <br><br><br><br><br>
 
                 <!--Section: Block Content-->
                 <section>
@@ -534,7 +408,7 @@
 
 </main>
 <!-- Main layout -->
-@include('sweetalert::alert')
+{{--@include('sweetalert::alert')--}}
 <!-- Footer -->
 @include('layouts.footer')
 <!-- Footer -->

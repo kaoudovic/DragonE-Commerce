@@ -40,19 +40,21 @@ class ShopController extends Controller
         $appliedFilters = $this->applyFilters(request(),$products);
 
 
-        if (request()->sort == 'low_high') {
-            $products = $products->orderBy('price');
-        } elseif (request()->sort == 'high_low') {
-            $products = $products->orderByDesc('price');
-        }
 
         // get options
         $options = $this->handleOptionsForFilters($products->get());
 
         // fetch required data
+
+
+
+        if(request()->ajax())
+        {
+            $this->handleProductSorting(request(),$products);
+            $products = $products->orderBy('name','desc')->paginate($pagination);
+            return view('frontend.pages.shop.products', compact('products'));
+        }
         $products = $products->paginate($pagination);
-
-
 
         return view('frontend.pages.shop.shop')->with([
             'products' => $products,
@@ -162,6 +164,19 @@ class ShopController extends Controller
 
         }
         return ['filters' => $allFilters, 'min_price'=> $min_price , 'max_price' => $max_price];
+    }
+
+    private function handleProductSorting($request,&$products)
+    {
+        $key = strtolower(explode('_', $request->sort)[0]);
+        $value = strtolower(explode('_', $request->sort)[1]);
+
+        if($value == 'ascending')
+            $value = substr($value,0,3);
+        else
+            $value = substr($value,0,4  );
+
+        $products = $products->orderBy($key,$value);
     }
 
 }

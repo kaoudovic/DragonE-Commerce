@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="{{asset('assets/new/css/mdb-pro.min.css')}}">
     <!-- Material Design Bootstrap Ecommerce -->
     <link rel="stylesheet" href="{{asset('assets/new/css/mdb.ecommerce.min.css')}}">
-
+    <link rel="icon" sizes="192x192" href="{{asset('Pictures_Project/logo/logo.png')}}">
     <link rel="stylesheet" href="{{ asset('assets/new/css/algolia.css') }}">
 
 

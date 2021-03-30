@@ -239,7 +239,7 @@
                     {{--                        </a>--}}
                     {{--                    </li>--}}
                     <li class="nav-item">
-                        <a href="{{ route('contact')}}"  class="nav-link waves-effect">
+                        <a href="{{ route('contact.index')}}"  class="nav-link waves-effect">
                             Contact
                         </a>
                     </li>

@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CheckoutRequest;
 use App\Models\Product;
-use App\Order;
-use App\OrderProduct;
+use App\Models\Order;
+use App\Models\OrderProduct;
 use Cartalyst\Stripe\Exception\CardErrorException;
 use Cartalyst\Stripe\Laravel\Facades\Stripe;
 use Gloudemans\Shoppingcart\Facades\Cart;
@@ -29,7 +29,10 @@ class CheckoutController extends Controller
         }
         $newTax = $newSubtotal * $tax;
         $newTotal = $newSubtotal * (1 + $tax);
-        $test="hello";
+        $newSubtotal = (Cart::subtotal() - $discount);
+        if ($newSubtotal < 0) {
+            $newSubtotal = 0;
+        }
 
         $gateway = new \Braintree\Gateway([
             'environment' => config('services.braintree.environment'),
@@ -45,11 +48,12 @@ class CheckoutController extends Controller
         }
         return view('frontend.pages.checkout')->with([
 //            'paypalToken' =>$paypalToken,
-            'discount' =>$this->getNumbers()->get('discount'),
-            'newSubtotal' =>$this->getNumbers()->get('newSubtotal'),
-            'newTax' =>$this->getNumbers()->get('newTax'),
-            'newTotal' =>$this->getNumbers()->get('newTotal'),
+            'discount' => $discount,
+            'newSubtotal' => $newSubtotal,
+            'newTax' =>$newTax,
+            'newTotal' =>$newTotal,
         ]);
+//        return view("frontend.pages.checkout",compact('newTotal'));
     }
 
 
@@ -66,26 +70,55 @@ class CheckoutController extends Controller
             return $item->model->slug.', '.$item->qty;
         })->values()->toJson();
 
-        try {
-            $charge = Stripe::charges()->create([
-                'amount' => Cart::total()/ 100,
-                'currency' => 'usd',
-                'source' => $request->stripeToken,
-                'description' => 'Order',
-                'receipt_email' => $request->email,
-                'metadata' => [
-                    'contents' => $contents,
-                    'quantity' => Cart::instance('default')->count(),
-                    'discount' => collect(session()->get('coupon'))->toJson(),
-                ],
+//        try {
+//            $charge = Stripe::charges()->create([
+//                'amount' => Cart::total()/ 100,
+//                'currency' => 'usd',
+//                'source' => $request->stripeToken,
+//                'description' => 'Order',
+//                'receipt_email' => $request->email,
+//                'metadata' => [
+//                    'contents' => $contents,
+//                    'quantity' => Cart::instance('default')->count(),
+//                    'discount' => collect(session()->get('coupon'))->toJson(),
+//                ],
+//            ]);
+
+            //insert into order table
+            $order = Order::create([
+                'user_id' => auth()->user() ? auth()->user()->id : null,
+                'billing_email' => $request->email,
+                'billing_name' => $request->name,
+                'billing_address' => $request->address,
+                'billing_city' => $request->city,
+                'billing_postalcode' => $request->postalcode,
+                'billing_phone' => $request->phone,
+                'billing_name_on_card' => $request->name_on_card,
+                'billing_discount' => getNumbers()->get('discount'),
+                'billing_discount_code' => getNumbers()->get('code'),
+                'billing_subtotal' => getNumbers()->get('newSubtotal'),
+                'billing_tax' => getNumbers()->get('newTax'),
+                'billing_total' => getNumbers()->get('newTotal'),
+                'error' => null,
             ]);
+
+            // Insert into order_product table
+            foreach (Cart::content() as $item) {
+                OrderProduct::create([
+                    'order_id' => $order->id,
+                    'product_id' => $item->model->id,
+                    'quantity' => $item->qty,
+                ]);
+            }
+
+            Cart::instance('default')->destroy();
+            session()->forget('coupon');
+
             return redirect()->route('confirmation.index')->with('success_message', 'Thank you! Your payment has been successfully accepted!');
-           } catch (CardErrorException $e) {
-               return back()->withErrors('Error!',$e->getMessage());
-             }
+//           } catch (CardErrorException $e) {
+//               return back()->withErrors('Error!',$e->getMessage());
+//             }
     }
-
-
 
 //    public function paypalCheckout(Request $request)
 //    {
@@ -153,11 +186,11 @@ class CheckoutController extends Controller
             'billing_postalcode' => $request->postcode,
             'billing_phone' => $request->phone,
             'billing_name_on_card' => $request->name_on_card,
-            'billing_discount' => $this->getNumbers()->get('discount'),
-            'billing_discount_code' => $this->getNumbers()->get('code'),
-            'billing_subtotal' => $this->getNumbers()->get('newSubtotal'),
-            'billing_tax' => $this->getNumbers()->get('newTax'),
-            'billing_total' => $this->getNumbers()->get('newTotal'),
+            'billing_discount' =>getNumbers()->get('discount'),
+            'billing_discount_code' =>getNumbers()->get('code'),
+            'billing_subtotal' =>getNumbers()->get('newSubtotal'),
+            'billing_tax' =>getNumbers()->get('newTax'),
+            'billing_total' =>getNumbers()->get('newTotal'),
         ]);
 
         // Insert into order_product table
@@ -222,28 +255,6 @@ class CheckoutController extends Controller
         return false;
     }
 
-    function getNumbers()
-    {
-        $tax=config('cart.tax')/100;
-        $discount = session()->get('coupon')['discount'] ?? 0;
-        $code = session()->get('coupon')['name'] ?? null;
-        $newSubtotal = (Cart::subtotal() - $discount);
-        if ($newSubtotal < 0) {
-            $newSubtotal = 0;
-        }
-        $newTax = $newSubtotal * $tax;
-        $newTotal = $newSubtotal * (1 + $tax);
-
-        return collect([
-            'tax' => $tax,
-            'discount' => $discount,
-            'code' => $code,
-            'newSubtotal' => $newSubtotal,
-            'newTax' => $newTax,
-            'newTotal' => $newTotal,
-        ]);
-    }
-
     public function checkout($amount){
 
         return view('frontend.pages.checkout_byStripe',compact('amount'));
@@ -271,15 +282,4 @@ class CheckoutController extends Controller
 
     }
 
-//\Stripe\Stripe::setApiKey('sk_test_51IWeaaGbZUDH5gEQ4etkzdwrzyDLk5zP9L5qJ8v8Wd0n1jL7OKJJPsoBUiyasewYltxaZjEJKSeGcuKaiCof3xUY00QJpzvJKM');
-//
-//    // Token is created using Stripe Checkout or Elements!
-//    // Get the payment token ID submitted by the form:
-//$token = $_POST['stripeToken'];
-//$charge =Stripe::Charge::create([
-//'amount' => 999,
-//'currency' => 'usd',
-//'description' => 'Example charge',
-//'source' => $token,
-//]);
 }

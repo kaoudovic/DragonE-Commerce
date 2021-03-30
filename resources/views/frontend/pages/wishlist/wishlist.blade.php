@@ -78,11 +78,11 @@
 
                         <div class="view zoom overlay z-depth-2 rounded">
                             <img class="img-fluid w-100"
-                                 src="https://mdbootstrap.com/img/Photos/Horizontal/alistyle/img(1).jpg">
+                                 src="{{ productImage($item->model->image) }}">
                             <a href="{{route('shop.show',$item->model->slug)}}">
                                 <div class="mask">
                                     <img class="img-fluid w-100"
-                                         src="https://mdbootstrap.com/img/Photos/Horizontal/alistyle/img(1).jpg">
+                                         src="{{ productImage($item->model->image) }}">
                                     <div class="mask rgba-black-slight"></div>
                                 </div>
                             </a>

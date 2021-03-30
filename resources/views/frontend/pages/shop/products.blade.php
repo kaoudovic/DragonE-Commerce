@@ -19,7 +19,7 @@
                 <div class="text-center pt-4">
                     <a  href="{{route('shop.show',$product->slug)}}">
                         <h5>{{$product->name}}</h5>
-                        <h6 class="mb-3">${{$product->price}}</h6>
+                        <h6 class="mb-3">${{test_x($product->price)}}</h6>
                     </a>
                     <form action="{{route('cart.store')}}" method="POST">
                         {{csrf_field()}}
@@ -46,4 +46,3 @@
     @endforeach
 
 </div>
-{!! $products->render() !!}

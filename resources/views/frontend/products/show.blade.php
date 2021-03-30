@@ -56,50 +56,25 @@
                     <div id="mdb-lightbox-ui"></div>
 
                     <div class="mdb-lightbox">
-                        <div class="row product-gallery mx-0">
-                            <div class="col-8 mb-0">
-                                <figure class="view overlay rounded z-depth-1 main-img">
-                                    <a  src="{{ asset('Pictures_Project/'.$product->slug.'.jpg')}}"
-                                        data-size="610x623">
+
+                        <div class="row product-gallery mx-1">
+
+                            <div class="col-12 mb-0">
+                                <figure class="view overlay rounded z-depth-1 main-img" style="max-height: 450px;">
+                                    <a  src="{{ asset('Pictures_Project/'.$product->slug.'.jpg')}}" data-size="710x823">
 {{--                                        <img  src="{{ asset('Pictures_Project/'.$product->slug.'.jpg')}}"--}}
                                         <img  src="{{ asset('Pictures_Project/'.$product->slug.'.jpg')}}"
                                               class="img-fluid z-depth-1" style="margin-top: -30px;">
                                     </a>
                                 </figure>
-                                <figure class="view overlay rounded z-depth-1" style="visibility: hidden;">
-                                    <a  src="{{asset
-                                    ('Pictures_Project/phone/product/1.jpg')}}"
-                                        data-size="710x823">
-                                        src="{{asset
-                                    ('Pictures_Project/phone/product/1.jpg.webp')}}"
-                                        class="img-fluid z-depth-1">
-                                    </a>
-                                </figure>
-                                <figure class="view overlay rounded z-depth-1" style="visibility: hidden;">
-                                    <a src="{{asset
-                                    ('Pictures_Project/phone/product/1.jpg')}}"
-                                       data-size="710x823">
-                                        <img src="{{asset
-                                    ('Pictures_Project/phone/product/1.jpg')}}"
-                                             class="img-fluid z-depth-1">
-                                    </a>
-                                </figure>
-                                <figure class="view overlay rounded z-depth-1" style="visibility: hidden;">
-                                    <a hsrc="{{asset
-                                    ('Pictures_Project/phone/product/1.jpg')}}"
-                                       data-size="710x823">
-                                        <img src="{{asset
-                                    ('Pictures_Project/phone/product/1.jpg')}}"
-                                             class="img-fluid z-depth-1">
-                                    </a>
-                                </figure>
+
                             </div>
                             <div class="col-12">
                                 <div class="row">
 
                                     @if ($product->images)
                                         @foreach (json_decode($product->images, true) as $image)
-                                            <div class="col-3" style="width: 100px; height:250px">
+                                            <div class="col-3" >
                                                 <div class="view overlay rounded z-depth-1 gallery-item hoverable" >
                                                     <img src="{{ productImage($image) }}" style="width:100px;
                                                     max-height:250px">
@@ -144,7 +119,7 @@
                             <i class="far fa-star fa-sm text-primary"></i>
                         </li>
                     </ul>
-                    <p><span class="mr-1"><strong>${{$product->price}} </strong></span></p>
+                    <p><span class="mr-1"><strong>${{test_x($product->price)}} </strong></span></p>
                     <p class="pt-1"> {!! $product->description !!} </p>
                     <div class="table-responsive">
                         <table class="table table-sm table-borderless mb-0">
@@ -209,7 +184,7 @@
                         {{csrf_field()}}
                         <input type="hidden" name="id" value="{{$product->id}}">
                         <input type="hidden" name="name" value="{{$product->name}}">
-                        <input type="hidden" name="price" value={{test_x($product->price)}}>
+                        <input type="hidden" name="price" value={{$product->price}}>
                         <a  href="{{route('checkout')}}">
                             <button type="button" class="btn btn-primary btn-md mr-1 mb-2">Buy now</button>
                         </a>
@@ -217,6 +192,8 @@
                         pr-2"></i>Add to
                             cart</button>
                     </form>
+
+
                 </div>
 
             </div>
@@ -247,14 +224,14 @@
                             <div class="text-center pt-4">
                                <a href="{{route('shop.show',$product->slug)}}" >
                                 <h5>{{$product->name}}</h5>
-                                <h6 class="mb-3">$ {{$product->price}}</h6>
+                                <h6 class="mb-3">${{test_x($product->price)}}</h6>
                                </a>
 
                                 <form action="{{route('cart.store')}}" method="POST">
                                     {{csrf_field()}}
                                     <input type="hidden" name="id" value="{{$product->id}}">
                                     <input type="hidden" name="name" value="{{$product->name}}">
-                                    <input type="hidden" name="price" value=10.00>
+                                    <input type="hidden" name="price" value={{$product->price}}>
                                     <button type="submit" class="btn btn-primary btn-sm mr-1 waves-effect waves-light"><i
                                             class="fas fa-shopping-cart pr-2"></i>Add to cart</button>
                                     <a href="{{url('/wishlist/')}}">
@@ -262,6 +239,7 @@
                                                 data-placement="top" title="Add to wishlist"><i class="far fa-heart"></i></button>
                                     </a>
                                 </form>
+
                             </div>
 
                         </div>

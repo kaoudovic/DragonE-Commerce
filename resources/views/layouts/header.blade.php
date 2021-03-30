@@ -21,25 +21,17 @@
                         <div class="select-outline">
                             <select class="mdb-select md-form md-outline my-0">
                                 <option value="">All type</option>
-                                <option value="codex">Electronics</option>
-                                <option value="comments">Phones</option>
+                                <option value="codex">Laptops</option>
+                                <option value="comments"> Mobile Phones</option>
                                 <option value="content">Tablets</option>
-                                <option value="content">Cameras</option>
-                                <option value="content">Computers</option>
+                                <option value="content">Digital Cameras</option>
+                                <option value="content">Desktops</option>
                                 <option value="content">Video Games</option>
+                                <option value="content">Head Phones</option>
+                                <option value="content">Smart Watches</option>
                                 <option value="content">TV</option>
                             </select>
                         </div>
-
-{{--                        <form action="{{ route('search') }}" method="GET" class="search-form">--}}
-{{--                            <input type="text"  name="query" id="query"--}}
-{{--                                   class="form-control mb-0" placeholder="Search for product" required>--}}
-{{--                            <div class="input-group-append">--}}
-{{--                                <button class="btn btn-primary btn-md px-3" type="submit">--}}
-{{--                                    <i class="fa fa-search"></i> Search--}}
-{{--                                </button>--}}
-{{--                            </div>--}}
-{{--                        </form>--}}
 
                         <div class="aa-input-container" id="aa-input-container">
                             <input type="search" id="aa-search-input" class="aa-input-search" placeholder="Search....
@@ -84,7 +76,7 @@
 {{--                        </a>--}}
 {{--                    </li>--}}
                     <li class="nav-item">
-                        <a href="{{ route('contact')}}"  class="nav-link waves-effect">
+                        <a href="{{ route('contact.index')}}"  class="nav-link waves-effect">
                             Contact
                         </a>
                     </li>

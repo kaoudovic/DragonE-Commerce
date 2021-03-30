@@ -56,6 +56,10 @@ Route::get('/search', 'ShopController@search')->name('search');
 Route::get('/search-algolia', 'ShopController@searchAlgolia')->name('search-algolia');
 
 
+Route::get('/contact-us', 'MessagesController@index')->name('contact.index');
+Route::get('/contact', 'MessagesController@messageStore')->name('contact.store');
+
+
 
 Route::get('/wishlist',function(){
     return view('frontend.pages.wishlist.wishlist');})->name('wishlist');
@@ -73,10 +77,6 @@ Route::get('/trackorder',function(){
 
 Route::get('/checkout',function(){
     return view('frontend.pages.checkout');})->name('checkout');
-
-
-Route::get('/contact',function(){
-    return view('frontend.pages.contact.contact-us');})->name('contact');
 
 
 Route::get('/blog',function(){

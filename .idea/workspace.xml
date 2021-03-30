@@ -2,10 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4556d6fa-4bc5-4613-8cb3-63cc47f7a892" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/pages/contact/test.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CartController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CheckoutController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CheckoutController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/CheckoutRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/CheckoutRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Order.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/OrderProduct.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/OrderProduct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/helper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/pages/checkout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/pages/checkout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/pages/checkout_byStripe.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/pages/checkout_byStripe.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/pages/contact/contact-us.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/pages/contact/contact-us.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/pages/shop/products.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/pages/shop/products.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/pages/shop/shop.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/pages/shop/shop.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/pages/test.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/pages/test.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/pages/wishlist/wishlist.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/pages/wishlist/wishlist.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/frontend/products/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/products/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/landing-page.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/landing-page.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,11 +210,11 @@
       <recent name="H:\DragonE-Commerce-master\deagon\public\Pictures_Project" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="H:\DragonE-Commerce-master\deagon\app" />
       <recent name="H:\DragonE-Commerce-master\deagon\resources\views\frontend\pages" />
       <recent name="H:\DragonE-Commerce-master\deagon\app\Models" />
       <recent name="H:\DragonE-Commerce-master\deagon\database\seeds" />
       <recent name="H:\DragonE-Commerce-master\deagon\database\migrations" />
-      <recent name="H:\DragonE-Commerce-master\deagon\app\Providers" />
     </key>
   </component>
   <component name="RunManager">
@@ -229,11 +246,28 @@
       <workItem from="1615800792549" duration="8019000" />
       <workItem from="1615905827069" duration="17838000" />
       <workItem from="1616020528892" duration="2584000" />
-      <workItem from="1616128295206" duration="34178000" />
+      <workItem from="1616128295206" duration="36363000" />
+      <workItem from="1616516686552" duration="162000" />
+      <workItem from="1616850137059" duration="1293000" />
+      <workItem from="1616851450861" duration="20320000" />
+      <workItem from="1617051280511" duration="5913000" />
+      <workItem from="1617059704517" duration="1727000" />
+      <workItem from="1617118636643" duration="2569000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/app/Http/Controllers/CheckoutController.php</url>
+          <line>30</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

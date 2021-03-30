@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="{{ asset('assets/new/css/algolia.css') }}">
 
 
-    <script src="https://js.stripe.com/v3/"></script>
+{{--    <script src="https://js.stripe.com/v3/"></script>--}}
 
 </head>
 
@@ -76,118 +76,91 @@
 
                 <!--Grid column-->
                 <div class="col-lg-8 mb-4">
-
                     <!-- Card -->
                     <div class="card wish-list pb-1">
-                        <div class="card-body">
 
-                            <h5 class="mb-2">Billing details</h5>
-                            <form action="{{route('checkout.store')}}" method="post">
-                            {{csrf_field()}}
-                            <!-- Grid row -->
-                            <div class="row">
+                        <form action="{{ route('checkout.store') }}" method="POST" >
+                            {{ csrf_field() }}
+                            <h2>Billing Details</h2>
 
-                                <!-- Grid column -->
-                                <div class="col-lg-6">
-                                    <!-- First name -->
-                                    <div class="md-form md-outline mb-0 mb-lg-4">
-                                        <input type="text" id="firstName" name="fname"  value="{{ old('fname')}}"class="form-control mb-0
-                                        mb-lg-2">
-                                        <label for="firstName">First name</label>
-                                    </div>
-                                </div>
-                                <!-- Grid column -->
-                                <!-- Grid column -->
-                                <div class="col-lg-6">
-                                    <!-- Last name -->
-                                    <div class="md-form md-outline">
-                                        <input type="text" name="lname" id="lastName" value="{{ old('lname')
-                                        }}"class="form-control">
-                                        <label for="lastName">Last name</label>
-                                    </div>
-
-                                </div>
-                                <!-- Grid column -->
-
-                            </div>
-
-                            <!-- Address Part 1 -->
-                            <div class="md-form md-outline mt-0">
-                                <input type="text" id="form14"name="address" placeholder="House number and street name"
-                                       class="form-control" value="{{ old('address')}}">
-                                <label for="form14">Address</label>
-                            </div>
-
-
-                            <!-- Postcode / ZIP -->
-                            <div class="md-form md-outline">
-                                <input type="text"name="postcode" id="form16" class="form-control">
-                                <label for="form16" value="{{ old('postcode')}}">Postcode / ZIP</label>
-                            </div>
-
-                            <!-- Town / City -->
-                            <div class="md-form md-outline">
-                                <input type="text" id="form17" name="city" class="form-control" value="{{ old('city')
-                                }}">
-                                <label for="form17">Town / City</label>
-                            </div>
-
-                            <!-- Phone -->
-                            <div class="md-form md-outline">
-                                <input type="number"name="phone" id="form18" class="form-control" value="{{ old('phone')
-                                }}">
-                                <label for="form18">Phone</label>
-                            </div>
-
-                            <!-- Email address -->
-                            <div class="md-form md-outline">
-                                <label for="form19">Email address</label>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
                                 @if (auth()->user())
                                     <input type="email" class="form-control" id="email" name="email" value="{{ auth()->user()->email }}" readonly>
                                 @else
                                     <input type="email" class="form-control" id="email" name="email" value="{{ old('email') }}" required>
                                 @endif
                             </div>
-
-                          <!-- Additional information -->
-                            <div class="md-form md-outline">
-                                <textarea id="form76" name="info" class="md-textarea form-control" rows="4" value="{{
-                                 old('info')}}"></textarea>
-                                <label for="form76">Additional information</label>
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="address">Address</label>
+                                <input type="text" class="form-control" id="address" name="address" value="{{ old('address') }}" required>
                             </div>
 
-                                <h2>Payment Details</h2>
-
+                            <div class="half-form">
                                 <div class="form-group">
-                                    <label for="name_on_card">Name on Card</label>
-                                    <input type="text" class="form-control" id="name_on_card" name="name_on_card" value="">
+                                    <label for="city">City</label>
+                                    <input type="text" class="form-control" id="city" name="city" value="{{ old('city') }}" required>
                                 </div>
 
+                            </div> <!-- end half-form -->
+
+                            <div class="half-form">
                                 <div class="form-group">
-                                    <label for="card-element">
-                                        Credit or debit card
-                                    </label>
-                                    <div id="card-element">
-                                        <!-- a Stripe Element will be inserted here. -->
-                                    </div>
-
-                                    <!-- Used to display form errors -->
-                                    <div id="card-errors" role="alert"></div>
+                                    <label for="postalcode">Postal Code</label>
+                                    <input type="text" class="form-control" id="postalcode" name="postalcode" value="{{ old('postalcode') }}" required>
                                 </div>
-                                <div class="spacer"></div>
-                            <div class="form-check pl-0 mb-4 mb-lg-0">
-                                <input type="checkbox" class="form-check-input filled-in" id="new3">
-                                <label class="form-check-label small text-uppercase card-link-secondary" for="new3">Create an
-                                    account?</label>
-                            </div>
-                                <button type="submit" id="complete-order" class="btn btn-primary btn-block waves-effect waves-light">Complete Order</button>
+                                <div class="form-group">
+                                    <label for="phone">Phone</label>
+                                    <input type="text" class="form-control" id="phone" name="phone" value="{{ old('phone') }}" required>
+                                </div>
+                            </div> <!-- end half-form -->
 
-                            </form>
-                        </div>
+
+                            <button type="submit" id="complete-order" class=" btn btn-primary btn-block waves-effect 
+                            waves-light">Complete Order</button>
+
+                        </form>
+
+{{--                        <form action="/charge" method="post" id="payment-form">--}}
+{{--                            {{csrf_field()}}--}}
+{{--                            <div class="spacer"></div>--}}
+
+{{--                            <h2>Payment Details</h2>--}}
+
+{{--                            <div class="form-group">--}}
+{{--                                <label for="name_on_card">Name on Card</label>--}}
+{{--                                <input type="text" class="form-control" id="name_on_card" name="name_on_card" value="">--}}
+{{--                            </div>--}}
+
+{{--                            <div class="form-group">--}}
+{{--                                <input type="hidden" name="amount" value="{{Cart::total()}}">--}}
+{{--                                <div class="">--}}
+{{--                                    <label for="card-element">--}}
+{{--                                        Credit or debit card--}}
+{{--                                    </label>--}}
+{{--                                    <div id="card-element">--}}
+{{--                                        <!-- A Stripe Element will be inserted here. -->--}}
+{{--                                    </div>--}}
+
+{{--                                    <!-- Used to display Element errors. -->--}}
+{{--                                    <div id="card-errors" role="alert"></div>--}}
+{{--                                </div>--}}
+
+{{--                                <button>Submit Payment</button>--}}
+{{--                            </div>--}}
+
+{{--                        </form>--}}
+
                     </div>
                     <!-- Card -->
                 </div>
                 <!--Grid column-->
+
+
 
 
                 <!--Grid column-->
@@ -256,6 +229,8 @@
                                                                name="coupon_code" placeholder="Enter discount code">
                                                     </div>
                                                 </div>
+                                                <span><strong>${{Cart::total()}}</strong></span>
+
                                             </div>
                                             <button type="submit">Apply</button>
                                         </form>
@@ -263,8 +238,9 @@
                                 </div>
                             @endif
 
-                                <button type="button" class="btn btn-primary btn-block waves-effect waves-light">Make purchase</button>
-
+                            <a  href="{{route('checkout.stripe',Cart::total(2,'.',','))}}" class=" btn btn-primary btn-block waves-effect
+                            waves-light">Proceed to checkout
+                            </a>
                         </div>
                     </div>
                     <!-- Card -->
@@ -275,53 +251,6 @@
             <!--Grid row-->
             </div>
         </section>
-
-                <div>
-
-                    <h2>Payment Details</h2>
-
-                    <div class="form-group">
-                        <label for="name_on_card">Name on Card</label>
-                        <input type="text" class="form-control" id="name_on_card" name="name_on_card" value="">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="card-element">
-                            Credit or debit card
-                        </label>
-                        <div id="card-element">
-                            <!-- a Stripe Element will be inserted here. -->
-                        </div>
-
-                        <!-- Used to display form errors -->
-                        <div id="card-errors" role="alert"></div>
-                    </div>
-                    <div class="spacer"></div>
-
-                    <button type="submit" id="complete-order" class="button-primary full-width">Complete Order</button>
-
-
-                    </form>
-
-{{--                    @if ($paypalToken)--}}
-{{--                        <div class="mt-32">or</div>--}}
-{{--                        <div class="mt-32">--}}
-{{--                            <h2>Pay with PayPal</h2>--}}
-
-{{--                            <form method="post" id="paypal-payment-form" action="{{ route('checkout.paypal') }}">--}}
-{{--                                @csrf--}}
-{{--                                <section>--}}
-{{--                                    <div class="bt-drop-in-wrapper">--}}
-{{--                                        <div id="bt-dropin"></div>--}}
-{{--                                    </div>--}}
-{{--                                </section>--}}
-
-{{--                                <input id="nonce" name="payment_method_nonce" type="hidden" />--}}
-{{--                                <button class="button-primary" type="submit"><span>Pay with PayPal</span></button>--}}
-{{--                            </form>--}}
-{{--                        </div>--}}
-{{--                    @endif--}}
-                </div>
 
         </div>
         <!--Section: Block Content-->
@@ -334,6 +263,62 @@
 <!-- Footer -->
 
 
+{{--<script>--}}
+
+{{--    window.onload=function (){--}}
+
+{{--        // Set your publishable key: remember to change this to your live publishable key in production--}}
+{{--        // See your keys here: https://dashboard.stripe.com/account/apikeys--}}
+{{--        var stripe = Stripe('pk_test_51IWeaaGbZUDH5gEQtPEBIhUnLuPjxhS9kvgmtTkc1SYb3dz97ddGWyWCEfvskxkOMDH7Dz7uvXV4x1Fn1X8fV8xd00PPFFhlB6');--}}
+{{--        var elements = stripe.elements();--}}
+
+{{--        // Custom styling can be passed to options when creating an Element.--}}
+{{--        var style = {--}}
+{{--            base: {--}}
+{{--                // Add your base input styles here. For example:--}}
+{{--                fontSize: '16px',--}}
+{{--                color: '#32325d',--}}
+{{--            },--}}
+{{--        };--}}
+
+{{--        // Create an instance of the card Element.--}}
+{{--        var card = elements.create('card', {style: style});--}}
+
+{{--        // Add an instance of the card Element into the `card-element` <div>.--}}
+{{--        card.mount('#card-element');--}}
+
+
+{{--        // Create a token or display an error when the form is submitted.--}}
+{{--        var form = document.getElementById('payment-form');--}}
+{{--        form.addEventListener('submit', function(event) {--}}
+{{--            event.preventDefault();--}}
+
+{{--            stripe.createToken(card).then(function(result) {--}}
+{{--                if (result.error) {--}}
+{{--                    // Inform the customer that there was an error.--}}
+{{--                    var errorElement = document.getElementById('card-errors');--}}
+{{--                    errorElement.textContent = result.error.message;--}}
+{{--                } else {--}}
+{{--                    // Send the token to your server.--}}
+{{--                    stripeTokenHandler(result.token);--}}
+{{--                }--}}
+{{--            });--}}
+{{--        });--}}
+
+{{--        function stripeTokenHandler(token) {--}}
+{{--            // Insert the token ID into the form so it gets submitted to the server--}}
+{{--            var form = document.getElementById('payment-form');--}}
+{{--            var hiddenInput = document.createElement('input');--}}
+{{--            hiddenInput.setAttribute('type', 'hidden');--}}
+{{--            hiddenInput.setAttribute('name', 'stripeToken');--}}
+{{--            hiddenInput.setAttribute('value', token.id);--}}
+{{--            form.appendChild(hiddenInput);--}}
+
+{{--            // Submit the form--}}
+{{--            form.submit();--}}
+{{--        }--}}
+{{--    }--}}
+{{--</script>--}}
 <!-- SCRIPTS -->
 <!-- JQuery -->
 <script type="text/javascript" src="{{asset('assets/new/js/jquery-3.4.1.min.js')}}"></script>
@@ -353,97 +338,6 @@
 <script src="{{ asset('assets/new/js/algolia.js') }}"></script>
 <script src="https://js.braintreegateway.com/web/dropin/1.13.0/js/dropin.min.js"></script>
 
-<script>
-    (function(){
-        // Create a Stripe client
-        var stripe = Stripe('{{ config('services.stripe.key') }}');
-
-        // Create an instance of Elements
-        var elements = stripe.elements();
-
-        // Custom styling can be passed to options when creating an Element.
-        // (Note that this demo uses a wider set of styles than the guide below.)
-        var style = {
-            base: {
-                color: '#32325d',
-                lineHeight: '18px',
-                fontFamily: '"Roboto", Helvetica Neue", Helvetica, sans-serif',
-                fontSmoothing: 'antialiased',
-                fontSize: '16px',
-                '::placeholder': {
-                    color: '#aab7c4'
-                }
-            },
-            invalid: {
-                color: '#fa755a',
-                iconColor: '#fa755a'
-            }
-        };
-
-        // Create an instance of the card Element
-        var card = elements.create('card', {
-            style: style,
-            hidePostalCode: true
-        });
-
-        // Add an instance of the card Element into the `card-element` <div>
-        card.mount('#card-element');
-
-        // Handle real-time validation errors from the card Element.
-        card.addEventListener('change', function(event) {
-            var displayError = document.getElementById('card-errors');
-            if (event.error) {
-                displayError.textContent = event.error.message;
-            } else {
-                displayError.textContent = '';
-            }
-        });
-
-        // Handle form submission
-        var form = document.getElementById('payment-form');
-        form.addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            // Disable the submit button to prevent repeated clicks
-            document.getElementById('complete-order').disabled = true;
-
-            var options = {
-                name: document.getElementById('name_on_card').value,
-                address_line1: document.getElementById('address').value,
-                address_city: document.getElementById('city').value,
-                address_state: document.getElementById('province').value,
-                address_zip: document.getElementById('postalcode').value
-            }
-
-            stripe.createToken(card, options).then(function(result) {
-                if (result.error) {
-                    // Inform the user if there was an error
-                    var errorElement = document.getElementById('card-errors');
-                    errorElement.textContent = result.error.message;
-
-                    // Enable the submit button
-                    document.getElementById('complete-order').disabled = false;
-                } else {
-                    // Send the token to your server
-                    stripeTokenHandler(result.token);
-                }
-            });
-        });
-
-        function stripeTokenHandler(token) {
-            // Insert the token ID into the form so it gets submitted to the server
-            var form = document.getElementById('payment-form');
-            var hiddenInput = document.createElement('input');
-            hiddenInput.setAttribute('type', 'hidden');
-            hiddenInput.setAttribute('name', 'stripeToken');
-            hiddenInput.setAttribute('value', token.id);
-            form.appendChild(hiddenInput);
-
-            // Submit the form
-            form.submit();
-        }
-
-</script>
 </body>
 
 </html>

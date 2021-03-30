@@ -73,13 +73,15 @@ class ShopController extends Controller
      */
     public function show($slug)
     {
-        $product=Product::where('slug',$slug)->firstOrFail();
-       $our_latest_collection=Product::where('slug','!=',$slug)->inRandomOrder()->take(4)->get();
+        $product = Product::with(['options.property'])->where('slug',$slug)->firstOrFail();
+        $our_latest_collection=Product::where('slug','!=',$slug)->inRandomOrder()->take(4)->get();
+        $options = $this->handleOptionsForFilters([$product]);
 
-       return view('frontend.products.show')->with([
-           'product'=>$product,
-           'our_latest_collection'=>$our_latest_collection,
-       ]);
+        return view('frontend.products.show')->with([
+            'product' => $product,
+            'our_latest_collection' => $our_latest_collection,
+            'options' => $options
+       ] );
     }
 
     public function search(Request $request)

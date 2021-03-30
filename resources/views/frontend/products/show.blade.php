@@ -34,9 +34,7 @@
 
     <div class="jumbotron color-grey-light mt-70">
         <div class="d-flex align-items-center h-100">
-            <div class="container text-center py-5">
-                <h1 class="mb-0">Product page</h1>
-            </div>
+
         </div>
     </div>
 
@@ -48,7 +46,7 @@
     <div class="container">
 
         <!--Section: Block Content-->
-        <section class="mb-5">
+        <section class="mb-5 mt-94">
 
             <div class="row">
                 <div class="col-md-6 mb-4 mb-md-0">
@@ -60,11 +58,10 @@
                         <div class="row product-gallery mx-1">
 
                             <div class="col-12 mb-0">
-                                <figure class="view overlay rounded z-depth-1 main-img" style="max-height: 450px;">
-                                    <a  src="{{ asset('Pictures_Project/'.$product->slug.'.jpg')}}" data-size="710x823">
-{{--                                        <img  src="{{ asset('Pictures_Project/'.$product->slug.'.jpg')}}"--}}
-                                        <img  src="{{ asset('Pictures_Project/'.$product->slug.'.jpg')}}"
-                                              class="img-fluid z-depth-1" style="margin-top: -30px;">
+                                <figure class="view overlay rounded z-depth-1 main-img" style="height: 450px;">
+                                    <a>
+                                        <img height="425px"  src="{{ asset('Pictures_Project/'.$product->slug.'.jpg')}}"
+                                              class="img-fluid z-depth-1">
                                     </a>
                                 </figure>
 
@@ -102,96 +99,62 @@
                 <div class="col-md-6">
                     <h5>{{$product->details }}</h5>
                     <p class="mb-2 text-muted text-uppercase small">{{$product->name}}</p>
-                    <ul class="rating">
-                        <li>
-                            <i class="fas fa-star fa-sm text-primary"></i>
-                        </li>
-                        <li>
-                            <i class="fas fa-star fa-sm text-primary"></i>
-                        </li>
-                        <li>
-                            <i class="fas fa-star fa-sm text-primary"></i>
-                        </li>
-                        <li>
-                            <i class="fas fa-star fa-sm text-primary"></i>
-                        </li>
-                        <li>
-                            <i class="far fa-star fa-sm text-primary"></i>
-                        </li>
-                    </ul>
                     <p><span class="mr-1"><strong>${{test_x($product->price)}} </strong></span></p>
                     <p class="pt-1"> {!! $product->description !!} </p>
                     <div class="table-responsive">
                         <table class="table table-sm table-borderless mb-0">
                             <tbody>
-                            <tr>
-                                <th class="pl-0 w-25" scope="row"><strong>Size: </strong></th>
-                                <td>256GB</td>
-                            </tr>
-                            <tr>
-                                <th class="pl-0 w-25" scope="row"><strong>Color</strong></th>
-                                <td>Pacific Blue</td>
-                            </tr>
-                            <tr>
-                                <th class="pl-0 w-25" scope="row"><strong>Delivery</strong></th>
-                                <td>USA, Europe</td>
-                            </tr>
+                            @foreach($options as $key => $option)
+                                <tr>
+                                    <th style="width: 80px" class="pl-0" scope="row"><strong>{{$key}}: </strong></th>
+                                    @foreach($option as $item)
+                                        <td> {{$item}} </td>
+                                    @endforeach
+                                </tr>
+                            @endforeach
                             </tbody>
                         </table>
                     </div>
                     <hr>
                     <div class="table-responsive mb-2">
-                        <table class="table table-sm table-borderless">
-                            <tbody>
-                            <tr>
-                                <td class="pl-0 pb-0 w-25">Quantity</td>
-                                <td class="pb-0">Select size</td>
-                            </tr>
-                            <tr>
-                                <td class="pl-0">
-                                    <div class="def-number-input number-input safari_only mb-0">
-                                        <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
-                                                class="minus"></button>
-                                        <input class="quantity" min="0" name="quantity" value="1" type="number">
-                                        <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
-                                                class="plus"></button>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="mt-1">
-                                        <div class="form-check form-check-inline pl-0">
-                                            <input type="radio" class="form-check-input" id="small" name="materialExampleRadios" checked>
-                                            <label class="form-check-label small text-uppercase card-link-secondary"
-                                                   for="small">128GB</label>
+                        <form action="{{route('cart.store')}}" method="POST">
+                            @csrf
+                            <table class="table table-sm table-borderless">
+                                <tbody>
+                                <tr>
+                                    <td class="pl-0 pb-0 w-25">Quantity</td>
+                                </tr>
+                                <tr>
+                                    <td class="pl-0">
+                                        <div style="" class="def-number-input number-input safari_only mb-0">
+                                            <button type="button" onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+                                                    class="minus"></button>
+                                            <input class="quantity" min="0" name="quantity" value="1" type="number">
+                                            <button type="button" onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
                                         </div>
-                                        <div class="form-check form-check-inline pl-0">
-                                            <input type="radio" class="form-check-input" id="medium" name="materialExampleRadios">
-                                            <label class="form-check-label small text-uppercase card-link-secondary"
-                                                   for="medium">256GB</label>
-                                        </div>
-                                        <div class="form-check form-check-inline pl-0">
-                                            <input type="radio" class="form-check-input" id="large" name="materialExampleRadios">
-                                            <label class="form-check-label small text-uppercase card-link-secondary"
-                                                   for="large">512GB</label>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
+                                    </td>
+                                    <td class="pl-3">
+                                        <button  type="submit" class="btn btn-primary btn-sm"><i class="fas fa-shopping-cart"></i>Add to cart</button>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <input type="hidden" name="id" value="{{$product->id}}">
+                            <input type="hidden" name="name" value="{{$product->name}}">
+                            <input type="hidden" name="price" value={{$product->price}}>
+                        </form>
+
                     </div>
-                    <form action="{{route('cart.store')}}" method="POST">
-                        {{csrf_field()}}
-                        <input type="hidden" name="id" value="{{$product->id}}">
-                        <input type="hidden" name="name" value="{{$product->name}}">
-                        <input type="hidden" name="price" value={{$product->price}}>
-                        <a  href="{{route('checkout')}}">
-                            <button type="button" class="btn btn-primary btn-md mr-1 mb-2">Buy now</button>
-                        </a>
-                        <button type="submit" class="btn btn-light btn-md mr-1 mb-2"><i class="fas fa-shopping-cart
-                        pr-2"></i>Add to
-                            cart</button>
-                    </form>
+{{--                    <form action="{{route('cart.store')}}" method="POST">--}}
+{{--                        {{csrf_field()}}--}}
+{{--                        <input type="hidden" name="id" value="{{$product->id}}">--}}
+{{--                        <input type="hidden" name="name" value="{{$product->name}}">--}}
+{{--                        <input type="hidden" name="price" value={{$product->price}}>--}}
+{{--                        <a  href="{{route('checkout')}}">--}}
+{{--                            <button type="button" class="btn btn-primary btn-md mr-1 mb-2">Buy now</button>--}}
+{{--                        </a>--}}
+{{--                        <button type="submit" class="btn btn-light btn-md mr-1 mb-2"><i class="fas fa-shopping-cart pr-2"></i>Add to cart</button>--}}
+{{--                    </form>--}}
 
 
                 </div>

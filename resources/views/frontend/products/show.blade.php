@@ -168,8 +168,8 @@
                     <div class="col-md-6 col-lg-3 mb-4">
                         <div class="">
 
-                            <div class="view zoom z-depth-2 rounded">
-                                <img class="img-fluid w-100" style="max-height:280px" src="{{ asset('Pictures_Project/'.$product->slug.'.jpg')}}"alt="Sample">
+                            <div class="view zoom z-depth-2 rounded" style="height: 250px">
+                                <img class="img-fluid w-100" style="max-height:280px" src="{{ asset('Pictures_Project/'.$product->slug.'.jpg')}}" alt="Sample">
                                 <a href="{{route('shop.show',$product->slug)}}">
                                     <div class="mask waves-effect waves-light"></div>
                                 </a>

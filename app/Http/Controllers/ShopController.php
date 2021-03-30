@@ -54,7 +54,7 @@ class ShopController extends Controller
             $products = $products->orderBy('name','desc')->paginate($pagination);
             return view('frontend.pages.shop.products', compact('products'));
         }
-        $products = $products->paginate($pagination);
+        $products = $products->orderBy('name','ASC')->paginate($pagination);
 
         return view('frontend.pages.shop.shop')->with([
             'products' => $products,

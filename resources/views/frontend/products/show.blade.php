@@ -53,41 +53,44 @@
 
                     <div id="mdb-lightbox-ui"></div>
 
-                    <div class="mdb-lightbox">
+                    <div class="mdb-lightbox" data-pswp-uid="1">
 
                         <div class="row product-gallery mx-1">
 
-                            <div class="col-12 mb-0">
-                                <figure class="view overlay rounded z-depth-1 main-img" style="height: 450px;">
-                                    <a>
-                                        <img height="425px"  src="{{ asset('Pictures_Project/'.$product->slug.'.jpg')}}"
-                                              class="img-fluid z-depth-1">
+                            <div class="col-12 mb-0 d-flex justify-content-center">
+                                <figure class="view overlay rounded z-depth-1 main-img" style="max-height: 450px;">
+                                    <a href="{{route('shop.show',['product' => $product->id])}}" data-size="710x823">
+                                        <img src="{{ asset('Pictures_Project/'.$product->slug.'.jpg')}}" class="img-fluid z-depth-1" style="transform-origin: center center; transform: scale(1); height: 450px;">
                                     </a>
                                 </figure>
-
+                                @if ($product->images)
+                                    @foreach (json_decode($product->images, true) as $image)
+                                        <figure class="view overlay rounded z-depth-1" style="visibility: hidden;">
+                                            <a href="{{route('shop.show',['product' => $product->id])}}" data-size="710x823">
+                                                <img src="{{ productImage($image) }}" class="img-fluid z-depth-1">
+                                            </a>
+                                        </figure>
+                                    @endforeach
+                                @endif
                             </div>
                             <div class="col-12">
                                 <div class="row">
-
                                     @if ($product->images)
                                         @foreach (json_decode($product->images, true) as $image)
-                                            <div class="col-3" >
-                                                <div class="view overlay rounded z-depth-1 gallery-item hoverable" >
-                                                    <img src="{{ productImage($image) }}" style="width:100px;
-                                                    max-height:250px">
+                                            <div class="col-3">
+                                                <div class="view overlay rounded z-depth-1 gallery-item hoverable">
+                                                    <img src="{{productImage($image)}}" class="img-fluid">
+                                                    <div class="mask rgba-white-slight"></div>
                                                 </div>
                                             </div>
                                         @endforeach
+                                            <div class="col-3">
+                                                <div class="view overlay rounded z-depth-1 gallery-item hoverable">
+                                                    <img src="{{asset('Pictures_Project/'.$product->slug.'.jpg')}}" class="img-fluid">
+                                                    <div class="mask rgba-white-slight"></div>
+                                                </div>
+                                            </div>
                                     @endif
-
-                                    <div class="col-3">
-                                        <div class="view overlay rounded z-depth-1 gallery-item hoverable">
-                                            <img src="{{ asset('Pictures_Project/'.$product->slug.'.jpg')}}"
-                                                 class="img-fluid">
-                                            <div class="mask rgba-white-slight"></div>
-                                        </div>
-                                    </div>
-
 
                                 </div>
                             </div>

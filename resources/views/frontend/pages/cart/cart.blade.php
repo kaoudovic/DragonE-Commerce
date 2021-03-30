@@ -91,7 +91,9 @@
                     <div class="card wish-list mb-4">
                         <div class="card-body">
                             <h5 class="mb-4">{{ Cart::count()}} item(s) in the shopping cart</h5>
+
                             @foreach(Cart::content() as $item)
+
                                 <div class="row mb-4" >
                                 <div class="col-md-5 col-lg-3 col-xl-3">
                                     <div class="view zoom overlay z-depth-1 rounded mb-3 mb-md-0">

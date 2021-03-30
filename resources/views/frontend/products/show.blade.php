@@ -145,18 +145,6 @@
                         </form>
 
                     </div>
-{{--                    <form action="{{route('cart.store')}}" method="POST">--}}
-{{--                        {{csrf_field()}}--}}
-{{--                        <input type="hidden" name="id" value="{{$product->id}}">--}}
-{{--                        <input type="hidden" name="name" value="{{$product->name}}">--}}
-{{--                        <input type="hidden" name="price" value={{$product->price}}>--}}
-{{--                        <a  href="{{route('checkout')}}">--}}
-{{--                            <button type="button" class="btn btn-primary btn-md mr-1 mb-2">Buy now</button>--}}
-{{--                        </a>--}}
-{{--                        <button type="submit" class="btn btn-light btn-md mr-1 mb-2"><i class="fas fa-shopping-cart pr-2"></i>Add to cart</button>--}}
-{{--                    </form>--}}
-
-
                 </div>
 
             </div>

@@ -1,4 +1,3 @@
-
 <!-- Main Navigation -->
 <header>
     <!-- Navbar -->
@@ -9,8 +8,6 @@
                 <a href="{{ route('home') }}">
                     <img src="{{asset('Pictures_Project/logo/logo1.jpg')}}" height="50">
                 </a>
-
-
         {{-- Search--}}
             <div class="col-md-7 col-lg-2 col-xl-7" style="height:40px;margin-top: -48px;">
 
@@ -91,6 +88,30 @@
                     </li>
                     </div>
 
+                    <div class="mr-4">
+
+                        <li class="nav-item" >
+                            <a href="{{route('cart.index')}}" role="button">
+                                <div> <i class="fas fa-shopping-cart fa-lg "></i></div>
+                                <small class="text-dark">Cart</small>
+                                 @if (Cart::instance('default')->count() > 0)
+                                <span class="badge badge-pill red">{{ Cart::count() }}</span>
+                                 @endif
+                            </a>
+                    </li>
+                    </div>
+
+                    <div class="mr-4">
+
+                        <li class="nav-item" >
+                            <a href="{{route('wishlist.index')}}" role="button">
+                                <div> <i class="fas fa-heart"></i></div>
+                                <small class="text-dark">Wishlist</small>
+                            </a>
+                    </li>
+                    </div>
+
+
                     @guest
                         <li class="nav-item">
                             <a class="nav-link waves-effect" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -124,19 +145,6 @@
                         </div>
                     @endguest
 
-
-                    <div class="mr-4">
-
-                        <li class="nav-item" >
-                            <a href="{{route('cart.index')}}" role="button">
-                                <div> <i class="fas fa-shopping-cart fa-lg "></i></div>
-                                <small class="text-dark">Cart</small>
-                                 @if (Cart::instance('default')->count() > 0)
-                                <span class="badge badge-pill red">{{ Cart::count() }}</span>
-                                 @endif
-                            </a>
-                    </li>
-                    </div>
 
 
 

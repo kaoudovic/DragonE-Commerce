@@ -119,19 +119,7 @@
                                                 <h5>{{$item->model->name}}</h5>
                                                 <p class="mb-3 text-muted text-uppercase small">{{$item->model->details}}</p>
                                             </div>
-{{--                                            <div>--}}
-{{--                                                <div class="def-number-input number-input safari_only mb-0 w-100">--}}
-{{--                                                    <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"--}}
-{{--                                                            class="minus" data-id="{{ $item->rowId }}" data-productQuantity="{{ $item->model->quantity }}"></button>--}}
-{{--                                                    <input class="quantity" min="0" name="quantity" value="1"--}}
-{{--                                                           type="number">--}}
-{{--                                                    <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()"--}}
-{{--                                                            class="plus" data-id="{{ $item->rowId }}" data-productQuantity="{{ $item->model->quantity }}"></button>--}}
-{{--                                                </div>--}}
-{{--                                                <small id="passwordHelpBlock" class="form-text text-muted text-center">--}}
-{{--                                                    (Note, 1 piece)--}}
-{{--                                                </small>--}}
-{{--                                            </div>--}}
+
                                             <div>
                                                 <select class="quantity" data-id="{{ $item->rowId }}" data-productQuantity="{{ $item->model->quantity }}">
                                                     @for ($i = 1; $i < 5 + 1 ; $i++)
@@ -149,7 +137,6 @@
                                                     <button type="submit" class="btn btn-flat btn-md text-uppercase">
                                                         <i class="fas fa-trash-alt mr-1"></i> &nbsp; Remove item
                                                     </button>
-                                                </form>
 
 
                                                 @if(!empty(@auth()->id()))
@@ -157,7 +144,7 @@
                                                         <i id="heart-{{$item->id}}" class="{{(\App\Models\Product::find($item->id))->isFav($item->id) ? 'fa fa-heart' : 'far fa-heart'}} mr-1"></i> &nbsp; Move to wish list
                                                     </button>
                                                 @endif
-
+                                                </form>
                                             </div>
                                             <p
                                                 class="mb-0"><span><strong>${{test_x($item->model->price)
@@ -166,6 +153,7 @@
                                     </div>
                                 </div>
                             </div>
+
                             <hr class="mb-4">
 
                             @endforeach

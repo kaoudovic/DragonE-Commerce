@@ -32,8 +32,6 @@
                             <button type="button" onclick="add_to_Wishlist('{{$product->id}}')" class="btn btn-danger btn-sm px-3 material-tooltip-main" data-toggle="tooltip"
                                  data-placement="top" title="Add to wishlist"><i id="heart-{{$product->id}}" class=" {{$product->isFav($product->id) ? 'fa fa-heart' : 'far fa-heart'}}"></i></button>
                         @endif
-
-
                     </form>
 
                 </div>
@@ -49,6 +47,7 @@
 </div>
 
 <script>
+
 
     function add_to_Wishlist(id)
     {

@@ -64,6 +64,8 @@ Route::post('profile', 'HomeController@profileUpdate')->name('profile.update');
 
 
 Route::get('/wishlist','WishlistController@index')->name('wishlist.index');
+Route::delete('/wishlist', 'WishlistController@deleteFromWishlist')->name('wishlist.destroy');
+
 
 Route::get('/aboutus',function(){
     return view('frontend.pages.aboutus');})->name('about_us');

@@ -35,7 +35,7 @@
     <div class="jumbotron color-grey-light mt-70">
         <div class="d-flex align-items-center h-100">
             <div class="container text-center py-5">
-                <h3 class="mb-0">About us</h3>
+                <h1 class="mb-0">About Dragon.com</h1>
             </div>
         </div>
     </div>
@@ -46,12 +46,8 @@
 <!-- Main layout -->
 <main>
     <div class="container mt-4 mb-5">
-
-        <h3 class="text-center py-3 mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt impedit dolor, fugiat accusamus reiciendis dignissimos nobis ipsum quisquam delectus.</h3>
-
         <!-- Grid row -->
         <div class="row">
-
             <!-- Grid column -->
             <div class="col-lg-5">
 
@@ -61,10 +57,30 @@
             <!-- Grid column -->
 
             <!-- Grid column -->
-            <div class="col-lg-7">
 
-                <p class="mt-4 mt-lg-0">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio molestiae sit voluptates assumenda omnis dolorem porro non placeat natus iusto modi, reprehenderit voluptatum ducimus ab unde ad quis amet soluta. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.</p>
+            <div class="col-lg-7">
+                <br><br>
+                Welcome to  <b><i>Dragon.com</i></b>– the Middle East’s online marketplace.
+                <br><br>
+                We connect people and products – opening up a world of possibility. From bracelets and backpacks to tablets and toy cars – we give you access to everything you need and want. Our range is unparalleled, and our prices unbeatable.
+                <br><br>
+                Driven by smart technology, everything we do is designed to put the power directly in your hands – giving you the freedom to shop however, whenever and wherever you like.
+                <br><br>
+                We’re trusted by millions, because we don’t just deliver to your doorstep, we were born here. With
+                <b><i>Dragon.com</i></b>  you’ll always be getting a good deal – with exceptional service that makes your shopping experience as easy and seamless as possible.
+                <br><br>
+                This is <b><i>Dragon.com</i></b> – the power is in your hands.
+
+                <br><br>
+
+                Our logo might have evolved over the years, but our focus - the same.
+
+                <div class="row text-center">
+                    <img class="fa-text-width" style="width: 550px"
+                         src="{{asset('Pictures_Project/logo/logo1.jpg')}}" alt="Dragon Logo Evolution">
+                </div>
+
+                <br><br>
 
             </div>
             <!-- Grid column -->
@@ -80,11 +96,9 @@
 @include('layouts.footer')
 <!-- Footer -->
 
-
-
 <!-- SCRIPTS -->
 <!-- JQuery -->
-<<script src="{{asset('assets/new/js/jquery-3.4.1.min.js')}}"></script>
+<script src="{{asset('assets/new/js/jquery-3.4.1.min.js')}}"></script>
 <!-- Bootstrap tooltips -->
 <script type="text/javascript" src="{{asset('assets/new/js/popper.min.js')}}"></script>
 <!-- Bootstrap core JavaScript -->
@@ -99,14 +113,6 @@
 <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
 <script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
 <script src="{{ asset('assets/new/js/algolia.js') }}"></script>
-<script>
-    $(document).ready(function () {
-        // MDB Lightbox Init
-        $(function () {
-            $("#mdb-lightbox-ui").load("../../../mdb-addons/mdb-lightbox-ui.html");
-        });
-    });
-</script>
 </body>
 
 </html>

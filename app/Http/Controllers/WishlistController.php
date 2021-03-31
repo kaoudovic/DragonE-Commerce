@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Whishlist;
+use App\Models\Wishlist;
 use Illuminate\Http\Request;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Response;
@@ -13,7 +13,7 @@ class WishlistController extends Controller
 
     public function index()
     {
-        $wishlists = Whishlist::where('user_id',Auth::id())->with('product')->get();
+        $wishlists = Wishlist::where('user_id',Auth::id())->with('product')->get();
         $products = [];
         foreach ($wishlists as $list)
         {
@@ -25,7 +25,7 @@ class WishlistController extends Controller
 
     public function deleteFromWishlist($id)
     {
-        $wishlist = Whishlist::where('user_id',Auth::id())->where('product_id',$id)->first();
+        $wishlist = Wishlist::where('user_id',Auth::id())->where('product_id',$id)->first();
         if($wishlist)
             $wishlist->delete();
     }
@@ -33,10 +33,10 @@ class WishlistController extends Controller
     public function moveToWishlist($product_id)
     {
 
-        $wishlist_exits = Whishlist::where('user_id',Auth::id())->where('product_id',$product_id)->first();
+        $wishlist_exits = Wishlist::where('user_id',Auth::id())->where('product_id',$product_id)->first();
         if(empty($wishlist_exits))
         {
-            $wishlist = new Whishlist();
+            $wishlist = new Wishlist();
             $wishlist->user_id = Auth::id();
             $wishlist->product_id  = $product_id;
             $wishlist->save();

@@ -55,7 +55,7 @@ class Product extends Model
     public function isFav($product_id)
     {
 
-        $wish = Whishlist::where('user_id',auth()->id())->where('product_id',$product_id)->first();
+        $wish = Wishlist::where('user_id',auth()->id())->where('product_id',$product_id)->first();
         if(!empty($wish))
             return true;
 

@@ -79,7 +79,7 @@
                     </li>
                     <!-- Authentication Links -->
 
-                    <div class="mr-4">
+                    <div class="mr-2">
                         <li class="nav-item pl-2 mb-2 mb-md-0">
                             <a href="{{route('track_order')}}" role="button">
                                 <div> <i class="fas fa-store fa-lg "></i></div>
@@ -88,20 +88,7 @@
                     </li>
                     </div>
 
-                    <div class="mr-4">
-
-                        <li class="nav-item" >
-                            <a href="{{route('cart.index')}}" role="button">
-                                <div> <i class="fas fa-shopping-cart fa-lg "></i></div>
-                                <small class="text-dark">Cart</small>
-                                 @if (Cart::instance('default')->count() > 0)
-                                <span class="badge badge-pill red">{{ Cart::count() }}</span>
-                                 @endif
-                            </a>
-                    </li>
-                    </div>
-
-                    <div class="mr-4">
+                    <div class="mr-2">
 
                         <li class="nav-item" >
                             <a href="{{route('wishlist.index')}}" role="button">
@@ -123,7 +110,7 @@
                             </li>
                         @endif
                     @else
-                        <div class="mr-3 ml4">
+                        <div class="mr-2">
                             <li  class="nav-item pl-2 mb-2 mb-md-1" >
                                 <a id="navbarDropdown"  href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     <div> <i class="fas fa-user-circle fa-lg "></i></div>
@@ -144,6 +131,20 @@
                             </li>
                         </div>
                     @endguest
+
+                    <div class="">
+
+                        <li class="nav-item" >
+                            <a href="{{route('cart.index')}}" role="button">
+                                <div> <i class="fas fa-shopping-cart fa-lg "></i></div>
+                                <small class="text-dark">Cart</small>
+                                @if (Cart::instance('default')->count() > 0)
+                                    <span class="badge badge-pill red">{{ Cart::count() }}</span>
+                                @endif
+                            </a>
+                        </li>
+                    </div>
+
 
 
 

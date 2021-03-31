@@ -102,7 +102,8 @@
                         <div class="text-center pt-4">
 
                             <h5>{{$product->name}}</h5>
-                            <p style="text-overflow: ellipsis;overflow: hidden; white-space: nowrap;" class="mb-2 text-muted text-uppercase small">{{$product->description}}</p>
+                            <p style="text-overflow: ellipsis;overflow: hidden; white-space: nowrap;" class="mb-2
+                            text-muted text-uppercase small">{{$product->description}}</p>
                             <hr>
                             <h6 class="mb-3">${{ test_x($product->price)}}</h6>
 

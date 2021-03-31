@@ -6,6 +6,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <title>Dragon Web Store</title>
     <!-- Roboto Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700&display=swap">
@@ -136,24 +138,24 @@
                                                 </select>
                                             </div>
                                         </div>
+
                                         <div class="d-flex justify-content-between align-items-center">
                                             <div class="mr-3">
-                                                <form method="post" action="{{route('cart.destroy' ,$item->rowId)
-                                                }}">
+                                                <form method="post" action="{{route('cart.destroy' ,$item->rowId)}}">
                                                     {{csrf_field()}}
                                                     {{method_field('DELETE')}}
-                                                    <button type="submit" class="btn btn-flat btn-sm small
-                                                    text-uppercase"><i
-                                                            class="fas fa-trash-alt mr-1"></i> Remove item</button>
+                                                    <button type="submit" class="btn btn-flat btn-md text-uppercase">
+                                                        <i class="fas fa-trash-alt mr-1"></i> &nbsp; Remove item
+                                                    </button>
                                                 </form>
 
-                                                <form method="post" action="{{route('cart.moveToWishlist' ,$item->rowId) }}">
-                                                    {{csrf_field()}}
-                                                    <button type="submit" class="btn btn-flat btn-sm small
-                                                    text-uppercase"><i
-                                                            class="fas fa-heart mr-1"></i> Move to wish
-                                                        list</button>
-                                                </form>
+
+                                                @if(!empty(@auth()->id()))
+                                                    <button type="button" onclick="add_to_Wishlist('{{$item->id}}')" class="btn btn-flat btn-md text-uppercase">
+                                                        <i id="heart-{{$item->id}}" class="{{(\App\Models\Product::find($item->id))->isFav($item->id) ? 'fa fa-heart' : 'far fa-heart'}} mr-1"></i> &nbsp; Move to wish list
+                                                    </button>
+                                                @endif
+
                                             </div>
                                             <p
                                                 class="mb-0"><span><strong>${{test_x($item->model->price)
@@ -360,23 +362,25 @@
             })
         })
     })();
-</script>
-<!-- Your custom scripts (optional) -->
-{{--<script type="text/javascript">--}}
-{{--    $(function () {--}}
-{{--        $('.material-tooltip-main').tooltip({--}}
-{{--            template: '<div class="tooltip md-tooltip-main"><div class="tooltip-arrow md-arrow"></div><div class="tooltip-inner md-inner-main"></div></div>'--}}
-{{--        });--}}
-{{--    });--}}
 
-{{--    $(document).ready(function () {--}}
-{{--        $('.mdb-select').materialSelect();--}}
-{{--        $('.select-wrapper.md-form.md-outline input.select-dropdown').bind('focus blur', function () {--}}
-{{--            $(this).closest('.select-outline').find('label').toggleClass('active');--}}
-{{--            $(this).closest('.select-outline').find('.caret').toggleClass('active');--}}
-{{--        });--}}
-{{--    });--}}
-{{--</script>--}}
+
+        function add_to_Wishlist(id)
+        {
+
+            $.ajax({
+                url: '/wishlist/moveToWishlist/'+id,
+                type:"POST",
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                success:function(response){
+                    var fav = document.getElementById('heart-'+id);
+                    fav.setAttribute('class',response.class);
+                }
+            });
+        }
+
+</script>
 
 
 

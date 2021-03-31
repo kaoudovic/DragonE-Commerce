@@ -1,11 +1,11 @@
 
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Dragon Web Store</title>
     <!-- Roboto Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700&display=swap">
@@ -32,8 +32,8 @@
 @include('layouts.header')
 
     <div class="jumbotron color-grey-light mt-70">
-        <div class="d-flex align-items-center h-100">
-            <div class="container text-center py-5">
+        <div class="d-flex align-items-center">
+            <div class="container text-center py-3">
                 <h1 class="mb-0">Wishlist</h1>
             </div>
         </div>
@@ -66,23 +66,19 @@
 
             <!-- Grid row -->
             <div class="row">
-{{--            @if(Cart::count()>0 )--}}
-                @if(Cart::instance('moveToWishlist')->count() > 0)
+                @if(count($products))
 
-                <!-- Grid column -->
-                    @foreach(Cart::instance('moveToWishlist')->content() as $item)
-
-                    <div class="col-md-4 mb-5">
+                    @foreach($products as $product)
+                        <div id="wishlist-{{$product->id}}" class="col-md-4 mb-5">
                     <!-- Card -->
-                    <div class="">
 
-                        <div class="view zoom overlay z-depth-2 rounded">
+                        <div class="view zoom overlay z-depth-2 rounded" style="height: 250px">
                             <img class="img-fluid w-100"
-                                 src="{{ productImage($item->model->image) }}">
-                            <a href="{{route('shop.show',$item->model->slug)}}">
+                                 src="{{ productImage($product->image) }}">
+                            <a href="{{route('shop.show',$product->slug)}}">
                                 <div class="mask">
                                     <img class="img-fluid w-100"
-                                         src="{{ productImage($item->model->image) }}">
+                                         src="{{ productImage($product->image) }}">
                                     <div class="mask rgba-black-slight"></div>
                                 </div>
                             </a>
@@ -90,59 +86,34 @@
 
                         <div class="text-center pt-4">
 
-                            <h5>{{$item->model->name}}</h5>
-                            <p class="mb-2 text-muted text-uppercase small">{{$item->model->details}}</p>
-                            <ul class="rating">
-                                <li>
-                                    <i class="fas fa-star fa-sm text-primary"></i>
-                                </li>
-                                <li>
-                                    <i class="fas fa-star fa-sm text-primary"></i>
-                                </li>
-                                <li>
-                                    <i class="fas fa-star fa-sm text-primary"></i>
-                                </li>
-                                <li>
-                                    <i class="fas fa-star fa-sm text-primary"></i>
-                                </li>
-                                <li>
-                                    <i class="fas fa-star fa-sm text-primary"></i>
-                                </li>
-                            </ul>
+                            <h5>{{$product->name}}</h5>
+                            <p style="text-overflow: ellipsis;overflow: hidden; white-space: nowrap;" class="mb-2 text-muted text-uppercase small">{{$product->description}}</p>
                             <hr>
-                            <h6 class="mb-3">${{ test_x($item->model->price)}}</h6>
+                            <h6 class="mb-3">${{ test_x($product->price)}}</h6>
 
                             <div class="mr-3">
                                <div>
                                 <form action="{{route('cart.store')}}" method="POST" >
                                     {{csrf_field()}}
-                                    <input type="hidden" name="id" value="{{$item->model->id}}">
-                                    <input type="hidden" name="name" value="{{$item->model->name}}">
+                                    <input type="hidden" name="id" value="{{$product->id}}">
+                                    <input type="hidden" name="name" value="{{$product->name}}">
                                     <input type="hidden" name="price" value=10.00>
                                     <button type="submit" class="btn btn-primary btn-sm mr-1 waves-effect waves-light"><i
                                             class="fas fa-shopping-cart pr-2"></i>Add to cart</button>
                                     <button type="button" class="btn btn-light btn-sm mr-1  "><i
-                                            class="fas fa-info-circle pr-2"></i><a href="{{route('shop.show',$item->model->slug)
+                                            class="fas fa-info-circle pr-2"></i><a href="{{route('shop.show',$product->slug)
                                     }}">Details</a></button>
-                                </form>
+                                    <button type="button" onclick="remove_from_Wishlist('{{$product->id}}')" class="btn btn-danger btn-sm mr-1 waves-effect waves-light"><i
+                                            class="fas fa-trash"></i></button>
 
-                                <form method="post" action="{{route('wishlist.destroy' ,$item->rowId)}}">
-                                    {{csrf_field()}}
-                                    {{method_field('DELETE')}}
-                                    <button  style="margin-right:-300px;margin-bottom:-10px "type="submit"
-                                              class="btn btn-elegant btn-sm px-3 mb-2 material-tooltip-main"
-                                            data-toggle="tooltip" data-placement="top" title="Remove from wishlist"><i
-                                            class="fas fa-times"></i></button>
                                 </form>
                                </div>
                             </div>
 
                         </div>
-
-                    </div>
                     <!-- Card -->
                 </div>
-                <!-- Grid column -->
+
                     @endforeach
 
                     @else
@@ -204,6 +175,24 @@
             $(this).closest('.select-outline').find('.caret').toggleClass('active');
         });
     });
+
+    function remove_from_Wishlist(id)
+    {
+        $.ajax({
+
+            url: '/wishlist/deleteFromWishlist/'+id,
+            type:"POST",
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            success:function(response){
+
+                var div = document.getElementById('wishlist-'+id);
+                div.remove();
+            }
+        });
+    }
+
 </script>
 </body>
 

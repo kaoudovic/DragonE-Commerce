@@ -28,10 +28,11 @@
                         <input type="hidden" name="price" value="{{$product->price}}">
                         <button type="submit" class="btn btn-primary btn-sm mr-1 waves-effect waves-light"><i
                                 class="fas fa-shopping-cart pr-2"></i>Add to cart</button>
-                        <a href="{{url('/wishlist/')}}">
-                            <button type="button" class="btn btn-danger btn-sm px-3 material-tooltip-main" data-toggle="tooltip"
-                                    data-placement="top" title="Add to wishlist"><i class="far fa-heart"></i></button>
-                        </a>
+                        @if(!empty(auth()->id()))
+                            <button type="button" onclick="add_to_Wishlist('{{$product->id}}')" class="btn btn-danger btn-sm px-3 material-tooltip-main" data-toggle="tooltip"
+                                 data-placement="top" title="Add to wishlist"><i id="heart-{{$product->id}}" class=" {{$product->isFav($product->id) ? 'fa fa-heart' : 'far fa-heart'}}"></i></button>
+                        @endif
+
 
                     </form>
 
@@ -46,3 +47,22 @@
     @endforeach
 
 </div>
+
+<script>
+
+    function add_to_Wishlist(id)
+    {
+
+        $.ajax({
+            url: '/wishlist/moveToWishlist/'+id,
+            type:"POST",
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            success:function(response){
+                var fav = document.getElementById('heart-'+id);
+                fav.setAttribute('class',response.class);
+            }
+        });
+    }
+</script>

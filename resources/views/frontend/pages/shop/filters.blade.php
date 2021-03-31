@@ -1,4 +1,4 @@
-<div class="col-lg-4 mt-3 mb-4">
+<div class="col-md-3 mt-3 mb-4">
 
     <h4 class="mb-4">Categories</h4>
 

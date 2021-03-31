@@ -8,7 +8,7 @@
 
             @include('frontend.pages.shop.filters')
 
-            <div class="col-lg-8 mt-94">
+            <div class="col-md-9 mt-94">
 
 
                 <!--Section: Block Content-->

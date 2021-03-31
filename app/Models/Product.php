@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Models;
+use Illuminate\Support\Facades\DB;
 use Laravel\Scout\Searchable;
 use Illuminate\Database\Eloquent\Model;
 
@@ -50,4 +51,16 @@ class Product extends Model
     {
         return $this->belongsToMany('App\Models\Option');
     }
+
+    public function isFav($product_id)
+    {
+
+        $wish = Whishlist::where('user_id',auth()->id())->where('product_id',$product_id)->first();
+        if(!empty($wish))
+            return true;
+
+        return false;
+    }
+
+
 }

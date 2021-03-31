@@ -29,10 +29,8 @@ Route::get('/cart', 'CartController@index')->name('cart.index');
 Route::post('/cart', 'CartController@store')->name('cart.store');
 Route::delete('/cart/{product}', 'CartController@destroy')->name('cart.destroy');
 Route::patch('/cart/{product}', 'CartController@update')->name('cart.update');
-Route::post('/cart/moveToWishlist/{product}', 'CartController@moveToWishlist')->name('cart.moveToWishlist');
-
-Route::delete('/wishlist/{product}', 'WishlistController@destroy')->name('wishlist.destroy');
-
+Route::post('/wishlist/moveToWishlist/{product}', 'WishlistController@moveToWishlist')->name('cart.moveToWishlist');
+Route::post('/wishlist/deleteFromWishlist/{product}','WishlistController@deleteFromWishlist')->name('wishlist.destroy');
 
 Route::post('/coupon', 'CouponsController@store')->name('coupon.store');
 Route::delete('/coupon', 'CouponsController@destroy')->name('coupon.destroy');
@@ -61,8 +59,7 @@ Route::get('/contact', 'MessagesController@messageStore')->name('contact.store')
 
 
 
-Route::get('/wishlist',function(){
-    return view('frontend.pages.wishlist.wishlist');})->name('wishlist');
+Route::get('/wishlist','WishlistController@index')->name('wishlist.index');
 
 Route::get('/aboutus',function(){
     return view('frontend.pages.aboutus');})->name('about_us');

@@ -19,9 +19,11 @@
     <link rel="stylesheet" href="{{asset('assets/new/css/mdb.ecommerce.min.css')}}">
 
     <link rel="stylesheet" href="{{ asset('assets/new/css/algolia.css') }}">
+    <link rel="icon" sizes="192x192" href="{{asset('Pictures_Project/logo/logo.png')}}">
 
 
-{{--    <script src="https://js.stripe.com/v3/"></script>--}}
+
+    {{--    <script src="https://js.stripe.com/v3/"></script>--}}
 
 </head>
 
@@ -120,7 +122,7 @@
                             </div> <!-- end half-form -->
 
 
-                            <button type="submit" id="complete-order" class=" btn btn-primary btn-block waves-effect 
+                            <button type="submit" id="complete-order" class=" btn btn-primary btn-block waves-effect
                             waves-light">Complete Order</button>
 
                         </form>

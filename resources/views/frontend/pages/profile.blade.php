@@ -18,9 +18,8 @@
     <link rel="stylesheet" href="{{asset('assets/new/css/mdb-pro.min.css')}}">
     <!-- Material Design Bootstrap Ecommerce -->
     <link rel="stylesheet" href="{{asset('assets/new/css/mdb.ecommerce.min.css')}}">
-
-    <link rel="stylesheet" href="{{ asset('assets/new/css/algolia.css') }}">
     <link rel="icon" sizes="192x192" href="{{asset('Pictures_Project/logo/logo.png')}}">
+    <link rel="stylesheet" href="{{ asset('assets/new/css/algolia.css') }}">
 
 
     <!-- Include AlgoliaSearch JS Client and autocomplete.js library -->
@@ -36,9 +35,17 @@
 
     <!-- Navbar -->
 @include('layouts.header')
-    <!-- Navbar -->
+<!-- Navbar -->
 </header>
 <!-- Main Navigation -->
+
+<div class="jumbotron color-grey-light mt-70">
+    <div class="d-flex align-items-center ">
+        <div class="container text-center py-5">
+            <h1 class="">Profile Page</h1>
+        </div>
+    </div>
+</div>
 
 <!-- Main layout -->
 <main>
@@ -58,35 +65,40 @@
             </ul>
         </div>
     @endif
-    <div class="container">
 
-        <!-- Grid row -->
-        <div class="row d-flex justify-content-center">
+        <div class="container text-center py-5 mt-auto">
+            <div class="row d-flex justify-content-center">
+                    <div  class="view zoom z-depth-0 rounded">
+                        <img style="height: 250px;width: 250px"
+                             src="https://pbs.twimg.com/profile_images/1361742806100934668/jYBTgl8E_400x400.jpg "
+                             class="img-fluid rounded-pill">
+                        <a>
+                            <div class="mask"></div>
+                        </a>
 
-            <!-- Grid column -->
-            <div class="col-md-6">
-                <br><br><br>
-                <br><br><br>
-                <!--Section: Block Content-->
-                <section class="my-7">
-                    <div class="row d-flex justify-content-center">
-                        <h1>Thank you for Your Order...!</h1>
-                        <p>A confirmation email was sent....!</p>
-                        <div class="spacer"></div>
+                        <br>
+                        <div class="name">
+                            <h2 class="title">{{ $user->name }}
+                                <br>
+                            </h2>
+                            <h3 class="description">
+                                {{ $user->email }}
+                            </h3>
+                        </div>
                     </div>
-                    <div class="row d-flex justify-content-center">
-                        <a  href="{{ url('/') }}" class="btn btn-primary"> Go To Home Page</a>
-                    </div>
-                </section>
-                <!--Section: Block Content-->
-
             </div>
-            <!-- Grid column -->
+            @if(auth()->user() && $user->id == auth()->user()->id)
+                <br>
+                <div class="row">
+                    <div class=" ml-auto mr-auto text-center" >
+                        <btn onclick="$('#profileCard').slideToggle(1000)" class="btn btn-primary">
+                            <i class="fa fa-cog"></i> Update Profile</btn>
+                    </div>
+                </div>
+                @include('frontend.pages.edit-profile')
+            @endif
 
         </div>
-        <!-- Grid row -->
-
-    </div>
 </main>
 <!-- Main layout -->
 

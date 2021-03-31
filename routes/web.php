@@ -58,6 +58,10 @@ Route::get('/contact-us', 'MessagesController@index')->name('contact.index');
 Route::get('/contact', 'MessagesController@messageStore')->name('contact.store');
 
 
+Route::get('/profile/{id}', 'HomeController@profile')->name('profile');
+Route::post('profile', 'HomeController@profileUpdate')->name('profile.update');
+
+
 
 Route::get('/wishlist','WishlistController@index')->name('wishlist.index');
 

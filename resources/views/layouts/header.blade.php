@@ -81,6 +81,16 @@
                         </a>
                     </li>
                     <!-- Authentication Links -->
+
+                    <div class="mr-4">
+                        <li class="nav-item pl-2 mb-2 mb-md-0">
+                            <a href="{{route('track_order')}}" role="button">
+                                <div> <i class="fas fa-store fa-lg "></i></div>
+                                <small class="text-dark">Orders</small>
+                            </a>
+                    </li>
+                    </div>
+
                     @guest
                         <li class="nav-item">
                             <a class="nav-link waves-effect" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -92,14 +102,14 @@
                             </li>
                         @endif
                     @else
-                        <div class="mr-4 ml3">
+                        <div class="mr-3 ml4">
                             <li  class="nav-item pl-2 mb-2 mb-md-1" >
                                 <a id="navbarDropdown"  href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     <div> <i class="fas fa-user-circle fa-lg "></i></div>
                                     <small class="text-dark">{{ Auth::user()->name }} </small>
                                 </a>
-
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('profile', ['id'=>auth()->user()->id]) }}">Profile</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -114,16 +124,8 @@
                         </div>
                     @endguest
 
-                    <div class="mr-4">
-                        <li class="nav-item pl-2 mb-2 mb-md-0">
-                            <a href="{{route('track_order')}}" role="button">
-                                <div> <i class="fas fa-store fa-lg "></i></div>
-                                <small class="text-dark">Orders</small>
-                            </a>
-                    </li>
-                    </div>
 
-                    <div class="mr-3">
+                    <div class="mr-4">
 
                         <li class="nav-item" >
                             <a href="{{route('cart.index')}}" role="button">
@@ -135,6 +137,7 @@
                             </a>
                     </li>
                     </div>
+
 
 
 

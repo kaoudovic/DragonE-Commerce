@@ -81,7 +81,7 @@
 
                     <div class="mr-2">
                         <li class="nav-item pl-2 mb-2 mb-md-0">
-                            <a href="{{route('track_order')}}" role="button">
+                            <a href="{{route('track.index')}}" role="button">
                                 <div> <i class="fas fa-store fa-lg "></i></div>
                                 <small class="text-dark">Orders</small>
                             </a>

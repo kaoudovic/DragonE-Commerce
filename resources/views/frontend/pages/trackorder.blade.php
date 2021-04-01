@@ -64,29 +64,35 @@
 
                     <h5 class="text-center mt-1 mb-4">Contact us</h5>
 
-                    <p>To track your order please enter your Order ID in the box below and press the "Track" button. This was given to you on your receipt and in the confirmation email you should have received.</p>
+                    <p>To track your order please enter your Order ID in the box below and press the "Track" button.
+                        <br>
+                        This was given to you on your receipt and in the confirmation email you should have received.</p>
 
-                    <form action="#!">
-
-                        <div class="md-form md-outline">
-                            <input type="text" id="orderID" class="form-control">
-                            <label for="orderID">Order ID</label>
-                        </div>
+                    <form class="" action="{{ route('track.store') }}">
+                        {{csrf_field()}}
 
                         <div class="md-form md-outline">
-                            <input type="email" id="billingEmail" class="form-control">
-                            <label for="billingEmail">Billing email</label>
+                            <input type="text"  name="order_id" id="form-subject" class="form-control">
+                            <label for="form-subject">Order ID </label>
                         </div>
 
+                        <div class="md-form md-outline mt-3">
+                            @if (auth()->user())
+                                <input type="email" class="form-control" id="form-email" name="billing_email" value="{{ auth()->user()->email }}" readonly>
+                            @else
+                                <input type="email" class="form-control" id="form-email" name="billing_email" value="{{ old('email') }}" required>
+                            @endif
+                                <label for="form-email">Billing E-mail</label>
+                        </div>
+                        <div class="text-center pt-2 mb-4">
+                            <button type="submit" class="btn btn-primary mb-4">TRACK</button>
+                        </div>
                     </form>
 
-                    <div class="text-center pt-2 mb-4">
-
-                        <button type="submit" class="btn btn-primary mb-4">Sign Up</button>
-
-                    </div>
 
                 </section>
+
+
                 <!--Section: Block Content-->
 
             </div>

@@ -58,6 +58,11 @@ Route::get('/contact-us', 'MessagesController@index')->name('contact.index');
 Route::get('/contact', 'MessagesController@messageStore')->name('contact.store');
 
 
+
+Route::get('/track_order', 'OrderTrakingController@index')->name('track.index');
+Route::get('/order', 'OrderTrakingController@trackingOrderStore')->name('track.store');
+
+
 Route::get('/profile/{id}', 'HomeController@profile')->name('profile');
 Route::post('profile', 'HomeController@profileUpdate')->name('profile.update');
 
@@ -74,8 +79,8 @@ Route::get('/aboutus',function(){
 Route::get('/test',function(){
     return view('frontend.pages.test');})->name('test');
 
-Route::get('/trackorder',function(){
-    return view('frontend.pages.trackorder');})->name('track_order');
+//Route::get('/trackorder',function(){
+//    return view('frontend.pages.trackorder');})->name('track_order');
 
 
 Route::get('/checkout',function(){

@@ -86,7 +86,7 @@
                             <h2>Billing Details</h2>
 
                             <div class="form-group">
-                                <label for="email">Email Address {{cart::tax()}}</label>
+                                <label for="email">Email Address</label>
                                 @if (auth()->user())
                                     <input type="email" class="form-control" id="email" name="email" value="{{ auth()->user()->email }}" readonly>
                                 @else

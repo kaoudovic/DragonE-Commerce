@@ -22,6 +22,7 @@
     <link rel="icon" sizes="192x192" href="{{asset('Pictures_Project/logo/logo.png')}}">
 
 
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     {{--    <script src="https://js.stripe.com/v3/"></script>--}}
 
@@ -333,7 +334,8 @@
 <script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
 <script src="{{ asset('assets/new/js/algolia.js') }}"></script>
 <script src="https://js.braintreegateway.com/web/dropin/1.13.0/js/dropin.min.js"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous"></script>
+@include('sweet::alert')
 </body>
 
 </html>

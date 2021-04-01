@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="{{asset('assets/new/css/mdb.ecommerce.min.css')}}">
     <link rel="stylesheet" href="{{ asset('assets/new/css/algolia.css') }}">
     <link rel="icon" sizes="192x192" href="{{asset('Pictures_Project/logo/logo.png')}}">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 </head>
 
@@ -130,6 +131,7 @@
 
 <!-- Footer -->
 @include('layouts.footer')
+
 <!-- Footer -->
 <!-- SCRIPTS -->
 <!-- JQuery -->
@@ -233,6 +235,8 @@
     }
 
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous"></script>
+@include('sweet::alert')
 </body>
 
 </html>

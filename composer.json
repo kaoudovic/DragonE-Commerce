@@ -9,6 +9,7 @@
     "license": "MIT",
     "require": {
         "php": "^7.2.5|^8.0",
+        "ext-json": "*",
         "algolia/algoliasearch-client-php": "2.2",
         "cartalyst/stripe-laravel": "11.0.*",
         "fideloper/proxy": "^4.4",
@@ -19,7 +20,7 @@
         "realrashid/sweet-alert": "^3.2",
         "stripe/stripe-php": "^7.75",
         "tcg/voyager": "^1.4",
-        "ext-json": "*"
+        "uxweb/sweet-alert": "^2.0"
     },
     "require-dev": {
         "facade/ignition": "^1.16.4",

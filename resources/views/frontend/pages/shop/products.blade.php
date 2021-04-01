@@ -39,7 +39,6 @@
             </div>
 
             <!-- Card -->
-
         </div>
 
     @endforeach

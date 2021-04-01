@@ -6,39 +6,19 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
     <title>Dragon Web Store</title>
     <!-- Roboto Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700&display=swap">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
-    <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="{{asset('assets/new/css/bootstrap.min.css')}}">
     <!-- Material Design Bootstrap -->
     <link rel="stylesheet" href="{{asset('assets/new/css/mdb-pro.min.css')}}">
     <!-- Material Design Bootstrap Ecommerce -->
     <link rel="stylesheet" href="{{asset('assets/new/css/mdb.ecommerce.min.css')}}">
-
     <link rel="stylesheet" href="{{ asset('assets/new/css/algolia.css') }}">
     <link rel="icon" sizes="192x192" href="{{asset('Pictures_Project/logo/logo.png')}}">
 
-
-    <style>
-        @media (min-width: 1100px) {
-            .container-xl {
-                max-width: 1480px;
-            }
-        }
-
-        .divider-new.version-2 {
-            justify-content: left;
-        }
-
-        .divider-new.version-2:before {
-            flex: 0;
-        }
-    </style>
 </head>
 
 <body class="skin-light">
@@ -151,7 +131,6 @@
 <!-- Footer -->
 @include('layouts.footer')
 <!-- Footer -->
-
 <!-- SCRIPTS -->
 <!-- JQuery -->
 <script src="{{asset('assets/new/js/jquery-3.4.1.min.js')}}"></script>
@@ -169,15 +148,6 @@
 <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
 <script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
 <script src="{{ asset('assets/new/js/algolia.js') }}"></script>
-<script>
-    $(document).ready(function () {
-        // MDB Lightbox Init
-        $(function () {
-            $("#mdb-lightbox-ui").load("../../../mdb-addons/mdb-lightbox-ui.html");
-        });
-    });
-</script>
-
 <script>
     (function(){
         const classname = document.querySelectorAll('.quantity')

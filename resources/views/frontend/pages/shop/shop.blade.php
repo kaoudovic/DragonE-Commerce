@@ -37,5 +37,22 @@
     </div>
 
 </main>
+<script>
+    function add_to_Wishlist(id)
+    {
+
+        $.ajax({
+            url: '/wishlist/moveToWishlist/'+id,
+            type:"POST",
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            success:function(response){
+                var fav = document.getElementById('heart-'+id);
+                fav.setAttribute('class',response.class);
+            }
+        });
+    }
+</script>
 
 @include('frontend.pages.shop.script')

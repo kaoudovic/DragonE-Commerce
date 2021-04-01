@@ -325,12 +325,13 @@
               </div>
           </div>
 
+
         <form action="/charge" method="post" id="payment-form">
             {{csrf_field()}}
             <input type="hidden" name="amount" value="{{Cart::total()}}">
             <div class="">
                 <label for="card-element">
-                    Credit or debit card
+                  Please Enter Your Credit or Debit card
                 </label>
                 <div id="card-element">
                     <!-- A Stripe Element will be inserted here. -->
@@ -349,7 +350,6 @@
 <!--Main layout-->
 <!-- Footer -->
 @include('sweetalert::alert')
-
 <!-- Footer -->
 
 <script>

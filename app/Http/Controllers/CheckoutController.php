@@ -46,13 +46,15 @@ class CheckoutController extends Controller
         } catch (\Exception $e) {
             $paypalToken = null;
         }
-        return view('frontend.pages.checkout')->with([
-//            'paypalToken' =>$paypalToken,
-            'discount' => $discount,
-            'newSubtotal' => $newSubtotal,
-            'newTax' =>$newTax,
-            'newTotal' =>$newTotal,
-        ]);
+//        return view('frontend.pages.checkout')->with([
+////            'paypalToken' =>$paypalToken,
+//            'discount' => $discount,
+//            'newSubtotal' => $newSubtotal,
+//            'newTax' =>$newTax,
+//            'newTotal' =>$newTotal,
+//            'tax' =>$tax,
+//        ]);
+        return view('frontend.pages.checkout',compact('newTotal'));
 //        return view("frontend.pages.checkout",compact('newTotal'));
     }
 
@@ -110,11 +112,11 @@ class CheckoutController extends Controller
                     'quantity' => $item->qty,
                 ]);
             }
-
-            Cart::instance('default')->destroy();
+//          Cart::instance('default')->destroy();
             session()->forget('coupon');
+            return redirect()->route('checkout.stripe',Cart::total(2,'.',','))->with('success_message', 'Thank you! Your payment has been successfully accepted!');
 
-            return redirect()->route('confirmation.index')->with('success_message', 'Thank you! Your payment has been successfully accepted!');
+//            return redirect()->route('confirmation.index')->with('success_message', 'Thank you! Your payment has been successfully accepted!');
 //           } catch (CardErrorException $e) {
 //               return back()->withErrors('Error!',$e->getMessage());
 //             }
@@ -266,7 +268,7 @@ class CheckoutController extends Controller
         $charge=Stripe::charges()->create([
             'amount' => $request->amount,
             'currency' => 'usd',
-            'description' => 'Dragon Store checkout',
+            'description' => 'Dragon.com Store ',
             'source' => $token,
         ]);
 

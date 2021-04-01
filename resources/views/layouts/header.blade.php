@@ -17,7 +17,7 @@
 
                         <div class="select-outline">
                             <select class="mdb-select md-form md-outline my-0">
-                                <option value="">All type</option>
+                                <option value="">All Categories</option>
                                 <option value="codex">Laptops</option>
                                 <option value="comments"> Mobile Phones</option>
                                 <option value="content">Tablets</option>
@@ -145,19 +145,13 @@
                         </li>
                     </div>
 
-
-
-
-
-
                 </ul>
-
-
-
             </div>
             <!-- Links -->
         </div>
     </nav>
     <!-- Navbar -->
 </header>
+
+
 

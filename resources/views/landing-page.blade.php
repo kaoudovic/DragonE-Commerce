@@ -48,7 +48,9 @@
     <!-- Header -->
 @include('layouts.header')
     <!-- Header -->
-
+<br>
+<br>
+<br>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg sticky-top navbar-light">
 
@@ -106,23 +108,6 @@
                         </div>
                     </li>
                 </ul>
-
-                <!-- Right -->
-                <ul class="navbar-nav ml-md-auto align-items-start">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Get the app</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="http://example.com" data-toggle="dropdown">English</a>
-                        <div class="dropdown-menu dropdown-menu-lg-right">
-                            <a class="dropdown-item" href="#">Russian</a>
-                            <a class="dropdown-item" href="#">French</a>
-                            <a class="dropdown-item" href="#">Spanish</a>
-                            <a class="dropdown-item" href="#">Chinese</a>
-                        </div>
-                    </li>
-                </ul>
-
             </div>
             <!-- Links -->
 

@@ -86,7 +86,7 @@
                             <h2>Billing Details</h2>
 
                             <div class="form-group">
-                                <label for="email">Email Address</label>
+                                <label for="email">Email Address {{cart::tax()}}</label>
                                 @if (auth()->user())
                                     <input type="email" class="form-control" id="email" name="email" value="{{ auth()->user()->email }}" readonly>
                                 @else
@@ -123,7 +123,7 @@
 
 
                             <button type="submit" id="complete-order" class=" btn btn-primary btn-block waves-effect
-                            waves-light">Complete Order</button>
+                            waves-light">Complete Order And Payment Process</button>
 
                         </form>
 
@@ -231,18 +231,12 @@
                                                                name="coupon_code" placeholder="Enter discount code">
                                                     </div>
                                                 </div>
-                                                <span><strong>${{Cart::total()}}</strong></span>
-
                                             </div>
                                             <button type="submit">Apply</button>
                                         </form>
                                     </div>
                                 </div>
                             @endif
-
-                            <a  href="{{route('checkout.stripe',Cart::total(2,'.',','))}}" class=" btn btn-primary btn-block waves-effect
-                            waves-light">Proceed to checkout
-                            </a>
                         </div>
                     </div>
                     <!-- Card -->

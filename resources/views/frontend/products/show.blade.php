@@ -242,13 +242,9 @@
     });
 </script>
 
-
 <script>
-
-
     function add_to_Wishlist(id)
     {
-
         $.ajax({
             url: '/wishlist/moveToWishlist/'+id,
             type:"POST",
@@ -258,6 +254,22 @@
             success:function(response){
                 var fav = document.getElementById('heart-'+id);
                 fav.setAttribute('class',response.class);
+            }
+        });
+    }
+    function remove_from_Wishlist(id)
+    {
+        $.ajax({
+
+            url: '/wishlist/deleteFromWishlist/'+id,
+            type:"POST",
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            success:function(response){
+
+                var div = document.getElementById('wishlist-'+id);
+                div.remove();
             }
         });
     }

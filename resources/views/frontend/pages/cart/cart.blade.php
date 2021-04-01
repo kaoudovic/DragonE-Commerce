@@ -275,7 +275,7 @@
                                     </div>
                                 @endif
 
-                                <a  href="{{route('checkout.stripe',Cart::total(2,'.',','))}}" class=" btn btn-primary btn-block
+                                <a  href="{{route('checkout')}}" class=" btn btn-primary btn-block
                             waves-effect
                             waves-light">
                                     Proceed to checkout

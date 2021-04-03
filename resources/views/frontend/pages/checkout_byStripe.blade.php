@@ -282,7 +282,7 @@
 
                     <div class="mr-4">
                         <li class="nav-item pl-2 mb-2 mb-md-0">
-                            <a href="{{route('track_order')}}" role="button">
+                            <a href="{{route('track.index')}}" role="button">
                                 <div> <i class="fas fa-store fa-lg "></i></div>
                                 <small class="text-dark">Orders</small>
                             </a>
@@ -290,7 +290,7 @@
                     </div>
 
                     <div class="mr-3">
-
+p
                         <li class="nav-item" >
                             <a href="{{route('cart.index')}}" role="button">
                                 <div> <i class="fas fa-shopping-cart fa-lg "></i></div>

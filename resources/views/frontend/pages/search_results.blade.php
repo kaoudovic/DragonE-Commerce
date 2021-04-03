@@ -258,7 +258,6 @@
                     <div class="search-results-container container">
                         <h1>Search Results</h1>
                         <p class="search-results-count">{{ $products->total() }} result(s) for '{{ request()->input('query') }}'</p>
-
                         @if ($products->total() > 0)
                             <table  width="100%" class="table table-bordered table-striped">
                                 <thead class="black white-text">

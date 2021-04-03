@@ -290,7 +290,6 @@
                     </div>
 
                     <div class="mr-3">
-p
                         <li class="nav-item" >
                             <a href="{{route('cart.index')}}" role="button">
                                 <div> <i class="fas fa-shopping-cart fa-lg "></i></div>

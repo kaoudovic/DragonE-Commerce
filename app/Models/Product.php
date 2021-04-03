@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Models;
-use Illuminate\Support\Facades\DB;
 use Laravel\Scout\Searchable;
 use Illuminate\Database\Eloquent\Model;
 
@@ -12,13 +11,7 @@ class Product extends Model
     protected $fillable = ['quantity'];
 
     protected $searchable = [
-        /**
-         * Columns and their priority in search results.
-         * Columns with higher values are more important.
-         * Columns with equal values have equal importance.
-         *
-         * @var array
-         */
+
         'columns' => [
             'products.name' => 10,
             'products.details' => 5,
@@ -30,7 +23,6 @@ class Product extends Model
         return $this->belongsToMany(Category::class,'category_product');
     }
 
-
     //for instant searching with algolia
     public function toSearchableArray()
     {
@@ -39,6 +31,7 @@ class Product extends Model
         $extraFields = [
             'categories' => $this->categories->pluck('name')->toArray(),
         ];
+
         return array_merge($array, $extraFields);
     }
 

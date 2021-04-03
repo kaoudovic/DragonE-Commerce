@@ -5,6 +5,13 @@
         indexName: 'products',
         urlSync: true
     });
+
+    // const search = instantsearch({
+    //     appId: '1Y2IQ8FSHY',
+    //     apiKey: '61f3a23b364a7ee3640fb9f42cb9b1a3',
+    //     indexName: 'products',
+    //     urlSync: true
+    // });
     search.addWidget(
         instantsearch.widgets.hits({
             container: '#hits',
@@ -52,7 +59,7 @@
             container: '#pagination',
             maxPages:2,
             // default is to scroll to 'body', here we disable this behavior
-            scrollTo: false
+            scrollTo: true
         })
     );
     search.addWidget(

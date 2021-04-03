@@ -191,9 +191,9 @@
                             <img class="mr-2" width="45px"
                                  src="https://mdbootstrap.com/wp-content/plugins/woocommerce-gateway-stripe/assets/images/mastercard.svg"
                                  alt="Mastercard">
-                            <img class="mr-2" width="45px"
-                                 src="http://www.sunsetdhowsafari.com/wp-content/uploads/2016/01/Paypal-PNG-Image-37253.png"
-                                 alt="PayPal acceptance mark">
+{{--                            <img class="mr-2" width="45px"--}}
+{{--                                 src="http://www.sunsetdhowsafari.com/wp-content/uploads/2016/01/Paypal-PNG-Image-37253.png"--}}
+{{--                                 alt="PayPal acceptance mark">--}}
                         </div>
                     </div>
                     <!-- Card -->

@@ -15,23 +15,23 @@
 
                     <div class="md-form md-outline input-group md-input-group w-100">
 
-                        <div class="select-outline">
-                            <select class="mdb-select md-form md-outline my-0">
-                                <option value="">All Categories</option>
-                                <option value="codex">Laptops</option>
-                                <option value="comments"> Mobile Phones</option>
-                                <option value="content">Tablets</option>
-                                <option value="content">Digital Cameras</option>
-                                <option value="content">Desktops</option>
-                                <option value="content">Video Games</option>
-                                <option value="content">Head Phones</option>
-                                <option value="content">Smart Watches</option>
-                                <option value="content">TV</option>
-                            </select>
-                        </div>
+{{--                        <div class="select-outline">--}}
+{{--                            <select class="mdb-select md-form md-outline my-0">--}}
+{{--                                <option value="">All Categories</option>--}}
+{{--                                <option value="codex">Laptops</option>--}}
+{{--                                <option value="comments"> Mobile Phones</option>--}}
+{{--                                <option value="content">Tablets</option>--}}
+{{--                                <option value="content">Digital Cameras</option>--}}
+{{--                                <option value="content">Desktops</option>--}}
+{{--                                <option value="content">Video Games</option>--}}
+{{--                                <option value="content">Head Phones</option>--}}
+{{--                                <option value="content">Smart Watches</option>--}}
+{{--                                <option value="content">TV</option>--}}
+{{--                            </select>--}}
+{{--                        </div>--}}
 
                         <div class="aa-input-container" id="aa-input-container">
-                            <input type="search" id="aa-search-input" class="aa-input-search" placeholder="Search....
+                            <input style="border: solid 1px #4da6ff" type="search" id="aa-search-input" class="aa-input-search" placeholder="Search....
                             ." name="search"
                                    autocomplete="off" />
                             <svg class="aa-input-icon" viewBox="654 -372 1664 1664">
@@ -57,46 +57,47 @@
 
                 <!-- Right -->
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a href="{{ route('about_us')}}" class="nav-link waves-effect">
-                            About
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{ route('shop.index')}}" class="nav-link waves-effect">
-                            Shop
-                        </a>
-                    </li>
-{{--                    <li class="nav-item">--}}
-{{--                        <a href="{{ route('blog.index')}}" class="nav-link waves-effect">--}}
-{{--                            Blog--}}
-{{--                        </a>--}}
-{{--                    </li>--}}
-                    <li class="nav-item">
-                        <a href="{{ route('contact.index')}}"  class="nav-link waves-effect">
-                            Contact
-                        </a>
-                    </li>
                     <!-- Authentication Links -->
 
                     <div class="mr-2">
                         <li class="nav-item pl-2 mb-2 mb-md-0">
-                            <a href="{{route('track.index')}}" role="button">
-                                <div> <i class="fas fa-store fa-lg "></i></div>
-                                <small class="text-dark">Orders</small>
+                            <a href="{{route('track.index')}}" class="text-center" role="button">
+                                <div> <i class="fas fa-store"></i></div>
+                                <span class="text-dark">Orders</span>
                             </a>
                     </li>
                     </div>
-                    @guest
-                        <li class="nav-item">
-                            <a class="nav-link waves-effect" href="{{ route('login') }}">{{ __('Login') }}</a>
+<<<<<<< HEAD
+=======
+
+                    <div class="mr-2">
+
+                        <li class="nav-item" >
+                            <a href="{{route('wishlist.index')}}" class="text-center" role="button">
+                                <div> <i class="fas fa-heart"></i></div>
+                                <span class="text-dark">Wishlist</span>
+                            </a>
+                    </li>
+                    </div>
+                    <div class="mr-2">
+                        <li class="nav-item" >
+                            <a href="{{route('cart.index')}}" class="text-center" role="button">
+                                <div> <i class="fas fa-shopping-cart"></i></div>
+                                <span class="text-dark">Cart</span>
+                                @if (Cart::instance('default')->count() > 0)
+                                    <span class="badge badge-pill red">{{ Cart::count() }}</span>
+                                @endif
+                            </a>
                         </li>
-                        @if (Route::has('register'))
-                            <li class="nav-item">
-                                <a class="nav-link btn btn-outline-info btn-md btn-rounded btn-navbar waves-effect
-                                waves-light" href="{{ route('register') }}">{{ __('SignUp') }}</a>
+                    </div>
+
+
+>>>>>>> b43caf3cf9c65328c822705da4908e76e594e13c
+                    @guest
+
+                            <li class="nav-item pl-2">
+                                <a href="{{ route('login') }}" class="btn btn-primary btn-md active" role="button" aria-pressed="true">Login</a>
                             </li>
-                        @endif
                     @else
                         <div class="mr-2">
                             <li  class="nav-item pl-2 mb-2 mb-md-1" >
@@ -128,6 +129,7 @@
                             </li>
                         </div>
 
+<<<<<<< HEAD
                     @endguest
                     <div class="">
 
@@ -141,6 +143,8 @@
                             </a>
                         </li>
                     </div>
+=======
+>>>>>>> b43caf3cf9c65328c822705da4908e76e594e13c
 
                 </ul>
             </div>

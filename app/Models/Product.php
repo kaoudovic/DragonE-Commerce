@@ -45,7 +45,12 @@ class Product extends Model
         return $this->belongsToMany('App\Models\Option');
     }
 
-    public function isFav($product_id)
+    public function category()
+    {
+        return $this->belongsToMany('App\Models\Category');
+    }
+
+    public  static function isFav($product_id)
     {
 
         $wish = Wishlist::where('user_id',auth()->id())->where('product_id',$product_id)->first();

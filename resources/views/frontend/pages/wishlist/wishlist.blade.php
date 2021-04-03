@@ -84,7 +84,7 @@
 
                             <h5>{{$product->name}}</h5>
                             <p style="text-overflow: ellipsis;overflow: hidden; white-space: nowrap;" class="mb-2
-                            text-muted text-uppercase small">{{$product->description}}</p>
+                            text-muted text-uppercase small">{!! $product->description !!}</p>
                             <hr>
                             <h6 class="mb-3">${{ test_x($product->price)}}</h6>
 
@@ -98,8 +98,7 @@
                                     <button type="submit" class="btn btn-primary btn-sm mr-1 waves-effect waves-light"><i
                                             class="fas fa-shopping-cart pr-2"></i>Add to cart</button>
                                     <button type="button" class="btn btn-light btn-sm mr-1  "><i
-                                            class="fas fa-info-circle pr-2"></i><a href="{{route('shop.show',$product->slug)
-                                    }}">Details</a></button>
+                                            class="fas fa-info-circle pr-2"></i><a href="{{route('shop.show',$product->slug)}}">Details</a></button>
                                     <button type="button" onclick="remove_from_Wishlist('{{$product->id}}')" class="btn btn-danger btn-sm mr-1 waves-effect waves-light"><i
                                             class="fas fa-trash"></i></button>
 
@@ -110,6 +109,7 @@
                         </div>
                     <!-- Card -->
                 </div>
+
 
                     @endforeach
 

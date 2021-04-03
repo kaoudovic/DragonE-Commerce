@@ -61,7 +61,7 @@
                             <div class="col-12 mb-0 d-flex justify-content-center">
                                 <figure class="view overlay rounded z-depth-1 main-img" style="max-height: 450px;">
                                     <a href="{{route('shop.show',['product' => $product->id])}}" data-size="710x823">
-                                        <img src="{{ asset('Pictures_Project/'.$product->slug.'.jpg')}}" class="img-fluid z-depth-1" style="transform-origin: center center; transform: scale(1); height: 450px;">
+                                        <img src="{{ productImage($product->image) }}" class="img-fluid z-depth-1" style="transform-origin: center center; transform: scale(1); height: 450px;">
                                     </a>
                                 </figure>
                                 @if ($product->images)
@@ -87,7 +87,7 @@
                                         @endforeach
                                             <div class="col-3">
                                                 <div class="view overlay rounded z-depth-1 gallery-item hoverable">
-                                                    <img src="{{asset('Pictures_Project/'.$product->slug.'.jpg')}}" class="img-fluid">
+                                                    <img src="{{ productImage($product->image) }}" class="img-fluid">
                                                     <div class="mask rgba-white-slight"></div>
                                                 </div>
                                             </div>

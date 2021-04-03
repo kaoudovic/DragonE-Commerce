@@ -130,6 +130,7 @@ class LandingPageController extends Controller
     {
         $product_ids = DB::table('recently_viewed_products')
             ->select('product_id')
+            ->orderBy('recent_date','DESC')
             ->orderBy('count','DESC')
             ->limit(40)
             ->get();

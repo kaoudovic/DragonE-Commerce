@@ -71,7 +71,7 @@
             <div class="row d-flex justify-content-center">
                     <div  class="view zoom z-depth-0 rounded">
                         <img style="height: 250px;width: 250px"
-                             src="https://pbs.twimg.com/profile_images/1361742806100934668/jYBTgl8E_400x400.jpg "
+                             src="{{productImage($user->avatar)}}"
                              class="img-fluid rounded-pill">
                         <a>
                             <div class="mask"></div>

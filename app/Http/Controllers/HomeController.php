@@ -47,6 +47,11 @@ class HomeController extends Controller
         if($request->name != $user->name){
             $array['name'] =  $request->name;
         }
+
+        if($request->avatar != $user->avatar){
+            $array['avatar'] =  $request->avatar;
+        }
+
         if($request->password != ''){
             $array['password'] =  Hash::make($request->password);
         }

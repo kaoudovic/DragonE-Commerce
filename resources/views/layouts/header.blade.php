@@ -87,18 +87,6 @@
                             </a>
                     </li>
                     </div>
-
-                    <div class="mr-2">
-
-                        <li class="nav-item" >
-                            <a href="{{route('wishlist.index')}}" role="button">
-                                <div> <i class="fas fa-heart"></i></div>
-                                <small class="text-dark">Wishlist</small>
-                            </a>
-                    </li>
-                    </div>
-
-
                     @guest
                         <li class="nav-item">
                             <a class="nav-link waves-effect" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -130,8 +118,17 @@
                                 </div>
                             </li>
                         </div>
-                    @endguest
+                        <div class="mr-2">
 
+                            <li class="nav-item" >
+                                <a href="{{route('wishlist.index')}}" role="button">
+                                    <div> <i class="fas fa-heart"></i></div>
+                                    <small class="text-dark">Wishlist</small>
+                                </a>
+                            </li>
+                        </div>
+
+                    @endguest
                     <div class="">
 
                         <li class="nav-item" >

@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="{{ asset('assets/new/css/algolia.css') }}">
     <link rel="icon" sizes="192x192" href="{{asset('Pictures_Project/logo/logo.png')}}">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
 </head>
 
@@ -83,8 +84,13 @@
                         <div class="text-center pt-4">
 
                             <h5>{{$product->name}}</h5>
+{{--                            <p style="text-overflow: ellipsis;overflow: hidden; white-space: nowrap;"--}}
+{{--                               class="mb-2--}}
+{{--                            text-muted text-uppercase small " >--}}
+{{--                                {!! $product->description !!}</p>--}}
                             <p style="text-overflow: ellipsis;overflow: hidden; white-space: nowrap;" class="mb-2
-                            text-muted text-uppercase small">{!! $product->description !!}</p>
+                            text-muted text-uppercase small">{!!$product->details!!}</p>
+
                             <hr>
                             <h6 class="mb-3">${{ test_x($product->price)}}</h6>
 

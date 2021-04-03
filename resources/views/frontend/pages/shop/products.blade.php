@@ -7,9 +7,7 @@
             <div class="">
 
                 <div class="view zoom z-depth-2 rounded">
-                    <img class="img-fluid w-100" style="height: 250px" src="{{ asset
-                                        ('Pictures_Project/'
-                                        .$product->slug.'.jpg')}}"
+                    <img class="img-fluid w-100" style="height: 250px" src="{{ productImage($product->image) }}"
                          alt="Sample">
                     <a href="{{route('shop.show',$product->slug)}}">
                         <div class="mask"></div>

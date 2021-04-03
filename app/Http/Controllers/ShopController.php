@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\RecentlyViewedProduct;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -77,6 +78,7 @@ class ShopController extends Controller
         $our_latest_collection=Product::where('slug','!=',$slug)->inRandomOrder()->take(4)->get();
         $options = $this->handleOptionsForFilters([$product]);
 
+        $this->addToRecentlyViewed($product);
         return view('frontend.products.show')->with([
             'product' => $product,
             'our_latest_collection' => $our_latest_collection,
@@ -179,6 +181,21 @@ class ShopController extends Controller
             $value = substr($value,0,4  );
 
         $products = $products->orderBy($key,$value);
+    }
+
+    private function addToRecentlyViewed($product)
+    {
+        $new_viewed_product = new RecentlyViewedProduct();
+        $checkExisting =  RecentlyViewedProduct::where('product_id',$product->id)->first();
+        if(!empty($checkExisting))
+            $new_viewed_product = $checkExisting;
+        else {
+            $new_viewed_product->product_id = $product->id;
+            $new_viewed_product->recent_date = date('Y-m-d');
+        }
+        $new_viewed_product->count = $new_viewed_product->count + 1;
+        $new_viewed_product->save();
+
     }
 
 }

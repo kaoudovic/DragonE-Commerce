@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
+use App\Models\Order;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class LandingPageController extends Controller
 {
@@ -14,9 +17,129 @@ class LandingPageController extends Controller
      */
     public function index()
     {
+        $categories = Category::all();
+        $popular_categories = $this->getPopularCategories();
         $products =Product::where('Featured',true)->take(8)->get();
+        $deals = $this->getProductsWithDeals();
+        $new_products = $this->getNewProducts();
+        $best_selling = $this->getBestSellingProducts();
+        $recently_viewed = $this->getRecentlyViewedProducts();
 
-        return view('landing-page')->with('products' ,$products);
+        return view('frontend.Landing-Page.index',compact(
+            'products',
+            'categories',
+            'popular_categories',
+            'deals',
+            'new_products',
+            'best_selling',
+            'recently_viewed'
+        ));
     }
 
+    private function getPopularCategories()
+    {
+        $product_ids = DB::table('order_product')
+            ->select('product_id')
+            ->get();
+
+        $ids_for_products = [];
+        foreach ($product_ids as $product_id)
+        {
+            $ids_for_products [] =$product_id->product_id;
+        }
+
+        $category_ids = DB::table('category_product')
+            ->select('category_id', DB::raw('count(*) as total'))
+            ->whereIn('product_id',$ids_for_products)
+            ->groupBy('category_id')
+            ->orderBy('total','DESC')
+            ->get()->toArray();
+
+
+        $ids_for_categories = [];
+        foreach ($category_ids as $category_id)
+        {
+            $ids_for_categories [] =$category_id->category_id;
+        }
+        $categories = Category::whereIn('id',$ids_for_categories)
+            ->limit(4)->get();
+        $remain = 0;
+        if(count($categories) < 4)
+        {
+            $remain = 4 - count($categories);
+            $remain = Category::whereNotIn('id',$ids_for_categories)->take($remain)->get();
+
+        }
+
+        $final_result = [];
+
+        foreach ($categories as $category)
+        {
+            $final_result [] = $category->getAttributes();
+        }
+        if($remain)
+        {
+            foreach ($remain as $category)
+            {
+                $final_result [] = $category->getAttributes();
+            }
+        }
+
+        return $final_result;
+
+    }
+
+    private function getProductsWithDeals()
+    {
+        return array_chunk(Product::where('discount','>',0)
+            ->with('category')
+            ->orderBy('discount','DESC')
+            ->orderBy('created_at','DESC')
+            ->limit(40)
+            ->get()->toArray(),4);
+    }
+
+    private function getNewProducts()
+    {
+        return array_chunk(Product::with('category')
+            ->orderBy('created_at','DESC')
+            ->orderBy('discount','DESC')
+            ->limit(40)
+            ->get()->toArray(),4);
+    }
+
+    private function getBestSellingProducts()
+    {
+        $product_ids = DB::table('order_product')
+            ->select('product_id')
+            ->get();
+        $ids_for_products = [];
+        foreach ($product_ids as $product_id)
+        {
+            $ids_for_products [] =$product_id->product_id;
+        }
+
+        return array_chunk(Product::with('category')
+            ->whereIn('id',$ids_for_products)
+            ->limit(40)
+            ->get()->toArray(),4);
+
+    }
+
+    private function getRecentlyViewedProducts()
+    {
+        $product_ids = DB::table('recently_viewed_products')
+            ->select('product_id')
+            ->orderBy('count','DESC')
+            ->limit(40)
+            ->get();
+        $ids_for_products = [];
+        foreach ($product_ids as $product_id)
+        {
+            $ids_for_products [] =$product_id->product_id;
+        }
+        return array_chunk(Product::with('category')
+            ->whereIn('id',$ids_for_products)
+            ->get()->toArray(),4);
+    }
 }

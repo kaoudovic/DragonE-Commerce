@@ -1,124 +1,4 @@
-
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Dragon Web Store</title>
-    <!-- Roboto Font -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700&display=swap">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="{{asset('assets/new/css/bootstrap.min.css')}}">
-    <!-- Material Design Bootstrap -->
-    <link rel="stylesheet" href="{{asset('assets/new/css/mdb-pro.min.css')}}">
-    <!-- Material Design Bootstrap Ecommerce -->
-    <link rel="stylesheet" href="{{asset('assets/new/css/mdb.ecommerce.min.css')}}">
-
-    <link rel="stylesheet" href="{{ asset('assets/new/css/algolia.css') }}">
-    <link rel="icon" sizes="192x192" href="{{asset('Pictures_Project/logo/logo.png')}}">
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
-
-    <style>
-        @media (min-width: 1100px) {
-            .container-xl {
-                max-width: 1480px;
-            }
-        }
-
-        .divider-new.version-2 {
-            justify-content: left;
-        }
-
-        .divider-new.version-2:before {
-            flex: 0;
-        }
-    </style>
-
-</head>
-
-<body class="skin-light">
-
-<header>
-
-    <!-- Header -->
-@include('layouts.header')
-    <!-- Header -->
-<br>
-<br>
-<br>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg sticky-top navbar-light">
-
-        <div class="container-xl">
-
-            <!-- Collapse button -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav1"
-                    aria-controls="basicExampleNav1" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <!-- Links -->
-            <div class="collapse navbar-collapse" id="basicExampleNav1">
-
-                <!-- Left -->
-                <ul class="navbar-nav align-items-start">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"><i
-                                class="fas fa-bars text-muted mr-2"></i> Categories </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Machinery</a>
-                            <a class="dropdown-item" href="#">Electronics</a>
-                            <a class="dropdown-item" href="#">Home textile</a>
-                            <a class="dropdown-item" href="#">Home and kitchen</a>
-                            <a class="dropdown-item" href="#">Service and equipment</a>
-                            <a class="dropdown-item" href="#">Healthcare items</a>
-                            <a class="dropdown-item" href="#">Toys and Hobbies</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Ready to ship</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Trade shows</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Sell with us</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Demo pages</a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="page-index.html">Main</a>
-                            <a class="dropdown-item" href="page-category.html">All category</a>
-                            <a class="dropdown-item" href="page-listing-large.html">Listing list</a>
-                            <a class="dropdown-item" href="page-listing-grid.html">Listing grid</a>
-                            <a class="dropdown-item" href="page-shopping-cart.html">Shopping cart</a>
-                            <a class="dropdown-item" href="page-detail-product.html">Item detail</a>
-                            <a class="dropdown-item" href="page-content.html">Info content</a>
-                            <a class="dropdown-item" href="page-user-login.html">Page login</a>
-                            <a class="dropdown-item" href="page-user-register.html">Page register</a>
-                            <a class="dropdown-item disabled text-muted" href="#">More components</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <!-- Links -->
-
-        </div>
-
-    </nav>
-    <!-- Navbar -->
-
-</header>
-
+@include('frontend.Landing-Page.head')
 <main>
 
     <div class="container-xl">
@@ -180,7 +60,7 @@
                                             </a>
                                         </div>
                                         <div class="carousel-caption">
-                                            <h3 class="h3-responsive">First shop item</h4>
+                                            <h3 class="h3-responsive">First shop item</h3>
                                                 <p>First text</p>
                                         </div>
                                     </div>
@@ -194,7 +74,7 @@
                                             </a>
                                         </div>
                                         <div class="carousel-caption">
-                                            <h3 class="h3-responsive">Second shop item</h4>
+                                            <h4 class="h3-responsive">Second shop item</h4>
                                                 <p>Secondary text</p>
                                         </div>
                                     </div>
@@ -208,7 +88,7 @@
                                             </a>
                                         </div>
                                         <div class="carousel-caption">
-                                            <h3 class="h3-responsive">Third shop item</h4>
+                                            <h3 class="h3-responsive">Third shop item</h3>
                                                 <p>Third text</p>
                                         </div>
                                     </div>
@@ -234,39 +114,20 @@
                         <div class="col-lg-3 d-none d-lg-block">
 
                             <h6 class="indigo text-white text-center py-2 mb-4">Popular category</h6>
-
-                            <div class="media">
-                                <div class="media-body">
-                                    <p class="text-grey-dark mb-2"><strong>Men clothing</strong></p>
-                                    <a href="#!" type="button" class="btn btn-indigo p-2">Source now</a>
+                            @foreach($popular_categories as $category)
+                                <div class="media">
+                                    <div class="media-body">
+                                        <p class="text-grey-dark mb-2"><strong>{{$category['name']}}</strong></p>
+                                        <a href="/shop?category={{$category['slug']}}" type="button" class="btn btn-indigo p-2">Source now</a>
+                                    </div>
+                                    <img class="d-flex ml-3"
+                                         src="{{$category['main_img']}}"
+                                         alt="category_main_img" width="100">
                                 </div>
-                                <img class="d-flex ml-3"
-                                     src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/10.jpg"
-                                     alt="Generic placeholder image" width="100">
-                            </div>
-
-                            <hr>
-
-                            <div class="media">
-                                <div class="media-body">
-                                    <p class="text-grey-dark mb-2"><strong>Men clothing</strong></p>
-                                    <a href="#!" type="button" class="btn btn-indigo p-2">Source now</a>
-                                </div>
-                                <img class="d-flex ml-3" src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/1.jpg"
-                                     alt="Generic placeholder image" width="100">
-                            </div>
-
-                            <hr>
-
-                            <div class="media">
-                                <div class="media-body">
-                                    <p class="text-grey-dark mb-2"><strong>Men clothing</strong></p>
-                                    <a href="#!" type="button" class="btn btn-indigo p-2">Source now</a>
-                                </div>
-                                <img class="d-flex ml-3"
-                                     src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/13.jpg"
-                                     alt="Generic placeholder image" width="100">
-                            </div>
+                                @if(!$loop->last)
+                                    <hr>
+                                @endif
+                            @endforeach
 
                         </div>
                         <!-- Grid column -->
@@ -278,6 +139,14 @@
             </div>
 
         </section>
+
+        @include('frontend.Landing-Page.deals')
+        @include('frontend.Landing-Page.new-arrivals')
+        @include('frontend.Landing-Page.best-seller')
+
+        @if(count($recently_viewed))
+            @include('frontend.Landing-Page.most-viewed')
+        @endif
         <!-- Section main -->
 
         <!-- Section deal -->

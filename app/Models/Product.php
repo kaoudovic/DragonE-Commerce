@@ -60,5 +60,11 @@ class Product extends Model
         return false;
     }
 
+    public static function getDiscount($id)
+    {
+        $product = Product::findOrFail($id);
+        return $product->discount ?? 0;
+    }
+
 
 }

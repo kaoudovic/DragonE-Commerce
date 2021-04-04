@@ -24,6 +24,9 @@ class LandingPageController extends Controller
         $new_products = $this->getNewProducts();
         $best_selling = $this->getBestSellingProducts();
         $recently_viewed = $this->getRecentlyViewedProducts();
+        $random_section =  $this->getRandomProducts();
+        $month_products = $this->getMonthProducts();
+        $recommended_products = $this->getRecommendedProducts();
 
         return view('frontend.Landing-Page.index',compact(
             'products',
@@ -32,7 +35,10 @@ class LandingPageController extends Controller
             'deals',
             'new_products',
             'best_selling',
-            'recently_viewed'
+            'recently_viewed',
+            'random_section',
+            'month_products',
+            'recommended_products'
         ));
     }
 
@@ -142,5 +148,29 @@ class LandingPageController extends Controller
         return array_chunk(Product::with('category')
             ->whereIn('id',$ids_for_products)
             ->get()->toArray(),4);
+    }
+
+    private function getRandomProducts()
+    {
+        return Product::with('category')->get()->random(8);
+
+    }
+
+    private function getMonthProducts()
+    {
+        return Product::with('category')
+            ->whereMonth('created_at',date('m'))
+            ->whereYear('created_at',date('y'))
+            ->get();
+
+    }
+
+    private function getRecommendedProducts()
+    {
+        return Product::with('category')
+            ->orderBy('discount','DESC')
+            ->orderBy('created_at','DESC')
+           ->limit(12)
+            ->get();
     }
 }

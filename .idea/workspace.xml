@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="4556d6fa-4bc5-4613-8cb3-63cc47f7a892" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/Landing-Page/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/Landing-Page/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/pages/cart/cart.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/pages/cart/cart.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/Landing-Page/head.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/Landing-Page/head.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/pages/checkout_byStripe.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/pages/checkout_byStripe.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/header.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -241,7 +241,7 @@
       <workItem from="1617215477734" duration="12331000" />
       <workItem from="1617262310894" duration="19028000" />
       <workItem from="1617432706520" duration="27480000" />
-      <workItem from="1617523702186" duration="15484000" />
+      <workItem from="1617523702186" duration="17058000" />
     </task>
     <servers />
   </component>
@@ -260,6 +260,11 @@
           <url>file://$PROJECT_DIR$/resources/views/frontend/pages/blog/index1.blade.php</url>
           <line>25</line>
           <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/layouts/header.blade.php</url>
+          <line>37</line>
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

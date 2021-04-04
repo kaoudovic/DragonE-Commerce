@@ -101,7 +101,7 @@
                     <li class="nav-item">
                         <a class="nav-link waves-effect waves-light" href="{{ route('blog.index')}}">Blog</a>
                     </li>
-                    
+
                 </ul>
             </div>
             <!-- Links -->

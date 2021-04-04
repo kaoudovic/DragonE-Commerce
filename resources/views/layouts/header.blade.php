@@ -14,22 +14,6 @@
                 <form action="">
 
                     <div class="md-form md-outline input-group md-input-group w-100">
-
-{{--                        <div class="select-outline">--}}
-{{--                            <select class="mdb-select md-form md-outline my-0">--}}
-{{--                                <option value="">All Categories</option>--}}
-{{--                                <option value="codex">Laptops</option>--}}
-{{--                                <option value="comments"> Mobile Phones</option>--}}
-{{--                                <option value="content">Tablets</option>--}}
-{{--                                <option value="content">Digital Cameras</option>--}}
-{{--                                <option value="content">Desktops</option>--}}
-{{--                                <option value="content">Video Games</option>--}}
-{{--                                <option value="content">Head Phones</option>--}}
-{{--                                <option value="content">Smart Watches</option>--}}
-{{--                                <option value="content">TV</option>--}}
-{{--                            </select>--}}
-{{--                        </div>--}}
-
                         <div class="aa-input-container" id="aa-input-container">
                             <input style="border: solid 1px #4da6ff" type="search" id="aa-search-input" class="aa-input-search" placeholder="Search....
                             ." name="search"
@@ -51,46 +35,6 @@
                 </form>
 
             </div>
-{{--            <div class="col-md-5 col-lg-4 col-xl-4 mt-2 mb-1 mb-md-0 pb-2 pb-md-0">--}}
-
-{{--                <!-- Icons -->--}}
-{{--                <div class="d-flex justify-content-start justify-content-md-end text-center">--}}
-
-{{--                    <div class="mr-4">--}}
-
-{{--                        <a href="#!" role="button">--}}
-{{--                            <div>--}}
-{{--                                <i class="fas fa-user fa-lg text-muted"></i>--}}
-{{--                                <span class="counter counter-floating counter-lg-icon position-absolute ml-n1 mt-1"><strong>3</strong></span>--}}
-{{--                            </div>--}}
-{{--                            <small class="text-dark">My profile</small>--}}
-{{--                        </a>--}}
-
-{{--                    </div>--}}
-{{--                    <div class="mr-4">--}}
-
-{{--                        <a href="#!" role="button">--}}
-{{--                            <div>--}}
-{{--                                <i class="fas fa-store fa-lg text-muted"></i>--}}
-{{--                            </div>--}}
-{{--                            <small class="text-dark">Orders</small>--}}
-{{--                        </a>--}}
-{{--                    </div>--}}
-{{--                    <div class="mr-0">--}}
-{{--                        <a href="#!" role="button">--}}
-{{--                            <div>--}}
-{{--                                <i class="fas fa-shopping-cart fa-lg text-muted"></i>--}}
-{{--                            </div>--}}
-{{--                            <small class="text-dark">Cart</small>--}}
-{{--                        </a>--}}
-
-{{--                    </div>--}}
-
-{{--                </div>--}}
-{{--                <!-- Icons -->--}}
-
-{{--            </div>--}}
-            <!-- Links -->
             <div class="col-md-5 col-lg-4 col-xl-4 mt-2 mb-1 mb-md-0 pb-2 pb-md-0">
                             <!-- Icons -->
                <div class="d-flex justify-content-start justify-content-md-end text-center">
@@ -131,16 +75,19 @@
                             </a>
                     </div>
 
-                    <div class="mr-4">
-                            <a href="{{route('wishlist.index')}}" role="button">
-                                <div> <i class="fas fa-heart"></i></div>
-                                <small class="text-dark">Wishlist</small>
-                            </a>
-                    </div>
+
+                   <div class="mr-4">
+                       <a href="{{route('wishlist.index')}}" role="button">
+                           <div> <i class="fas fa-heart"></i></div>
+                           <small class="text-dark">Wishlist</small>
+                       </a>
+                   </div>
+
 
                     @guest
-
-                                <a href="{{ route('login') }}" class="btn btn-primary btn-md active" role="button" aria-pressed="true">Login</a>
+                               <div class="mr-4">
+                                   <a href="{{ route('login') }}" class="btn btn-primary btn-md active" role="button" aria-pressed="true">Login</a>
+                               </div>
                     @else
                         <div class="mr-4">
                                 <a id="navbarDropdown"  href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

@@ -226,26 +226,6 @@
 
                 <!-- Right -->
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a href="{{ route('about_us')}}" class="nav-link waves-effect">
-                            About
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{ route('shop.index')}}" class="nav-link waves-effect">
-                            Shop
-                        </a>
-                    </li>
-                    {{--                    <li class="nav-item">--}}
-                    {{--                        <a href="{{ route('blog.index')}}" class="nav-link waves-effect">--}}
-                    {{--                            Blog--}}
-                    {{--                        </a>--}}
-                    {{--                    </li>--}}
-                    <li class="nav-item">
-                        <a href="{{ route('contact.index')}}"  class="nav-link waves-effect">
-                            Contact
-                        </a>
-                    </li>
                     <!-- Authentication Links -->
                     @guest
                         <li class="nav-item">

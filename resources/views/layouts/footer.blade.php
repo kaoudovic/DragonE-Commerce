@@ -69,12 +69,12 @@
                         <a href="{{ route('about_us')}}">About Dragon </a>
                     </li>
                     <li class="mb-2">
-                        <a href="#!">Investor Relations</a>
+                        <a href="{{route('contact.index')}}">Investor Relations</a>
                     </li>
                     <li class="mb-2">
-                        <a href="#!">Dragon Tours</a>
+                        <a href="{{route('about_us')}}">Dragon Tours</a>
                     </li> <li class="mb-2">
-                        <a href="#!"> Dragon Devices</a>
+                        <a href="{{route('about_us')}}"> Dragon Devices</a>
                 </ul>
             </div>
             <!-- Grid column -->
@@ -90,22 +90,22 @@
 
                 <ul class="list-unstyled foot-desc">
                     <li class="mb-2">
-                        <a href="#!">Mobile Phone</a>
+                        <a href="/shop?category=mobile-phones">Mobile Phone</a>
                     </li>
                     <li class="mb-2">
-                        <a href="#!">Electronics</a>
+                        <a href="/shop?category=smart-watch">Smart Watch</a>
                     </li>
                     <li class="mb-2">
-                        <a href="#!">Camera</a>
+                        <a href="/shop?category=digital-cameras">Digital Camera</a>
                     </li>
                     <li class="mb-2">
-                        <a href="#!">Laptop</a>
+                        <a href="/shop?category=laptops">Laptop</a>
                     </li>
                     <li class="mb-2">
-                        <a href="#!">Tablet</a>
+                        <a href="/shop?category=tablets">Tablet</a>
                     </li>
                     <li class="mb-2">
-                        <a href="#!">Video Game</a>
+                        <a href="/shop?category=video-game">Video Game</a>
                     </li>
                 </ul>
 
@@ -123,22 +123,22 @@
 
                 <ul class="list-unstyled foot-desc">
                     <li class="mb-2">
-                        <a href="#!">Your Account</a>
+                        <a href="{{ route('profile', ['id'=>auth()->user()->id])}}">Your Account</a>
                     </li>
                     <li class="mb-2">
-                        <a href="#!">Become an Affiliate</a>
+                        <a href="{{route('contact.index')}}">Become an Affiliate</a>
                     </li>
                     <li class="mb-2">
-                        <a href="#!">Sell products on Dragon</a>
+                        <a href="{{route('contact.index')}}">Sell products on Dragon</a>
                     </li>
                     <li class="mb-2">
-                        <a href="#!">  Sell apps on Dragon</a>
+                        <a href="{{route('contact.index')}}">  Sell apps on Dragon</a>
                     </li>
                     <li class="mb-2">
-                        <a href="#!">Shipping Rates</a>
+                        <a href="{{route('contact.index')}}">Shipping Rates</a>
                     </li>
                     <li class="mb-2">
-                        <a href="#!">Help</a>
+                        <a href="{{route('contact.index')}}">Help</a>
                     </li>
                 </ul>
 

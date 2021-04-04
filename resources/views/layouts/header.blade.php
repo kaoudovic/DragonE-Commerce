@@ -10,9 +10,7 @@
                 </a>
         {{-- Search--}}
             <div class="col-md-7 col-lg-2 col-xl-7" style="height:40px;margin-top: -48px;">
-
                 <form action="">
-
                     <div class="md-form md-outline input-group md-input-group w-100">
                         <div class="aa-input-container" id="aa-input-container">
                             <input style="border: solid 1px #4da6ff" type="search" id="aa-search-input" class="aa-input-search" placeholder="Search....
@@ -39,8 +37,6 @@
                             <!-- Icons -->
                <div class="d-flex justify-content-start justify-content-md-end text-center">
                 <!-- Right -->
-
-
                     <!-- Authentication Links -->
                     <div class="mr-4">
                             <a href="{{route('about_us')}}" role="button">
@@ -75,15 +71,6 @@
                             </a>
                     </div>
 
-
-                   <div class="mr-4">
-                       <a href="{{route('wishlist.index')}}" role="button">
-                           <div> <i class="fas fa-heart"></i></div>
-                           <small class="text-dark">Wishlist</small>
-                       </a>
-                   </div>
-
-
                     @guest
                                <div class="mr-4">
                                    <a href="{{ route('login') }}" class="btn btn-primary btn-md active" role="button" aria-pressed="true">Login</a>
@@ -109,7 +96,17 @@
                         </div>
 
 
-                    @endguest
+                       <div class="mr-4">
+                           <a href="{{route('wishlist.index')}}" role="button">
+                               <div> <i class="fas fa-heart"></i></div>
+                               <small class="text-dark">Wishlist</small>
+                           </a>
+                       </div>
+
+
+
+
+                   @endguest
                     <div class="">
                             <a href="{{route('cart.index')}}" role="button">
                                 <div> <i class="fas fa-shopping-cart fa-lg "></i>

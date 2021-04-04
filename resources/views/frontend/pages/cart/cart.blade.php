@@ -182,19 +182,28 @@
 
                             <h5 class="mb-4">We accept</h5>
 
-                            <img class="mr-2" width="45px"
+                            <img class="mr-2" width="50px"
                                  src="https://mdbootstrap.com/wp-content/plugins/woocommerce-gateway-stripe/assets/images/visa.svg"
                                  alt="Visa">
-                            <img class="mr-2" width="45px"
-                                 src="https://mdbootstrap.com/wp-content/plugins/woocommerce-gateway-stripe/assets/images/visa.svg"
-                                 alt="Visa">
-                            <img class="mr-2" width="45px"
+
+                            <img class="mr-2" width="50px"
                                  src="https://mdbootstrap.com/wp-content/plugins/woocommerce-gateway-stripe/assets/images/amex.svg"
                                  alt="American Express">
-                            <img class="mr-2" width="45px"
+
+                            <img class="mr-2" width="50px"
                                  src="https://mdbootstrap.com/wp-content/plugins/woocommerce-gateway-stripe/assets/images/mastercard.svg"
                                  alt="Mastercard">
-{{--                            <img class="mr-2" width="45px"--}}
+
+
+                            <img class="mr-2" width="50px"
+                                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOSPAwgx9IbXKj4w20LRFX1dmaC3pV70g-6Ir5qzh9NFuig6LL&s"
+                                 alt="Visa">
+
+                            <img class="mr-2" width="50px"
+                                 src="https://business.edx.org/hubfs/Imported_Blog_Media/Stripe-Logo-blue-1.png"
+                                 alt="Visa">
+
+                            {{--                            <img class="mr-2" width="45px"--}}
 {{--                                 src="http://www.sunsetdhowsafari.com/wp-content/uploads/2016/01/Paypal-PNG-Image-37253.png"--}}
 {{--                                 alt="PayPal acceptance mark">--}}
                         </div>

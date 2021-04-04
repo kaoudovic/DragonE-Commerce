@@ -91,6 +91,10 @@
                     </li>
 
                     <li class="nav-item">
+                        <a class="nav-link waves-effect waves-light" href="{{ route('shop.index')}}">Shop</a>
+                    </li>
+
+                    <li class="nav-item">
                         <a class="nav-link waves-effect waves-light" href="{{ route('contact.index')}}">Contact-us</a>
                     </li>
 

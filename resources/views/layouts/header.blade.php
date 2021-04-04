@@ -51,31 +51,92 @@
                 </form>
 
             </div>
+{{--            <div class="col-md-5 col-lg-4 col-xl-4 mt-2 mb-1 mb-md-0 pb-2 pb-md-0">--}}
 
+{{--                <!-- Icons -->--}}
+{{--                <div class="d-flex justify-content-start justify-content-md-end text-center">--}}
+
+{{--                    <div class="mr-4">--}}
+
+{{--                        <a href="#!" role="button">--}}
+{{--                            <div>--}}
+{{--                                <i class="fas fa-user fa-lg text-muted"></i>--}}
+{{--                                <span class="counter counter-floating counter-lg-icon position-absolute ml-n1 mt-1"><strong>3</strong></span>--}}
+{{--                            </div>--}}
+{{--                            <small class="text-dark">My profile</small>--}}
+{{--                        </a>--}}
+
+{{--                    </div>--}}
+{{--                    <div class="mr-4">--}}
+
+{{--                        <a href="#!" role="button">--}}
+{{--                            <div>--}}
+{{--                                <i class="fas fa-store fa-lg text-muted"></i>--}}
+{{--                            </div>--}}
+{{--                            <small class="text-dark">Orders</small>--}}
+{{--                        </a>--}}
+{{--                    </div>--}}
+{{--                    <div class="mr-0">--}}
+{{--                        <a href="#!" role="button">--}}
+{{--                            <div>--}}
+{{--                                <i class="fas fa-shopping-cart fa-lg text-muted"></i>--}}
+{{--                            </div>--}}
+{{--                            <small class="text-dark">Cart</small>--}}
+{{--                        </a>--}}
+
+{{--                    </div>--}}
+
+{{--                </div>--}}
+{{--                <!-- Icons -->--}}
+
+{{--            </div>--}}
             <!-- Links -->
-            <div class="collapse navbar-collapse" id="basicExampleNav">
-
+            <div class="col-md-5 col-lg-4 col-xl-4 mt-2 mb-1 mb-md-0 pb-2 pb-md-0">
+                            <!-- Icons -->
+               <div class="d-flex justify-content-start justify-content-md-end text-center">
                 <!-- Right -->
-                <ul class="navbar-nav ml-auto">
-                    <!-- Authentication Links -->
-                    <div class="mr-2">
 
-                        <li class="nav-item" >
+
+                    <!-- Authentication Links -->
+                    <div class="mr-4">
+                            <a href="{{route('contact.index')}}" role="button">
+                                <div> <i class="fas fa-sms"></i></div>
+                                <small class="text-dark">Contact</small>
+                            </a>
+                    </div>
+                   <div class="mr-4">
+                            <a href="{{route('blog.index')}}" role="button">
+                                <div> <i class="fas fa-blog"></i></div>
+                                <small class="text-dark">Blog</small>
+                            </a>
+                    </div>
+
+                    <div class="mr-4">
+                            <a href="{{route('shop.index')}}" role="button">
+                                <div> <i class="fas fa-shopping-bag"></i></div>
+                                <small class="text-dark">Shop</small>
+                            </a>
+                    </div>
+
+                    <div class="mr-4">
                             <a href="{{route('track.index')}}" role="button">
                                 <div> <i class="fas fa-store"></i></div>
                                 <small class="text-dark">Orders</small>
                             </a>
-                        </li>
+                    </div>
+
+                    <div class="mr-4">
+                            <a href="{{route('wishlist.index')}}" role="button">
+                                <div> <i class="fas fa-heart"></i></div>
+                                <small class="text-dark">Wishlist</small>
+                            </a>
                     </div>
 
                     @guest
 
-                            <li class="nav-item pl-2">
                                 <a href="{{ route('login') }}" class="btn btn-primary btn-md active" role="button" aria-pressed="true">Login</a>
-                            </li>
                     @else
-                        <div class="mr-2">
-                            <li  class="nav-item pl-2 mb-2 mb-md-1" >
+                        <div class="mr-4">
                                 <a id="navbarDropdown"  href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     <div> <i class="fas fa-user-circle fa-lg "></i></div>
                                     <small class="text-dark">{{ Auth::user()->name }} </small>
@@ -92,34 +153,22 @@
                                         @csrf
                                     </form>
                                 </div>
-                            </li>
                         </div>
-                        <div class="mr-2">
 
-                            <li class="nav-item" >
-                                <a href="{{route('wishlist.index')}}" role="button">
-                                    <div> <i class="fas fa-heart"></i></div>
-                                    <small class="text-dark">Wishlist</small>
-                                </a>
-                            </li>
-                        </div>
 
                     @endguest
                     <div class="">
-
-                        <li class="nav-item" >
                             <a href="{{route('cart.index')}}" role="button">
-                                <div> <i class="fas fa-shopping-cart fa-lg "></i></div>
+                                <div> <i class="fas fa-shopping-cart fa-lg "></i>
+                                    @if (Cart::instance('default')->count() > 0)
+                                        <span class="counter counter-floating counter-lg-icon position-absolute ml-n1 mt-1">{{ Cart::count() }}</strong></span>
+                                    @endif
+                                </div>
                                 <small class="text-dark">Cart</small>
-                                @if (Cart::instance('default')->count() > 0)
-                                    <span class="badge badge-pill red">{{ Cart::count() }}</span>
-                                @endif
+
                             </a>
-                        </li>
                     </div>
-
-
-                </ul>
+            </div>
             </div>
             <!-- Links -->
         </div>

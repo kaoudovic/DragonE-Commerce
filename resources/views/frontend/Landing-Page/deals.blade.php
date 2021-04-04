@@ -4,7 +4,6 @@
 <!--Section: Block Content-->
 <section class="text-center mb-5">
 
-
     <!-- Carousel Wrapper -->
     <div id="multi-item-example-deals" class="carousel slide carousel-multi-item" data-ride="carousel">
         <!-- Indicators -->

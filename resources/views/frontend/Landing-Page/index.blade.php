@@ -14,25 +14,14 @@
 
                         <!-- Grid column -->
                         <div class="col-md-4 col-lg-3 col-xl-2">
-                            <h6>MY MARKETS</h6>
+                            <h6>MY Categories</h6>
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item pl-0"><a class="text-grey-dark" href="#">Fashion and clothes</a></li>
-                                <li class="list-group-item pl-0"><a class="text-grey-dark" href="#">Automobile and motors</a></li>
-                                <li class="list-group-item pl-0"><a class="text-grey-dark" href="#">Gardening and agriculture</a></li>
-                                <li class="list-group-item pl-0"><a class="text-grey-dark" href="#">Electronics and tech</a></li>
-                                <li class="list-group-item pl-0"><a class="text-grey-dark" href="#">Packaginf and printing</a></li>
-                                <li class="list-group-item pl-0"><a class="text-grey-dark" href="#">Home and kitchen</a></li>
-                                <li class="list-group-item pl-0"><a class="text-grey-dark" href="#">Digital goods</a></li>
-                                <li class="list-group-item pl-0 dropdown">
-                                    <a class="dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-                                       aria-expanded="false">More items</a>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                        <a class="dropdown-item" href="#">Submenu name</a>
-                                        <a class="dropdown-item" href="#">Great submenu</a>
-                                        <a class="dropdown-item" href="#">Another menu</a>
-                                        <a class="dropdown-item" href="#">Some others</a>
-                                    </div>
-                                </li>
+                                  @foreach($categories as $category)
+                                   <li class="list-group-item pl-0">
+                                    <a class="text-grey-dark"
+                                    href="/shop?category={{$category->slug}}">{{$category->name}}</a>
+                                    </li>
+                                  @endforeach
                             </ul>
                         </div>
                         <!-- Grid column -->
@@ -55,13 +44,13 @@
                                         <div class="view" style="max-height: 418px;">
                                             <img class="d-block" src="https://mdbootstrap.com/img/Photos/Horizontal/alistyle/img(3).jpg"
                                                  alt="First slide">
-                                            <a href="#!">
+                                            <a href="/shop?category=laptops">
                                                 <div class="mask rgba-black-light"></div>
                                             </a>
                                         </div>
                                         <div class="carousel-caption">
-                                            <h3 class="h3-responsive">First shop item</h3>
-                                                <p>First text</p>
+                                            <h3 class="h3-responsive">Laptops</h3>
+                                                <p></p>
                                         </div>
                                     </div>
                                     <div class="carousel-item">
@@ -69,13 +58,13 @@
                                         <div class="view" style="max-height: 418px;">
                                             <img class="d-block" src="https://mdbootstrap.com/img/Photos/Horizontal/alistyle/img(2).jpg"
                                                  alt="Second slide">
-                                            <a href="#!">
+                                            <a href="/shop?category=laptops">
                                                 <div class="mask rgba-black-light"></div>
                                             </a>
                                         </div>
                                         <div class="carousel-caption">
-                                            <h4 class="h3-responsive">Second shop item</h4>
-                                                <p>Secondary text</p>
+                                            <h4 class="h3-responsive">Mac-Book Pro</h4>
+                                                <p></p>
                                         </div>
                                     </div>
                                     <div class="carousel-item">
@@ -83,13 +72,27 @@
                                         <div class="view" style="max-height: 418px;">
                                             <img class="d-block" src="https://mdbootstrap.com/img/Photos/Horizontal/alistyle/img(1).jpg"
                                                  alt="Third slide">
-                                            <a href="#!">
+                                            <a href="/shop?category=mobile-phones">
                                                 <div class="mask rgba-black-light"></div>
                                             </a>
                                         </div>
                                         <div class="carousel-caption">
-                                            <h3 class="h3-responsive">Third shop item</h3>
-                                                <p>Third text</p>
+                                            <h3 class="h3-responsive">Iphone</h3>
+                                                <p></p>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <!--Mask color-->
+                                        <div class="view" style="max-height: 418px;">
+                                            <img class="d-block" src="https://souqcms.s3-eu-west-1.amazonaws.com/cms/boxes/img/desktop/L_1616665702_GW-MB-PS5-en.jpg"
+                                                 alt="Third slide">
+                                            <a href="/shop?category=video-game">
+                                                <div class="mask rgba-black-light"></div>
+                                            </a>
+                                        </div>
+                                        <div class="carousel-caption">
+                                            <h3 class="h3-responsive">PlayStation^5</h3>
+                                                <p></p>
                                         </div>
                                     </div>
                                 </div>
@@ -121,7 +124,7 @@
                                         <a href="/shop?category={{$category['slug']}}" type="button" class="btn btn-indigo p-2">Source now</a>
                                     </div>
                                     <img class="d-flex ml-3"
-                                         src="{{$category['main_img']}}"
+                                         src="{{productImage($category['main_img'])}}"
                                          alt="category_main_img" width="100">
                                 </div>
                                 @if(!$loop->last)

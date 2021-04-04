@@ -85,8 +85,21 @@
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="{{route('shop.index')}}">Shop</a>
                             <a class="dropdown-item" href="{{ route('about_us')}}">About</a>
-                            <a class="dropdown-item" href="href="{{ route('contact.index')}}">Contact</a>
+                            <a class="dropdown-item" href="{{ route('contact.index')}}">Contact</a>
+                            <a class="dropdown-item" href="{{ route('blog.index')}}">Blog</a>
                         </div>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link waves-effect waves-light" href="{{ route('contact.index')}}">Contact-us</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link waves-effect waves-light" href="{{ route('about_us')}}">About Dragon.com</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link waves-effect waves-light" href="{{ route('blog.index')}}">Blog</a>
                     </li>
                 </ul>
             </div>

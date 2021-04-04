@@ -58,41 +58,16 @@
                 <!-- Right -->
                 <ul class="navbar-nav ml-auto">
                     <!-- Authentication Links -->
-
                     <div class="mr-2">
-                        <li class="nav-item pl-2 mb-2 mb-md-0">
-                            <a href="{{route('track.index')}}" class="text-center" role="button">
+
+                        <li class="nav-item" >
+                            <a href="{{route('track.index')}}" role="button">
                                 <div> <i class="fas fa-store"></i></div>
-                                <span class="text-dark">Orders</span>
-                            </a>
-                    </li>
-                    </div>
-<<<<<<< HEAD
-=======
-
-                    <div class="mr-2">
-
-                        <li class="nav-item" >
-                            <a href="{{route('wishlist.index')}}" class="text-center" role="button">
-                                <div> <i class="fas fa-heart"></i></div>
-                                <span class="text-dark">Wishlist</span>
-                            </a>
-                    </li>
-                    </div>
-                    <div class="mr-2">
-                        <li class="nav-item" >
-                            <a href="{{route('cart.index')}}" class="text-center" role="button">
-                                <div> <i class="fas fa-shopping-cart"></i></div>
-                                <span class="text-dark">Cart</span>
-                                @if (Cart::instance('default')->count() > 0)
-                                    <span class="badge badge-pill red">{{ Cart::count() }}</span>
-                                @endif
+                                <small class="text-dark">Orders</small>
                             </a>
                         </li>
                     </div>
 
-
->>>>>>> b43caf3cf9c65328c822705da4908e76e594e13c
                     @guest
 
                             <li class="nav-item pl-2">
@@ -129,7 +104,6 @@
                             </li>
                         </div>
 
-<<<<<<< HEAD
                     @endguest
                     <div class="">
 
@@ -143,8 +117,7 @@
                             </a>
                         </li>
                     </div>
-=======
->>>>>>> b43caf3cf9c65328c822705da4908e76e594e13c
+
 
                 </ul>
             </div>

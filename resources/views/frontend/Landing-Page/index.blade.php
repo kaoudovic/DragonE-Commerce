@@ -1071,36 +1071,6 @@
             </div>
 
         </section>
-        <!-- Section services -->
-
-        <div class="divider-new version-2 mt-4 mb-0">
-            <h4 class="text-uppercase font-weight-bold deep-grey-text mr-3">Choose region</h4>
-        </div>
-
-        <!-- Section services -->
-        <section class="py-2 mt-4 mb-0 mb-lg-4">
-
-            <ul class="d-flex flex-row flex-wrap justify-content-start justify-content-lg-around list-unstyled">
-                <li class="mb-2 mx-2"><a href="#" class="text-reset"> <i class="china flag"></i> <span>China</span> </a></li>
-                <li class="mb-2 mx-2"><a href="#" class="text-reset"> <i class="germany flag"></i> <span>Germany</span> </a>
-                </li>
-                <li class="mb-2 mx-2"><a href="#" class="text-reset"> <i class="australia flag"></i> <span>Australia</span>
-                    </a></li>
-                <li class="mb-2 mx-2"><a href="#" class="text-reset"> <i class="russia flag"></i> <span>Russia</span> </a>
-                </li>
-                <li class="mb-2 mx-2"><a href="#" class="text-reset"> <i class="india flag"></i> <span>India</span> </a></li>
-                <li class="mb-2 mx-2"><a href="#" class="text-reset"> <i class="india flag"></i> <span>England</span> </a>
-                </li>
-                <li class="mb-2 mx-2"><a href="#" class="text-reset"> <i class="turkey flag"></i> <span>Turkey</span> </a>
-                </li>
-                <li class="mb-2 mx-2"><a href="#" class="text-reset"> <i class="poland flag"></i> <span>Uzbekistan</span> </a>
-                </li>
-                <li class="mb-2 mx-2"><a href="#" class="text-reset"> <i class="mr-3 fas fa-ellipsis-h"></i> <span>More
-                regions</span> </a></li>
-            </ul>
-
-        </section>
-        <!-- Section services -->
 
     </div>
 

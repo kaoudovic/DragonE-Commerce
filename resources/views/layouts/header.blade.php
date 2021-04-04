@@ -99,6 +99,12 @@
 
                     <!-- Authentication Links -->
                     <div class="mr-4">
+                            <a href="{{route('about_us')}}" role="button">
+                                <div> <i class="far fa-handshake"></i></div>
+                                <small class="text-dark">About</small>
+                            </a>
+                    </div>
+                   <div class="mr-4">
                             <a href="{{route('contact.index')}}" role="button">
                                 <div> <i class="fas fa-sms"></i></div>
                                 <small class="text-dark">Contact</small>

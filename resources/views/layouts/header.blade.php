@@ -75,6 +75,10 @@
                                <div class="mr-4">
                                    <a href="{{ route('login') }}" class="btn btn-primary btn-md active" role="button" aria-pressed="true">Login</a>
                                </div>
+                               <div class="mr-4">
+                                   <a href="{{ route('register') }}" class="btn btn-primary btn-md active"
+                                      role="button" aria-pressed="true">REGISTER</a>
+                               </div>
                     @else
                         <div class="mr-4">
                                 <a id="navbarDropdown"  href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

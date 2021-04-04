@@ -122,21 +122,38 @@
                 <hr class="color-primary mb-4 mt-0 d-inline-block mx-auto w-60">
 
                 <ul class="list-unstyled foot-desc">
-                    <li class="mb-2">
-                        <a href="{{ route('profile', ['id'=>auth()->user()->id])}}">Your Account</a>
-                    </li>
+
+                    @if (Route::has('login'))
+                            @auth
+                            <li class="mb-2">
+                                <a href="{{ route('profile', ['id'=>auth()->user()->id]) }}">Your Account</a>
+                            </li>
+                            @else
+                                <a href="{{ route('login') }}">Login</a>
+                        <br>
+
+                                @if (Route::has('register'))
+                                    <a href="{{ route('register') }}">Register</a>
+                                @endif
+                            @endauth
+                    @endif
+
                     <li class="mb-2">
                         <a href="{{route('contact.index')}}">Become an Affiliate</a>
                     </li>
+
                     <li class="mb-2">
                         <a href="{{route('contact.index')}}">Sell products on Dragon</a>
                     </li>
+
                     <li class="mb-2">
                         <a href="{{route('contact.index')}}">  Sell apps on Dragon</a>
                     </li>
+
                     <li class="mb-2">
                         <a href="{{route('contact.index')}}">Shipping Rates</a>
                     </li>
+
                     <li class="mb-2">
                         <a href="{{route('contact.index')}}">Help</a>
                     </li>

@@ -147,9 +147,16 @@
                                                 @endif
                                                 </form>
                                             </div>
-                                            <p
-                                                class="mb-0"><span><strong>${{test_x($item->model->price)
-                                                }}</strong></span></p>
+                                            @if(\App\Models\Product::getDiscount($item->id) == 0)
+                                                <p class="mb-0"><span><strong>${{test_x($item->model->price)}}</strong></span></p>
+
+                                            @else
+                                                <div>
+                                                    <del><p class="mb-0"><span><strong>${{test_x($item->model->price)}}</strong></span></p></del>
+                                                    <p class="mb-0"><span><strong>${{test_x($item->model->price)-( (test_x($item->model->price) * (\App\Models\Product::getDiscount($item->id)/100)))}}</strong></span></p>
+                                                </div>
+
+                                            @endif
                                         </div>
                                     </div>
                                 </div>

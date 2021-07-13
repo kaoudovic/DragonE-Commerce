@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-    use Searchable;
+    //use Searchable;
 
     protected $fillable = ['quantity'];
 
